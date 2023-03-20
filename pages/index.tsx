@@ -1,3 +1,9 @@
+import { AppLayout } from '@layouts';
+
 export default function Home() {
-  return <>index</>;
+  return (
+    <AppLayout>
+      <div>Home Page</div>
+    </AppLayout>
+  );
 }
