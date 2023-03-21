@@ -134,12 +134,31 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 min-h-[397px] flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
                     currentFormElementIndex == 0 ? 'disabled-aqfm' : ''
                   }`}
                 >
-                  <div className="border-1 border-gray-200 h-full">
-                    {/* <MyEditor /> */}
+                  <div className="flex flex-col -mt-2">
+                    <div className="flex flex-col my-2">
+                      <div className="flex">
+                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">
+                          What are the details of your problem?
+                        </label>
+                      </div>
+                      <div className="flex flex-col align-baseline">
+                        <div className="flex mb-2 p-2 basis-3/4">
+                          <label className="text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
+                            Introduce the problem and expand on what you put in
+                            the title. Minimum 20 characters.
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-[277px]">
+                      <div className="border-1 border-gray-300 h-full rounded-3">
+                        {/* <MyEditor /> */}
+                      </div>
+                    </div>
                   </div>
                   {currentFormElementIndex == 1 && (
                     <button
@@ -174,12 +193,32 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 min-h-[397px] flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 1 ? 'disabled-aqfm' : ''
                   }`}
                 >
-                  <div className="border-1 border-gray-200 h-full">
-                    {/* <MyEditor /> */}
+                  <div className="flex flex-col -mt-2">
+                    <div className="flex flex-col my-2">
+                      <div className="flex">
+                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">
+                          What did you try and what were you expecting?
+                        </label>
+                      </div>
+                      <div className="flex flex-col align-baseline">
+                        <div className="flex mb-2 p-2 basis-3/4">
+                          <label className="text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
+                            Describe what you tried, what you expected to
+                            happen, and what actually resulted. Minimum 20
+                            characters.
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-[277px]">
+                      <div className="border-1 border-gray-300 h-full rounded-3">
+                        {/* <MyEditor /> */}
+                      </div>
+                    </div>
                   </div>
                   {currentFormElementIndex == 2 && (
                     <button
