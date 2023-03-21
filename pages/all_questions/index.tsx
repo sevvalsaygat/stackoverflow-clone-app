@@ -10,77 +10,77 @@ const AllQuestions = () => {
             <div className="w-[164px] h-screen" id="left-sidebar">
               <div className="flex flex-col sticky mb-8 pt-24 w-[164px]">
                 <nav className="w-full" role="navigation">
-                  <ol className="w-full">
-                    <li className="relative group p-1 cursor-pointer">
+                  <div className="w-full">
+                    <div className="relative group p-1 cursor-pointer">
                       <div className="pl-8 p-4 text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                         Home
                       </div>
-                    </li>
-                    <li>
-                      <ol className="w-full">
-                        <li className="ml-8 mb-4 mt-16 text-11 font-400 leading-15 text-gray-250">
+                    </div>
+                    <div>
+                      <div className="w-full">
+                        <div className="ml-8 mb-4 mt-16 text-11 font-400 leading-15 text-gray-250">
                           PUBLIC
-                        </li>
+                        </div>
 
-                        <li className="relative">
+                        <div className="relative">
                           <a className="flex flex-row align-center items-center bg-gray-150 border-r-3 border-orange-400 py-[6px] h-[33px] pl-8 pb-4 cursor-pointer">
                             <Icons.SvgWorld className="text-neutral-900 -mt-1 mr-4 w-[20px] h-[20px]" />
                             <span className="text-13 font-700 text-neutral-900 leading-17 w-full cursor-pointer">
                               Questions
                             </span>
                           </a>
-                        </li>
+                        </div>
 
-                        <li className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-[30px] p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Tags
                           </span>
-                        </li>
-                        <li className="group pl-[30px] p-4 cursor-pointer">
+                        </div>
+                        <div className="group pl-[30px] p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Users
                           </span>
-                        </li>
-                        <li className="group pl-[30px] p-4 cursor-pointer">
+                        </div>
+                        <div className="group pl-[30px] p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Companies
                           </span>
-                        </li>
-                        <li className="p-2">
-                          <li className="flex flex-row justify-between items-center mt-16 ml-8">
+                        </div>
+                        <div className="p-2">
+                          <div className="flex flex-row justify-between items-center mt-16 ml-8">
                             <div className="text-11 font-400 text-gray-250">
                               COLLECTIVES
                             </div>
                             <div>
                               <Icons.SvgInfo className="text-gray-250 mx-10" />
                             </div>
-                          </li>
-                          <li className="flex flex-row items-center group cursor-pointer pt-1">
+                          </div>
+                          <div className="flex flex-row items-center group cursor-pointer pt-1">
                             <Icons.SvgStarVerified className="text-orange-400 mr-4 ml-8" />
                             <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                               Explore Collectives
                             </span>
-                          </li>
-                        </li>
-                      </ol>
-                    </li>
-                    <li className="w-full pl-2 pr-3">
-                      <li className="flex flex-row justify-between items-center mt-24 ml-8 mb-4">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-full pl-2 pr-3">
+                      <div className="flex flex-row justify-between items-center mt-24 ml-8 mb-4">
                         <div className="text-11 font-400 text-gray-250">
                           TEAMS
                         </div>
                         <div className="group cursor-pointer">
                           <Icons.SvgInfo className="text-gray-250 group-hover:text-neutral-900 mx-2" />
                         </div>
-                      </li>
-                      <li className="flex flex-row items-center group cursor-pointer pt-1">
+                      </div>
+                      <div className="flex flex-row items-center group cursor-pointer pt-1">
                         <Icons.SvgBriefCase className="text-orange-400 mr-6 ml-8" />
                         <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                           Create free Team
                         </span>
-                      </li>
-                    </li>
-                  </ol>
+                      </div>
+                    </div>
+                  </div>
                 </nav>
               </div>
             </div>
@@ -169,16 +169,16 @@ const AllQuestions = () => {
                           <div className="flex flex-wrap justify-between align-center items-center gap-x-6 gap-y-8">
                             <div className="flex flex-wrap gap-4 float-left leading-18">
                               <ul className="mb-13 inline ml-0">
-                                <li className="inline mr-4">
+                                <div className="inline mr-4">
                                   <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
                                     python-3.x
                                   </a>
-                                </li>
-                                <li className="inline mr-4">
+                                </div>
+                                <div className="inline mr-4">
                                   <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
                                     android-studio
                                   </a>
-                                </li>
+                                </div>
                               </ul>
                             </div>
                             <div className="felx flex-wrap ml-auto justify-end align-center items-center gap-4 leading-1">
@@ -210,10 +210,10 @@ const AllQuestions = () => {
               <div id="sidebar" className="w-[300px] ml-24">
                 <div className="bg-yellow-50 border border-yellow-100 mb-16 shadow-sm rounded-3">
                   <ul className="p-0 m-0">
-                    <li className="text-12 text-zinc-500 font-bold leading-15 border-b-1 border-yellow-100  bg-yellow-200 rounded-3 py-12 px-16">
+                    <div className="text-12 text-zinc-500 font-bold leading-15 border-b-1 border-yellow-100  bg-yellow-200 rounded-3 py-12 px-16">
                       The Overflow Blog
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgPencil className="" />
@@ -221,8 +221,8 @@ const AllQuestions = () => {
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         AI applications open new security vulnerabilities
                       </div>
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgPencil className="" />
@@ -231,11 +231,11 @@ const AllQuestions = () => {
                         How chaos engineering preps developers for the ultimate
                         game day (Ep. 531)
                       </div>
-                    </li>
-                    <li className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
+                    </div>
+                    <div className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
                       Featured on Meta
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgStackExchange className="" />
@@ -243,8 +243,8 @@ const AllQuestions = () => {
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         2022 Community-a-thon Recap
                       </div>
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgStack className="text-zinc-800" />
@@ -252,8 +252,8 @@ const AllQuestions = () => {
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         Temporary policy: ChatGPT is banned
                       </div>
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgStack className="text-zinc-800" />
@@ -261,8 +261,8 @@ const AllQuestions = () => {
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         Should we burninate the [gpl] tag?
                       </div>
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgStack className="text-zinc-800" />
@@ -271,8 +271,8 @@ const AllQuestions = () => {
                         We’re bringing advertisements for technology courses to
                         Stack Overflow
                       </div>
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <div className="">
                         {' '}
                         <Icons.SvgStack className="text-zinc-800" />
@@ -281,18 +281,18 @@ const AllQuestions = () => {
                         Introducing a new close reason specifically for
                         non-English questions
                       </div>
-                    </li>
-                    <li className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
+                    </div>
+                    <div className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
                       Hot Meta Posts
-                    </li>
-                    <li className="flex flex-row my-12 px-16 gap-2">
+                    </div>
+                    <div className="flex flex-row my-12 px-16 gap-2">
                       <span className="text-13 font-400 leading-17 text-gray-250">
                         22
                       </span>
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         Stack Overflow is adding a 1st party targeting cookie{' '}
                       </div>
-                    </li>
+                    </div>
                   </ul>
                 </div>
                 <div className="mb-16 border-1 border-gray-200 rounded-3 shadow-sm bg-white">
@@ -300,11 +300,11 @@ const AllQuestions = () => {
                     Custom Filters
                   </h2>
                   <ul className="border-t-1 border-gray-200 py-4 px-15">
-                    <li className="flex my-12">
+                    <div className="flex my-12">
                       <a className="text-13 font-400 leading-17 text-blue-700 cursor-pointer hover:text-sky-600">
                         Create a custom filter
                       </a>
-                    </li>
+                    </div>
                   </ul>
                 </div>
                 <div>
@@ -598,85 +598,85 @@ const AllQuestions = () => {
                     </a>
                   </h4>
                   <ul>
-                    <li className="flex flex-row mb-10 ml-0">
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top">
                         {/* <img src="/images/favicons.png" className="bg-no-repeat bg-top-756" /> */}
                       </div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         Bridge rectifier speed
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         I was knit a sweater
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         What is the meaning of assertion?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         FIPS 186-4, Use of RSA key pair for Encryption and
                         Signature
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         Why are transponders to be turned off when in formation?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         Why was the graphical user interface version of Defrag
                         removed?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         The rationale behind allowing `sudo -u root` but
                         disallowing `sudo -u root -i`
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         Was there any technological reason that C was designed
                         to return only a single thing from a function?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         How do proponents of the Fine Tuning argument for God,
                         refute the puddle comparison?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         Basis for multivariable polynomials
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         How do we know we&apos;re not getting bigger?
                       </a>
-                    </li>
-                    <li className="flex flex-row mb-10 ml-0">
+                    </div>
+                    <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
                         How to write straight on blank paper?
                       </a>
-                    </li>
+                    </div>
                   </ul>
                   <div className="flex flex-row items-center">
                     <a className="flex flex-row items-center text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer ml-22 my-5 whitespace-normal	">
