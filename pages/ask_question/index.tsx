@@ -302,7 +302,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 3 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-[212px] bg-white">
+                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full min-h-[212px] bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Adding tags
                     </div>
@@ -334,35 +334,43 @@ const AskQuestions = () => {
                     currentFormElementIndex <= 3 ? 'disabled-aqfm' : ''
                   }`}
                 >
-                  <div className="flex flex-col gap-16">
-                    <div className="flex flex-col -m-2 mx-0">
-                      <div className="flex flex-col ">
-                        <p className="mb-2 font-600 text-15 leading-19.61 text-neutral-900">
+                  <div className="flex flex-col -mt-2 gap-12">
+                    <div className="flex flex-col my-2">
+                      <div className="flex">
+                        <label className="font-600 p-2 text-15 leading-19.61 text-neutral-900 cursor-pointer">
                           Review questions already on Stack Overflow to see if
                           your question is a duplicate.
-                        </p>
-                        <p className="mb-0 text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
-                          Clicking on these questions will open them in a new
-                          tab for you to review. Your progress here will be
-                          saved so you can come back and continue.
-                        </p>
+                        </label>
+                      </div>
+                      <div className="flex flex-col align-baseline">
+                        <div className="flex p-2 basis-3/4">
+                          <label className="text-12 font-400 leading-15 text-neutral-700">
+                            Clicking on these questions will open them in a new
+                            tab for you to review. Your progress here will be
+                            saved so you can come back and continue.
+                          </label>
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-col">
-                      <div className="flex flex-row">
+                      <div className="flex flex-row w-full">
                         <button
-                          className="w-full border-1 border-gray-300 rounded-3 flex justify-start py-12 px-16 bg-gray-100 cursor-pointer text-gray-250 text-15 font-400 leading-19.61"
+                          className="w-full border-1 border-gray-300 rounded-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
                           type="button"
                           onClick={() => {
                             setIsShowingReviewTab(!isShowingReviewTab);
                           }}
                         >
-                          Do any of these posts answer your question?
-                          <div className="">
-                            <Icons.SvgArrowDown className="text-gray-250 absolute" />
+                          <div className="w-full flex justify-start text-gray-250 text-15 font-400 leading-19.61">
+                            Do any of these posts answer your question?
                           </div>
-                          <div className="">
-                            <Icons.SvgArrowUp className="text-gray-250" />
+                          <div className="w-full flex justify-end">
+                            <div className="">
+                              <Icons.SvgArrowDown className="text-gray-250 absolute" />
+                            </div>
+                            <div className="">
+                              <Icons.SvgArrowUp className="text-gray-250" />
+                            </div>
                           </div>
                         </button>
                       </div>
@@ -383,6 +391,29 @@ const AskQuestions = () => {
                     </div>
                   </div>
                 </div>
+                {currentFormElementIndex == 4 && (
+                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-[188px] bg-white">
+                    <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
+                      Make sure we don’t already have an answer for your
+                      question
+                    </div>
+                    <div className="flex flex-row bg-white m-16">
+                      <div className="mx-8 my-0">
+                        <Icons.SvgBell />
+                      </div>
+                      <div className="mx-8 my-0 text-12 leading-15.6923 text-zinc-800 font-400">
+                        <p className="mb-12">
+                          Stack Overflow is a huge database of knowledge.
+                        </p>
+                        <p className="mb-0">
+                          Please make sure your question isn’t already answered
+                          before posting, or your question might be closed as a
+                          duplicate.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </main>
           </form>

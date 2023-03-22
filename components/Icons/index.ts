@@ -33,6 +33,7 @@ import SvgSpotPencil from './SpotPencil';
 import SvgAskBackground from './AskBackground';
 import SvgArrowDown from './ArrowDown';
 import SvgArrowUp from './ArrowUp';
+import SvgBell from './Bell';
 
 /* eslint-disable */
 export default {
@@ -71,5 +72,6 @@ export default {
   SvgAskBackground,
   SvgArrowDown,
   SvgArrowUp,
+  SvgBell,
 };
 /* eslint-enable */
