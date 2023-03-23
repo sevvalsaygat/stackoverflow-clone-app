@@ -263,7 +263,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 flex-grow-0 bg-white border-1 rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 2 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -355,7 +355,7 @@ const AskQuestions = () => {
                     <div className="flex flex-col">
                       <div className="flex flex-row w-full">
                         <button
-                          className="w-full border-1 border-gray-300 rounded-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
+                          className="w-full border-1 border-gray-300 rounded-t-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
                           type="button"
                           onClick={() => {
                             setIsShowingReviewTab(!isShowingReviewTab);
@@ -365,17 +365,25 @@ const AskQuestions = () => {
                             Do any of these posts answer your question?
                           </div>
                           <div className="w-full flex justify-end">
-                            <div className="">
-                              <Icons.SvgArrowDown className="text-gray-250 absolute" />
+                            <div
+                              className={`${
+                                isShowingReviewTab ? 'hidden' : ''
+                              }`}
+                            >
+                              <Icons.SvgArrowDown className="text-gray-250" />
                             </div>
-                            <div className="">
+                            <div
+                              className={`${
+                                isShowingReviewTab ? '' : 'hidden'
+                              }`}
+                            >
                               <Icons.SvgArrowUp className="text-gray-250" />
                             </div>
                           </div>
                         </button>
                       </div>
                       {isShowingReviewTab && (
-                        <div className="text-gray-250 text-13 font-400 leading-17 flex justify-center items-center border-1 border-gray-300 rounded-3 py-14 px-16">
+                        <div className="text-gray-250 text-13 font-400 leading-17 flex justify-center items-center border-x-1 border-b-1 border-gray-300 rounded-b-3 py-14 px-16">
                           No duplicate questions found.
                         </div>
                       )}
@@ -414,6 +422,11 @@ const AskQuestions = () => {
                     </div>
                   </div>
                 )}
+              </div>
+              <div className="my-12 ">
+                <button className="border-1-transparent cursor-pointer rounded-3 p-10.4 hover:bg-red-100 text-red-300 hover:text-red-400 text-13 font-400 leading-15">
+                  Discard draft
+                </button>
               </div>
             </main>
           </form>
