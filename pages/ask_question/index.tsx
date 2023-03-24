@@ -263,7 +263,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 flex-grow-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`relative w-70 p-24 flex-shrink-0 flex-grow-0 bg-white border-1 rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 2 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -295,33 +295,35 @@ const AskQuestions = () => {
                     <button
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7"
+                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-15"
                     >
                       Next
                     </button>
                   )}
                 </div>
                 {currentFormElementIndex == 3 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full min-h-[212px] bg-white">
-                    <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
-                      Adding tags
-                    </div>
-                    <div className="flex flex-row bg-white m-16">
-                      <div className="mx-8 my-0">
-                        <Icons.SvgSpotPencil />
+                  <div className="relative w-full">
+                    <div className="absolute border-1 rounded-3 border-gray-200 shadow-sm min-h-[212px] bg-white">
+                      <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
+                        Adding tags
                       </div>
-                      <div className="mx-8 my-0 text-12 leading-15.6923 text-zinc-800 font-400">
-                        <p className="mb-12">
-                          Tags help ensure that your question will get attention
-                          from the right people.
-                        </p>
-                        <p className="mb-12">
-                          Tag things in more than one way so people can find
-                          them more easily. Add tags for product lines,
-                          projects, teams, and the specific technologies or
-                          languages used.{' '}
-                        </p>
-                        <p className="mb-0">Learn more about tagging</p>
+                      <div className="flex flex-row bg-white m-16">
+                        <div className="mx-8 my-0">
+                          <Icons.SvgSpotPencil />
+                        </div>
+                        <div className="mx-8 my-0 text-12 leading-15.6923 text-zinc-800 font-400">
+                          <p className="mb-12">
+                            Tags help ensure that your question will get
+                            attention from the right people.
+                          </p>
+                          <p className="mb-12">
+                            Tag things in more than one way so people can find
+                            them more easily. Add tags for product lines,
+                            projects, teams, and the specific technologies or
+                            languages used.{' '}
+                          </p>
+                          <p className="mb-0">Learn more about tagging</p>
+                        </div>
                       </div>
                     </div>
                   </div>
