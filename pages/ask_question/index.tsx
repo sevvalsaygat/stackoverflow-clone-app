@@ -156,6 +156,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
+                        <input className="w-full h-full"></input>
                         {/* <MyEditor /> */}
                       </div>
                     </div>
@@ -216,6 +217,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
+                        <input className="w-full h-full"></input>
                         {/* <MyEditor /> */}
                       </div>
                     </div>

@@ -18,7 +18,9 @@ export const AuthProvider = ({ children }: AuthProviderType) => {
     isAuthenticated,
   };
 
-  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
 };
 /* eslint-enable */
 
