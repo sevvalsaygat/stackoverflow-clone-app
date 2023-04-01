@@ -1,10 +1,28 @@
 import React, { useState } from 'react';
 import { AppLayout } from '@layouts';
 import { Icons } from '@components';
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
+import { Api } from '@hooks';
 
 const AskQuestions = () => {
   const [isShowingReviewTab, setIsShowingReviewTab] = useState(false);
   const [currentFormElementIndex, setCurrentFormElementIndex] = useState(0);
+
+  const { mutate } = Api.Questions.useAskQuestion({
+    onSuccess: (data: any) => {
+      router.push('/all_questions');
+    },
+    onError: () => {},
+  });
+
+  const router = useRouter();
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data: any) => {
+    mutate(data);
+  };
 
   function onClickNextButton() {
     setCurrentFormElementIndex(currentFormElementIndex + 1);
@@ -14,7 +32,7 @@ const AskQuestions = () => {
     <AppLayout hideFooter={false} hideHamburger={false}>
       <div className="w-full bg-gray-100">
         <div className="mx-auto max-w-79 flex justify-center px-24 pb-24">
-          <form className="w-full">
+          <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
             <main className="mb-48">
               <div className="flex flex-col">
                 <div className="flex flex-col m-0 p-0">
@@ -94,6 +112,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="flex m-2 mx-0 relative">
                       <input
+                        {...register('title')}
                         className="border-1 rounded-3 border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
                         placeholder="e.g. Is there an R function the index of an element in a vector?"
                       ></input>
@@ -156,7 +175,10 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <input className="w-full h-full"></input>
+                        <input
+                          {...register('problem')}
+                          className="w-full h-full"
+                        ></input>
                         {/* <MyEditor /> */}
                       </div>
                     </div>
@@ -217,7 +239,10 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <input className="w-full h-full"></input>
+                        <input
+                          {...register('description')}
+                          className="w-full h-full"
+                        ></input>
                         {/* <MyEditor /> */}
                       </div>
                     </div>
@@ -287,6 +312,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="flex m-2 mx-0 relative">
                       <input
+                        {...register('tags')}
                         className="border-1 rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
                         placeholder="e.g. (c# vba pandas)"
                       ></input>
@@ -393,8 +419,7 @@ const AskQuestions = () => {
                       )}
                       {currentFormElementIndex == 4 && (
                         <button
-                          type="button"
-                          onClick={onClickNextButton}
+                          type="submit"
                           className="border-1 border-transparent p-10.4 w-fit bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-16"
                         >
                           Review your question

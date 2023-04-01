@@ -1,5 +1,122 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ]
+  "api_users_sign_in": {
+    "displayName": "şevval saygat",
+    "email": "sevvallsstt@gmail.com",
+    "password": "12312323",
+    "allowResearch": true
+  },
+  "api_top_questions": [
+    {
+      "votesCount": 165,
+      "answersCount": 12,
+      "viewsCount": 20,
+      "tags": [
+        "java",
+        "sos",
+        "android",
+        "javascript"
+      ],
+      "question": "How i can send a sms message (SOS) to a saved contact by shaking the phone - Android Studio",
+      "createdAt": "4 min ago",
+      "asksCount": 1,
+      "askedBy": {
+        "id": 123,
+        "name": "sevvalsaygat"
+      }
+    },
+    {
+      "votesCount": 159,
+      "answersCount": 16,
+      "viewsCount": 35,
+      "tags": [
+        "oracle",
+        "sql",
+        "database"
+      ],
+      "question": "About oracle database",
+      "createdAt": "9 min ago",
+      "asksCount": 15,
+      "askedBy": {
+        "id": 1566,
+        "name": "aslıcicek"
+      }
+    },
+    {
+      "votesCount": 260,
+      "answersCount": 14,
+      "viewsCount": 35,
+      "tags": [
+        "woocommerce"
+      ],
+      "question": "Woocommerce - Automatically populate category for products with only 1 unit left in Stock",
+      "createdAt": "15 min ago",
+      "asksCount": 156,
+      "askedBy": {
+        "id": 14558,
+        "name": "dave"
+      }
+    }
+  ],
+  "api_all_questions": [
+    {
+      "votesCount": 155,
+      "answersCount": 14,
+      "viewsCount": 35,
+      "tags": [
+        "java",
+        "sos",
+        "android",
+        "javascript"
+      ],
+      "question": "How to mathematically model in MATLAB using Graph?",
+      "description": "I am trying to create a code for the following statement in MATLAB: Suppose there are 60 small base stations (small mobile towers) and 1 Macro base station (big mobile tower). Let us index these nodes",
+      "createdAt": "1 min ago",
+      "asksCount": 3,
+      "askedBy": {
+        "id": 145,
+        "name": "sevvalsaygat"
+      }
+    },
+    {
+      "votesCount": 146,
+      "answersCount": 16,
+      "viewsCount": 46,
+      "tags": [
+        "oracle",
+        "sql",
+        "database"
+      ],
+      "question": "Where I can Get Calculator Simillar to Calculador.io",
+      "description": "I want to make similar calculador like calculador.io How I can clone it or make similar advance calculator for my clients",
+      "createdAt": "6 min ago",
+      "asksCount": 18,
+      "askedBy": {
+        "id": 176,
+        "name": "aslıcicek"
+      }
+    },
+    {
+      "votesCount": 254,
+      "answersCount": 4,
+      "viewsCount": 78,
+      "tags": [
+        "woocommerce"
+      ],
+      "question": "G++ Compiler issue: cc1plus.exe application error with mingw-w64",
+      "description": "I tried starting using C++ on VSCode (I am currently on Windows 11), but after having installed mingw-w64, and using the g++ command line, it seems that the compiler does not work, i.e. I receive a ",
+      "createdAt": "15 min ago",
+      "asksCount": 56,
+      "askedBy": {
+        "id": 158,
+        "name": "dave"
+      }
+    }
+  ],
+  "api_ask_question": {
+    "title": "AZSDFGHJ",
+    "problem": "ASDFGHJ",
+    "description": "ASDFGHJ",
+    "tags": "ASDFGHJKIL"
+  },
+  "api_users_sign_up": {}
 }

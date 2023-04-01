@@ -1,7 +1,10 @@
 import { AppLayout } from '@layouts';
 import { Icons, Pagination } from '@components';
+import { Api } from '@hooks';
 
 const AllQuestions = () => {
+  const { data, isSuccess } = Api.Questions.useGetAllQuestions();
+
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
       <div className="w-full bg-none">
@@ -136,69 +139,75 @@ const AllQuestions = () => {
 
                   <div id="qlist-wrapper" className="w-full -ml-24 border-t-1">
                     <div className="mb-20">
-                      <div className="flex flex-row p-16 border-b-1 border-gray-50">
-                        <div className="flex flex-col shrink-0 flex-wrap w-[108px] mr-16 mb-4 gap-6 text-gray-250">
-                          <div className="text-neutral-900 gap-1 flex justify-end border-1 border-transparent text-13 font-400 leading-17">
-                            <span>0</span>
-                            <span>votes</span>
-                          </div>
-                          <div className="flex flex-row justify-end gap-1 border-1 border-transparent text-gray-250 text-13 font-400 leading-17">
-                            <span>1</span>
-                            <span>answer</span>
-                          </div>
-                          <div className="flex flex-row justify-end gap-1 border-1 border-transparent text-gray-250 text-13 font-400 leading-17">
-                            <span>19</span>
-                            <span>views</span>
-                          </div>
-                        </div>
-                        <div className="grow max-w-full">
-                          <h3 className="-mt-[1.95px] mb-[4.9998px] pr-24 text-17 font-sans leading-22.2308 break-words">
-                            <a className="text-blue-700 hover:text-sky-600 cursor-pointer">
-                              When appending a to list1, a is appended to every
-                              element of list1 instead of adding a single
-                              element to the end of the list
-                            </a>
-                          </h3>
-                          <div className="-mt-2 mb-8 line-clamp-2 break-words overflow-hidden text-13 font-400 leading-17 text-neutral-700">
-                            Hey everyone I&apos;m fairly new to coding and
-                            thought I&apos;d post a problem I&apos;m having with
-                            a project I got out of a workbook about the birthday
-                            paradox. I&apos;m trying to randomly create a list
-                            of birthdays
-                          </div>
-                          <div className="flex flex-wrap justify-between align-center items-center gap-x-6 gap-y-8">
-                            <div className="flex flex-wrap gap-4 float-left leading-18">
-                              <ul className="mb-13 inline ml-0">
-                                <div className="inline mr-4">
-                                  <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
-                                    python-3.x
-                                  </a>
+                      {isSuccess &&
+                        data.map((q: any, index: number) => {
+                          return (
+                            <div
+                              key={index}
+                              className="flex flex-row p-16 border-b-1 border-gray-50"
+                            >
+                              <div className="flex flex-col shrink-0 flex-wrap w-[108px] mr-16 mb-4 gap-6 text-gray-250">
+                                <div className="text-neutral-900 gap-1 flex justify-end border-1 border-transparent text-13 font-400 leading-17">
+                                  <span>{q.votesCount}</span>
+                                  <span>votes</span>
                                 </div>
-                                <div className="inline mr-4">
-                                  <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
-                                    android-studio
-                                  </a>
+                                <div className="flex flex-row justify-end gap-1 border-1 border-transparent text-gray-250 text-13 font-400 leading-17">
+                                  <span>{q.answersCount}</span>
+                                  <span>answer</span>
                                 </div>
-                              </ul>
-                            </div>
-                            <div className="felx flex-wrap ml-auto justify-end align-center items-center gap-4 leading-1">
-                              <div className="flex flex-row gap-4">
-                                <div className="flex flex-row align-center items-center gap-4">
-                                  <a className="flex align-center items-center text-12 font-400 leading-12 text-blue-700 hover:text-sky-600 cursor-pointer">
-                                    LosDavidos
+                                <div className="flex flex-row justify-end gap-1 border-1 border-transparent text-gray-250 text-13 font-400 leading-17">
+                                  <span>{q.viewsCount}</span>
+                                  <span>views</span>
+                                </div>
+                              </div>
+                              <div className="grow max-w-full">
+                                <h3 className="-mt-[1.95px] mb-[4.9998px] pr-24 text-17 font-sans leading-22.2308 break-words">
+                                  <a className="text-blue-700 hover:text-sky-600 cursor-pointer">
+                                    {q.question}
                                   </a>
-                                  <div className="flex align-center items-center text-12 font-bold leading-12 text-zinc-500">
-                                    21
+                                </h3>
+                                <div className="-mt-2 mb-8 line-clamp-2 break-words overflow-hidden text-13 font-400 leading-17 text-neutral-700">
+                                  {q.description}
+                                </div>
+                                <div className="flex flex-wrap justify-between align-center items-center gap-x-6 gap-y-8">
+                                  <div className="flex flex-wrap gap-4 float-left leading-18">
+                                    <ul className="mb-13 inline ml-0">
+                                      {q.tags.map(
+                                        (t: string, index: number) => {
+                                          return (
+                                            <div
+                                              key={index}
+                                              className="inline mr-4"
+                                            >
+                                              <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
+                                                {t}
+                                              </a>
+                                            </div>
+                                          );
+                                        }
+                                      )}
+                                    </ul>
+                                  </div>
+                                  <div className="felx flex-wrap ml-auto justify-end align-center items-center gap-4 leading-1">
+                                    <div className="flex flex-row gap-4">
+                                      <div className="flex flex-row align-center items-center gap-4">
+                                        <a className="flex align-center items-center text-12 font-400 leading-12 text-blue-700 hover:text-sky-600 cursor-pointer">
+                                          {q.askedBy.name}
+                                        </a>
+                                        <div className="flex align-center items-center text-12 font-bold leading-12 text-zinc-500">
+                                          {q.asksCount}
+                                        </div>
+                                      </div>
+                                      <time className="text-gray-250 text-12 font-400 leading-12">
+                                        <a>asked {q.createdAt}</a>
+                                      </time>
+                                    </div>
                                   </div>
                                 </div>
-                                <time className="text-gray-250 text-12 font-400 leading-12">
-                                  <a>asked 1 min ago</a>
-                                </time>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
+                          );
+                        })}
                     </div>
                   </div>
                   <br />

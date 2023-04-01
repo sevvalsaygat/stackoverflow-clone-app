@@ -1,7 +1,28 @@
 import { AppLayout } from '@layouts';
 import { Icons, Buttons } from '@components';
+import { Api, useAuth } from '@hooks';
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
 
 const SignIn = () => {
+  const { mutate } = Api.Authentication.useLogin({
+    onSuccess: (data: any) => {
+      setUser(data);
+      router.push('/top_questions');
+    },
+    onError: () => {},
+  });
+
+  const router = useRouter();
+
+  const { setUser } = useAuth();
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data: any) => {
+    mutate(data);
+  };
+
   return (
     <AppLayout hideFooter={true}>
       <div
@@ -43,13 +64,19 @@ const SignIn = () => {
                 </div>
               </div>
               <div className="shadow-xl bg-white p-24 mb-[24px] rounded-lg max-w-[316px] max-h-[234.19px]">
-                <form className="flex flex-col">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="flex flex-col"
+                >
                   <div className="flex flex-col">
                     <label className="m-1 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
                       Email
                     </label>
                     <div className="m-2 flex">
-                      <input className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"></input>
+                      <input
+                        {...register('email')}
+                        className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"
+                      ></input>
                     </div>
                   </div>
                   <div className="flex flex-col mt-3">
@@ -62,11 +89,18 @@ const SignIn = () => {
                       </a>
                     </div>
                     <div className="m-2 flex">
-                      <input className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"></input>
+                      <input
+                        type="password"
+                        {...register('password')}
+                        className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"
+                      ></input>
                     </div>
                   </div>
                   <div className="flex mt-3">
-                    <button className="border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs">
+                    <button
+                      type="submit"
+                      className="border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs"
+                    >
                       Log in
                     </button>
                   </div>

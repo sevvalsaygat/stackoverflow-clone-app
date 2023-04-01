@@ -2,6 +2,8 @@ import React, { useState, useContext, createContext } from 'react';
 
 type UseAuthType = {
   isAuthenticated: boolean;
+  currentUser: null | object;
+  setUser: (user: any) => void;
 };
 
 type AuthProviderType = {
@@ -12,10 +14,17 @@ const AuthContext = createContext({} as UseAuthType);
 
 /* eslint-disable */
 export const AuthProvider = ({ children }: AuthProviderType) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [currentUser, setCurrentUser] = useState<any>(null);
+  const isAuthenticated = currentUser != null;
+
+  function setUser(user: any): void {
+    setCurrentUser(user);
+  }
 
   const contextValue = {
     isAuthenticated,
+    currentUser,
+    setUser,
   };
 
   return (

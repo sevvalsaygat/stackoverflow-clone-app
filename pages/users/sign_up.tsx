@@ -1,8 +1,29 @@
 import { AppLayout } from '@layouts';
 import { Icons, Buttons } from '@components';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useRouter } from 'next/router';
+import { Api, useAuth } from '@hooks';
+import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
+  const { mutate } = Api.Authentication.useLogin({
+    onSuccess: (data: any) => {
+      setUser(data);
+      router.push('/top_questions');
+    },
+    onError: () => {},
+  });
+
+  const router = useRouter();
+
+  const { setUser } = useAuth();
+
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data: any) => {
+    mutate(data);
+  };
+
   return (
     <AppLayout hideFooter={true}>
       <div
@@ -93,13 +114,19 @@ const SignUp = () => {
 
             <div className="w-[316px]">
               <div className="mx-auto shadow-xl p-24 mb-[24px] bg-white rounded-lg ">
-                <form className="flex flex-col">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="flex flex-col"
+                >
                   <div className="flex flex-col my-6">
                     <label className="m-2 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
                       Display name
                     </label>
                     <div className="mt-2 flex">
-                      <input className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"></input>
+                      <input
+                        {...register('displayName')}
+                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                      ></input>
                     </div>
                   </div>
                   <div className="flex flex-col my-6">
@@ -109,7 +136,10 @@ const SignUp = () => {
                       </label>
                     </div>
                     <div className="mt-2 flex">
-                      <input className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"></input>
+                      <input
+                        {...register('email')}
+                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                      ></input>
                     </div>
                   </div>
                   <div className="flex flex-col my-6">
@@ -117,7 +147,11 @@ const SignUp = () => {
                       Password
                     </label>
                     <div className="mt-2 flex">
-                      <input className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"></input>
+                      <input
+                        type={'password'}
+                        {...register('password')}
+                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                      ></input>
                     </div>
                     <p className="my-4 font-400 text-12 leading-15 text-gray-250">
                       Passwords must contain at least eight characters,
@@ -141,7 +175,11 @@ const SignUp = () => {
 
                   <div className="flex flex-row mt-3">
                     <div className="flex mr-1 content-start">
-                      <input type="checkbox" className="mt-0 h-13 w-13 mr-4" />
+                      <input
+                        {...register('allowResearch')}
+                        type="checkbox"
+                        className="mt-0 h-13 w-13 mr-4"
+                      />
                     </div>
                     <div className="mb-6">
                       <p className="text-12 font-400 leading-15.6923 cursor-pointer text-neutral-900">
@@ -155,7 +193,10 @@ const SignUp = () => {
                     </div>
                   </div>
                   <div className="flex">
-                    <button className="my-6 border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs">
+                    <button
+                      type="submit"
+                      className="my-6 border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs"
+                    >
                       Sign up
                     </button>
                   </div>
