@@ -1,5 +1,6 @@
 import { Icons } from '@components';
 import { useAuth } from '@hooks';
+import Link from 'next/link';
 
 type HeaderType = {
   hideHamburger?: boolean;
@@ -72,12 +73,18 @@ const Header = ({ hideHamburger }: HeaderType) => {
             </div>
           ) : (
             <div className="flex flex-row">
-              <button className="border border-blue-400 bg-cyan-50 hover:bg-cyan-300 text-sky-700 hover:text-blue-350 text-13 font-400 w-[58.2px] h-[33px] shadow-bm rounded">
+              <Link
+                href="/users/sign_in"
+                className="flex justify-center items-center border border-blue-400 bg-cyan-50 hover:bg-cyan-300 text-sky-700 hover:text-blue-350 text-13 font-400 w-[58.2px] h-[33px] shadow-bm rounded "
+              >
                 Log in
-              </button>
-              <button className="border border-sky-600 hover:border-blue-700 ml-4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 w-[66.88px] h-[33px] shadow-bs rounded">
+              </Link>
+              <Link
+                href="/users/sign_up"
+                className="flex justify-center items-center border border-sky-600 hover:border-blue-700 ml-4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 w-[66.88px] h-[33px] shadow-bs rounded text-center"
+              >
                 Sign up
-              </button>
+              </Link>
             </div>
           )}
         </div>

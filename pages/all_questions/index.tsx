@@ -1,6 +1,7 @@
 import { AppLayout } from '@layouts';
 import { Icons, Pagination } from '@components';
 import { Api } from '@hooks';
+import Link from 'next/link';
 
 const AllQuestions = () => {
   const { data, isSuccess } = Api.Questions.useGetAllQuestions();
@@ -15,9 +16,12 @@ const AllQuestions = () => {
                 <nav className="w-full" role="navigation">
                   <div className="w-full">
                     <div className="relative group p-1 cursor-pointer">
-                      <div className="pl-8 p-4 text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
+                      <Link
+                        href="/top_questions"
+                        className="pl-8 p-4 text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900"
+                      >
                         Home
-                      </div>
+                      </Link>
                     </div>
                     <div>
                       <div className="w-full">
@@ -96,9 +100,12 @@ const AllQuestions = () => {
                       All Questions
                     </h1>
                     <div className="ml-3">
-                      <button className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs">
+                      <Link
+                        href="/ask_question"
+                        className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
+                      >
                         Ask Question
-                      </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="flex flex-row justify-between align-center items-center mb-12">

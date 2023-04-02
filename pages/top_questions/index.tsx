@@ -1,6 +1,7 @@
 import { AppLayout } from '@layouts';
 import { Icons } from '@components';
 import { Api } from '@hooks';
+import Link from 'next/link';
 
 const TopQuestions = () => {
   const { data, isSuccess } = Api.Questions.useGetTopQuestions();
@@ -26,9 +27,12 @@ const TopQuestions = () => {
                         </div>
                         <div className=" group flex flex-row cursor-pointer items-center pl-8 pb-4">
                           <Icons.SvgWorld className="text-gray-400 group-hover:text-neutral-900 mr-4 w-18 h-18" />
-                          <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
+                          <Link
+                            href="/all_questions"
+                            className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900"
+                          >
                             Questions
-                          </span>
+                          </Link>
                         </div>
                         <div className="group pl-[30px] p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
@@ -91,9 +95,12 @@ const TopQuestions = () => {
                       Top Questions
                     </h1>
                     <div className="ml-3">
-                      <button className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs">
+                      <Link
+                        href="/ask_question"
+                        className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
+                      >
                         Ask Question
-                      </button>
+                      </Link>
                     </div>
                   </div>
                   <div className="flex justify-end align-center mb-16">
