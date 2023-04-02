@@ -19,9 +19,12 @@ const Header = ({ hideHamburger }: HeaderType) => {
               <Icons.SvgHambuger className="h-[47px] w-12 py-3 text-zinc-800" />
             </div>
           )}
-          <div className="px-8 w-[166px] hover:bg-gray-50 cursor-pointer flex items-center justify-center h-[47px]">
+          <Link
+            href="/top_questions"
+            className="px-8 w-[166px] hover:bg-gray-50 cursor-pointer flex items-center justify-center h-[47px]"
+          >
             <Icons.SvgLogo className="h-30 w-150 -mt-4" />
-          </div>
+          </Link>
           {!isAuthenticated && (
             <div className="flex items-center">
               <p className="m-auto text-13 leading-17 text-zinc-500 px-[12px] py-[6px] hover:bg-gray-50 hover:text-zinc-800 rounded-full cursor-pointer h-[29px]">

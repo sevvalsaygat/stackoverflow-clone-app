@@ -8,7 +8,7 @@ const AllQuestions = () => {
 
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
-      <div className="w-full bg-none">
+      <div className="w-full bg-white">
         <div className="mx-auto max-w-79 flex justify-center">
           <div className="flex w-full justify-between">
             <div className="w-[164px] h-screen" id="left-sidebar">
