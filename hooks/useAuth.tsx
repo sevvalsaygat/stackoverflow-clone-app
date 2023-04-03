@@ -12,7 +12,6 @@ type AuthProviderType = {
 
 const AuthContext = createContext({} as UseAuthType);
 
-/* eslint-disable */
 export const AuthProvider = ({ children }: AuthProviderType) => {
   const [currentUser, setCurrentUser] = useState<any>(null);
   const isAuthenticated = currentUser != null;
@@ -31,7 +30,6 @@ export const AuthProvider = ({ children }: AuthProviderType) => {
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
 };
-/* eslint-enable */
 
 export default function useAuth(): UseAuthType {
   const context = useContext(AuthContext);

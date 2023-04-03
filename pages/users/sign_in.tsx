@@ -5,8 +5,12 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 
 const SignIn = () => {
+  const { setUser } = useAuth();
+
   const { mutate } = Api.Authentication.useLogin({
     onSuccess: (data: any) => {
+      console.log(data);
+
       setUser(data);
       router.push('/top_questions');
     },
@@ -14,8 +18,6 @@ const SignIn = () => {
   });
 
   const router = useRouter();
-
-  const { setUser } = useAuth();
 
   const { register, handleSubmit } = useForm();
 

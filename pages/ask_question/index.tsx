@@ -18,7 +18,11 @@ const AskQuestions = () => {
 
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (data: any) => {
     mutate(data);
