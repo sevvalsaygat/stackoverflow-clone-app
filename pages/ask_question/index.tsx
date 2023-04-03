@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppLayout } from '@layouts';
-import { Icons } from '@components';
+import { Icons, MyEditor } from '@components';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { Api } from '@hooks';
@@ -179,11 +179,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <input
-                          {...register('problem')}
-                          className="w-full h-full"
-                        ></input>
-                        {/* <MyEditor /> */}
+                        <MyEditor />
                       </div>
                     </div>
                   </div>
@@ -243,11 +239,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-[277px]">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <input
-                          {...register('description')}
-                          className="w-full h-full"
-                        ></input>
-                        {/* <MyEditor /> */}
+                        <MyEditor />
                       </div>
                     </div>
                   </div>

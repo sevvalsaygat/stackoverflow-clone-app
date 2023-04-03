@@ -3,6 +3,10 @@ import Header from './Header';
 import Icons from './Icons';
 import Buttons from './Buttons';
 import Pagination from './Pagination';
-// import MyEditor from './Editor';
+import dynamic from 'next/dynamic';
 
-export { Footer, Header, Icons, Buttons, Pagination };
+const MyEditor = dynamic(() => import('./Editor'), {
+  ssr: false,
+});
+
+export { Footer, Header, Icons, Buttons, Pagination, MyEditor };

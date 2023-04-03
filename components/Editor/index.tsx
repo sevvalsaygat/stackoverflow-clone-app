@@ -4,8 +4,6 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 
-/* eslint-disable  */
-
 const MyEditor = () => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [text, setText] = useState('');
@@ -34,7 +32,5 @@ const MyEditor = () => {
     </>
   );
 };
-
-/* eslint-enable  */
 
 export default MyEditor;
