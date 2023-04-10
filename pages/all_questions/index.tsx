@@ -94,12 +94,12 @@ const AllQuestions = () => {
             <div className="w-full border-l p-24 flex flex-row">
               <div className="w-[727px]">
                 <div id="mainbar" className="w-full">
-                  <div className="flex flex-row justify-between">
+                  <div className="flex flex-row justify-between mt-7">
                     <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27">
                       {' '}
                       All Questions
                     </h1>
-                    <div className="ml-3">
+                    <div>
                       <Link
                         href="/ask_question"
                         className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
@@ -130,7 +130,7 @@ const AllQuestions = () => {
                           <button className="flex justify-center items-center border-y border-r border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Unanswered
                           </button>
-                          <button className="flex justify-center items-center border-y border-r rounded-3 border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
+                          <button className="flex justify-center items-center border-y border-r rounded-r-3 border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             More
                           </button>
                         </div>
