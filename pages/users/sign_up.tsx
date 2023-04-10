@@ -27,16 +27,12 @@ const SignUp = () => {
   return (
     <AppLayout hideFooter={true}>
       <div
-        className="flex flex-col justify-center items-center w-full bg-gray-150"
-        style={{
-          height: 'calc(100vh - 50px)',
-        }}
-      >
+        className="flex flex-col justify-center items-center w-full bg-gray-150 p-20">
         <div className="flex flex-row">
-          <div className="flex flex-col justify-center items-center">
-            <div className="w-[421.33px] mr-[48px] mb-128">
+          <div className="flex flex-col align-center justify-center items-center">
+            <div className="w-[421.33px] mr-[48px] mb-128 mt-48">
               <h1 className="flex flex-row justify-between text-27 font-400 text-zinc-800 leading-27 mb-32px">
-                Join the Stack Overflow <br /> community
+                Join the Stack Overflow community
               </h1>
               <div className="flex flex-row mb-24">
                 <div>
