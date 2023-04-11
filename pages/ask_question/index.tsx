@@ -177,7 +177,7 @@ const AskQuestions = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="h-[277px]">
+                    <div className="h-277">
                       <div className="border-1 border-gray-300 h-full rounded-3">
                         <MyEditor />
                       </div>
@@ -194,7 +194,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 1 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-[126px] bg-white">
+                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Introduce the problem
                     </div>
@@ -237,7 +237,7 @@ const AskQuestions = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="h-[277px]">
+                    <div className="h-277">
                       <div className="border-1 border-gray-300 h-full rounded-3">
                         <MyEditor />
                       </div>
@@ -254,7 +254,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 2 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-[243px] bg-white">
+                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-287 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Expand on the problem
                     </div>
@@ -327,7 +327,7 @@ const AskQuestions = () => {
                 </div>
                 {currentFormElementIndex == 3 && (
                   <div className="relative w-full">
-                    <div className="absolute border-1 rounded-3 border-gray-200 shadow-sm min-h-[212px] bg-white">
+                    <div className="absolute border-1 rounded-3 border-gray-200 shadow-sm min-h-212 bg-white">
                       <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                         Adding tags
                       </div>
@@ -425,7 +425,7 @@ const AskQuestions = () => {
                   </div>
                 </div>
                 {currentFormElementIndex == 4 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-[188px] bg-white">
+                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-188 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Make sure we don’t already have an answer for your
                       question
