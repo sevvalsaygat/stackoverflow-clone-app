@@ -11,8 +11,8 @@ const TopQuestions = () => {
       <div className="w-full bg-white">
         <div className="mx-auto max-w-79 flex justify-center">
           <div className="flex w-full justify-between">
-            <div className="w-[164px] h-screen" id="left-sidebar">
-              <div className="flex flex-col sticky mb-8 pt-24 w-[164px]">
+            <div className="w-164 h-screen" id="left-sidebar">
+              <div className="flex flex-col sticky mb-8 pt-24 w-164">
                 <nav className="w-full" role="navigation">
                   <div className="w-full">
                     <div className="relative">
@@ -34,17 +34,17 @@ const TopQuestions = () => {
                             Questions
                           </Link>
                         </div>
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Tags
                           </span>
                         </div>
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Users
                           </span>
                         </div>
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Companies
                           </span>
@@ -88,7 +88,7 @@ const TopQuestions = () => {
               </div>
             </div>
             <div className="w-full border-l p-24 flex flex-row">
-              <div className="w-[727px]">
+              <div className="w-727">
                 <div id="mainbar" className="w-full">
                   <div className="flex flex-row justify-between mt-7">
                     <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27">
@@ -105,7 +105,7 @@ const TopQuestions = () => {
                   </div>
                   <div className="flex justify-end align-center mb-16">
                     <div className="flex flex-row">
-                      <div className="flex mb-1 max-h-[38.08px]">
+                      <div className="flex mb-1 max-h-38.08">
                         <button className="border-y border-x rounded-l-3 border-gray-400 p-[.8em] text-13 font-400 text-zinc-500 bg-gray-50 hover:text-zinc-500">
                           Interesting
                         </button>
@@ -136,7 +136,7 @@ const TopQuestions = () => {
                               key={index}
                               className="flex flex-row p-16 border-b-1 border-gray-50"
                             >
-                              <div className="flex flex-col shrink-0 flex-wrap w-[108px] mr-16 mb-4 gap-6 text-gray-250">
+                              <div className="flex flex-col shrink-0 flex-wrap w-108 mr-16 mb-4 gap-6 text-gray-250">
                                 <div className="text-neutral-900 gap-1 flex justify-end border-1 border-transparent text-13 font-400 leading-17">
                                   <span>{q.votesCount}</span>
                                   <span>votes</span>
@@ -151,7 +151,7 @@ const TopQuestions = () => {
                                 </div>
                               </div>
                               <div className="grow max-w-full">
-                                <h3 className="-mt-[1.95px] mb-[4.9998px] pr-24 text-17 font-sans leading-22.2308 break-words">
+                                <h3 className="-mt-2 mb-5 pr-24 text-17 font-sans leading-22.2308 break-words">
                                   <a className="text-blue-700 hover:text-sky-600 cursor-pointer">
                                     {q.question}
                                   </a>
@@ -167,7 +167,7 @@ const TopQuestions = () => {
                                               key={index}
                                               className="inline mr-4"
                                             >
-                                              <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
+                                              <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-6 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
                                                 {t}
                                               </a>
                                             </div>
@@ -201,7 +201,7 @@ const TopQuestions = () => {
                 </div>
               </div>
 
-              <div id="sidebar" className="w-[300px] ml-24">
+              <div id="sidebar" className="w-300 ml-24">
                 <div className="bg-yellow-50 border border-yellow-100 mb-16 shadow-sm rounded-3">
                   <div className="p-0 m-0">
                     <div className="text-12 text-zinc-500 font-bold leading-15 border-b-1 border-yellow-100  bg-yellow-200 rounded-3 py-12 px-16">
@@ -298,7 +298,7 @@ const TopQuestions = () => {
                     </div>
                     <div className="py-16 px-15 border-t-1 border-gray-200">
                       <div className="flex flex-wrap py-4 m-2">
-                        <a className="mb-1 border-1 border-transparent rounded-3 bg-cyan-50 py-[4.8px] px-[6px] text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
+                        <a className="mb-1 border-1 border-transparent rounded-3 bg-cyan-50 py-5 px-6 text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
                           javascript
                         </a>
                       </div>
@@ -413,7 +413,7 @@ const TopQuestions = () => {
                     </span>
                   </div>
                 </div>
-                <div className="min-h-[300px]"></div>
+                <div className="min-h-300"></div>
 
                 <div className="mb-19">
                   <h4 className="mb-19">
