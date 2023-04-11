@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { AppLayout } from '@layouts';
 import { Icons, MyEditor } from '@components';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { Api } from '@hooks';
+
+type FormInputType = {
+  title: string;
+  details: string;
+  expecting: string;
+  tags: string;
+  rewiew: string;
+}
 
 const AskQuestions = () => {
   const [isShowingReviewTab, setIsShowingReviewTab] = useState(false);
@@ -21,8 +29,15 @@ const AskQuestions = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm();
+    getValues,
+    setValue,
+    control,
+    watch,
+    formState: { errors }, 
+  } = useForm<FormInputType>();
+
+  const watchDetails = watch('details', '');
+  const watchExpecting = watch('expecting', '');
 
   const onSubmit = (data: any) => {
     mutate(data);
@@ -179,15 +194,23 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-277">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <MyEditor />
+                        <Controller
+                          control={control}
+                          name="details"
+                          rules={{ required: true, minLength: 20 }}
+                          render={({ field: { onChange, onBlur, value, ref } }) => (
+                          <MyEditor onChange={onChange} value={value} />
+                        )}
+                        />                      
                       </div>
                     </div>
                   </div>
                   {currentFormElementIndex == 1 && (
                     <button
+                      disabled={watchDetails.length < 20}
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7"
+                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
                     >
                       Next
                     </button>
@@ -239,15 +262,22 @@ const AskQuestions = () => {
                     </div>
                     <div className="h-277">
                       <div className="border-1 border-gray-300 h-full rounded-3">
-                        <MyEditor />
+                        <Controller
+                          control={control}
+                          name="expecting"
+                          render={({ field: { onChange, onBlur, value, ref } }) => (
+                          <MyEditor onChange={onChange} value={value} />
+                        )}
+                        />     
                       </div>
                     </div>
                   </div>
                   {currentFormElementIndex == 2 && (
                     <button
+                      disabled={watchExpecting.length < 20}
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7"
+                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
                     >
                       Next
                     </button>

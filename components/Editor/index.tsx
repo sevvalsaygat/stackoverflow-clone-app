@@ -4,9 +4,13 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 
-const MyEditor = () => {
+type MyEditorType = {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const MyEditor = ({ value, onChange }: MyEditorType) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
-  const [text, setText] = useState('');
 
   const onEditorStateChange = (editorState: EditorState) => {
     setEditorState(editorState);
@@ -15,7 +19,7 @@ const MyEditor = () => {
       acc = acc + item.text;
       return acc;
     }, '');
-    setText(text);
+    onChange(text);
   };
 
   const html = draftToHtml(convertToRaw(editorState.getCurrentContent()));

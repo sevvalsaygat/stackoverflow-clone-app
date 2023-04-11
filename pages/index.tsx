@@ -1,9 +1,7 @@
-import { AppLayout } from '@layouts';
+import SignIn from './users/sign_in';
 
 export default function Home() {
   return (
-    <AppLayout>
-      <div>Home Page</div>
-    </AppLayout>
+      <div><SignIn/></div>
   );
 }
