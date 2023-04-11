@@ -1,9 +1,9 @@
 {
   "api_users_sign_in": {
-    "displayName": "şevval saygat",
-    "email": "text1@gmail.com",
-    "password": "123123222",
-    "allowResearch": true
+    "displayName": "şevval",
+    "email": "sevval.saygat@shft.co",
+    "password": "ajhbbkjnsak",
+    "allowResearch": false
   },
   "api_top_questions": [
     {

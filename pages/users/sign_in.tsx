@@ -12,7 +12,9 @@ const SignIn = () => {
       console.log(data);
 
       setUser(data);
-      router.push('/top_questions');
+      setTimeout(() => {
+        router.push('/top_questions');
+      }, 500)
     },
     onError: () => {},
   });

@@ -1,5 +1,4 @@
 import { Header, Footer } from '@components';
-import { AuthProvider } from '@hooks/useAuth';
 
 type AppType = {
   children: React.ReactNode;
@@ -9,7 +8,6 @@ type AppType = {
 
 const App = ({ children, hideFooter, hideHamburger }: AppType) => {
   return (
-    <AuthProvider>
       <div className="w-full h-50 bg-gray-100">
         <Header hideHamburger={hideHamburger} />
         <div className="w-full flex justify-center">
@@ -18,7 +16,6 @@ const App = ({ children, hideFooter, hideHamburger }: AppType) => {
 
         {hideFooter ? null : <Footer />}
       </div>
-    </AuthProvider>
   );
 };
 
