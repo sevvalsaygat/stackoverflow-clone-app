@@ -30,8 +30,8 @@ const SignUp = () => {
         className="flex flex-col justify-center items-center w-full bg-gray-150 p-20">
         <div className="flex flex-row">
           <div className="flex flex-col align-center justify-center items-center">
-            <div className="w-[421.33px] mr-[48px] mb-128 mt-48">
-              <h1 className="flex flex-row justify-between text-27 font-400 text-zinc-800 leading-27 mb-32px">
+            <div className="w-421 mr-48 mb-128 mt-48">
+              <h1 className="flex flex-row justify-between text-27 font-400 text-zinc-800 leading-27 mb-32">
                 Join the Stack Overflow community
               </h1>
               <div className="flex flex-row mb-24">
@@ -108,8 +108,8 @@ const SignUp = () => {
               </div>
             </div>
 
-            <div className="w-[316px]">
-              <div className="mx-auto shadow-xl p-24 mb-[24px] bg-white rounded-lg ">
+            <div className="w-316">
+              <div className="mx-auto shadow-xl p-24 mb-24 bg-white rounded-lg ">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex flex-col"
@@ -121,7 +121,7 @@ const SignUp = () => {
                     <div className="mt-2 flex">
                       <input
                         {...register('displayName')}
-                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
                       ></input>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const SignUp = () => {
                     <div className="mt-2 flex">
                       <input
                         {...register('email')}
-                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
                       ></input>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ const SignUp = () => {
                       <input
                         type={'password'}
                         {...register('password')}
-                        className="w-full m-0 h-32.59 border-[1px] border-gray-300 rounded-3 bg-white"
+                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
                       ></input>
                     </div>
                     <p className="my-4 font-400 text-12 leading-15 text-gray-250">
@@ -155,9 +155,9 @@ const SignUp = () => {
                     </p>
                   </div>
 
-                  <div className="flex flex-col my-6 pb-[2px] pt-2">
+                  <div className="flex flex-col my-6 pb-2 pt-2">
                     <div className="flex">
-                      <div className="w-full h-[156px] m-0 border-[1px] border-gray-50 rounded-3 bg-gray-150">
+                      <div className="w-full h-156 m-0 border border-gray-50 rounded-3 bg-gray-150">
                         <div className="flex justify-center items-center h-full">
                           <ReCAPTCHA
                             className="pt-6"
@@ -191,7 +191,7 @@ const SignUp = () => {
                   <div className="flex">
                     <button
                       type="submit"
-                      className="my-6 border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs"
+                      className="my-6 border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-13 font-400 leading-15 shadow-bs"
                     >
                       Sign up
                     </button>

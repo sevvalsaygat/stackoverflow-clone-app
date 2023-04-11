@@ -111,10 +111,8 @@
     }
   ],
   "api_ask_question": {
-    "title": "AZSDFGHJ",
-    "problem": "ASDFGHJ",
-    "description": "ASDFGHJ",
-    "tags": "ASDFGHJKIL"
+    "title": "",
+    "tags": ""
   },
   "api_users_sign_up": {}
 }

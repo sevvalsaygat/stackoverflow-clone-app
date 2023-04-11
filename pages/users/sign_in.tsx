@@ -67,7 +67,7 @@ const SignIn = () => {
                   </Buttons.Omniauth>
                 </div>
               </div>
-              <div className="shadow-xl bg-white p-24 mb-[24px] rounded-lg max-w-[316px] max-h-[234.19px]">
+              <div className="shadow-xl bg-white p-24 mb-24 rounded-lg max-w-316 max-h-234">
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex flex-col"
@@ -79,7 +79,7 @@ const SignIn = () => {
                     <div className="m-2 flex">
                       <input
                         {...register('email')}
-                        className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"
+                        className="w-full m-0 h-32.59 border rounded-sm bg-white"
                       ></input>
                     </div>
                   </div>
@@ -96,14 +96,14 @@ const SignIn = () => {
                       <input
                         type="password"
                         {...register('password')}
-                        className="w-full m-0 h-32.59 border-[1px] rounded-sm bg-white"
+                        className="w-full m-0 h-32.59 border rounded-sm bg-white"
                       ></input>
                     </div>
                   </div>
                   <div className="flex mt-3">
                     <button
                       type="submit"
-                      className="border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-[13px] font-400 leading-15 shadow-bs"
+                      className="border border-sky-600 hover:border-blue-700 bg-sky-600 hover:bg-blue-700 w-full h-37.78 rounded text-white text-13 font-400 leading-15 shadow-bs"
                     >
                       Log in
                     </button>
