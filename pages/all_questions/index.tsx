@@ -11,8 +11,8 @@ const AllQuestions = () => {
       <div className="w-full bg-white">
         <div className="mx-auto max-w-79 flex justify-center">
           <div className="flex w-full justify-between">
-            <div className="w-[164px] h-screen" id="left-sidebar">
-              <div className="flex flex-col sticky mb-8 pt-24 w-[164px]">
+            <div className="w-164 h-screen" id="left-sidebar">
+              <div className="flex flex-col sticky mb-8 pt-24 w-164">
                 <nav className="w-full" role="navigation">
                   <div className="w-full">
                     <div className="relative group p-1 cursor-pointer">
@@ -30,25 +30,25 @@ const AllQuestions = () => {
                         </div>
 
                         <div className="relative">
-                          <a className="flex flex-row align-center items-center bg-gray-150 border-r-3 border-orange-400 py-[6px] h-[33px] pl-8 pb-4 cursor-pointer">
-                            <Icons.SvgWorld className="text-neutral-900 -mt-1 mr-4 w-[20px] h-[20px]" />
+                          <a className="flex flex-row align-center items-center bg-gray-150 border-r-3 border-orange-400 py-6 pl-8 pb-4 cursor-pointer">
+                            <Icons.SvgWorld className="text-neutral-900 -mt-1 mr-4 w-5 h-5" />
                             <span className="text-13 font-700 text-neutral-900 leading-17 w-full cursor-pointer">
                               Questions
                             </span>
                           </a>
                         </div>
 
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Tags
                           </span>
                         </div>
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Users
                           </span>
                         </div>
-                        <div className="group pl-[30px] p-4 cursor-pointer">
+                        <div className="group pl-30 p-4 cursor-pointer">
                           <span className="text-13 font-400 leading-26 text-zinc-500 group-hover:text-neutral-900">
                             Companies
                           </span>
@@ -92,7 +92,7 @@ const AllQuestions = () => {
               </div>
             </div>
             <div className="w-full border-l p-24 flex flex-row">
-              <div className="w-[727px]">
+              <div className="w-727">
                 <div id="mainbar" className="w-full">
                   <div className="flex flex-row justify-between mt-7">
                     <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27">
@@ -114,29 +114,29 @@ const AllQuestions = () => {
                     </div>
                     <div className="flex justify-end align-center items-center">
                       <div className="flex flex-row">
-                        <div className="flex mb-1 max-h-[35.03px] mr-16">
-                          <button className="flex justify-center items-center border-y border-x rounded-l-3 border-gray-400 text-13 font-400 text-zinc-500 bg-gray-50 hover:text-zinc-500 p-[9.6px]">
+                        <div className="flex mb-1 max-h-35 mr-16">
+                          <button className="flex justify-center items-center border-y border-x rounded-l-3 border-gray-400 text-13 font-400 text-zinc-500 bg-gray-50 hover:text-zinc-500 p-9.6">
                             Newest
                           </button>
-                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
+                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Active
                           </button>
-                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
+                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Bountied
                             <span className="bg-blue-700 rounded-2 text-white text-11 px-1 ml-5">
                               298
                             </span>
                           </button>
-                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
+                          <button className="flex justify-center items-center border-y border-r border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Unanswered
                           </button>
-                          <button className="flex justify-center items-center border-y border-r rounded-r-3 border-gray-400 p-[9.6px] text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
+                          <button className="flex justify-center items-center border-y border-r rounded-r-3 border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             More
                           </button>
                         </div>
-                        <div className="flex flex-row justify-center items-center w-[69.19px] h-[35.85px]">
-                          <button className="w-full h-full flex flex-row justify-center items-center rounded-3 border shadow-bs border-blue-400 bg-cyan-50 text-sky-700 p-[9.6px] text-12 font-400 leading-13">
-                            <Icons.SvgFilter className="flex -my-[3.6px] align-baseline	" />{' '}
+                        <div className="flex flex-row justify-center items-center w-69 h-36">
+                          <button className="w-full h-full flex flex-row justify-center items-center rounded-3 border shadow-bs border-blue-400 bg-cyan-50 text-sky-700 p-9.6 text-12 font-400 leading-13">
+                            <Icons.SvgFilter className="flex -my-3.6 align-baseline	" />{' '}
                             Filter
                           </button>
                         </div>
@@ -153,7 +153,7 @@ const AllQuestions = () => {
                               key={index}
                               className="flex flex-row p-16 border-b-1 border-gray-50"
                             >
-                              <div className="flex flex-col shrink-0 flex-wrap w-[108px] mr-16 mb-4 gap-6 text-gray-250">
+                              <div className="flex flex-col shrink-0 flex-wrap w-108 mr-16 mb-4 gap-6 text-gray-250">
                                 <div className="text-neutral-900 gap-1 flex justify-end border-1 border-transparent text-13 font-400 leading-17">
                                   <span>{q.votesCount}</span>
                                   <span>votes</span>
@@ -168,7 +168,7 @@ const AllQuestions = () => {
                                 </div>
                               </div>
                               <div className="grow max-w-full">
-                                <h3 className="-mt-[1.95px] mb-[4.9998px] pr-24 text-17 font-sans leading-22.2308 break-words">
+                                <h3 className="-mt-1.95 mb-5 pr-24 text-17 font-sans leading-22.2308 break-words">
                                   <a className="text-blue-700 hover:text-sky-600 cursor-pointer">
                                     {q.question}
                                   </a>
@@ -186,7 +186,7 @@ const AllQuestions = () => {
                                               key={index}
                                               className="inline mr-4"
                                             >
-                                              <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-[5.8px] py-[5px] mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
+                                              <a className="text-sky-700 bg-cyan-50 border-1 border-transparent inline-block px-5.8 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
                                                 {t}
                                               </a>
                                             </div>
@@ -223,7 +223,7 @@ const AllQuestions = () => {
                 </div>
               </div>
 
-              <div id="sidebar" className="w-[300px] ml-24">
+              <div id="sidebar" className="w-300 ml-24">
                 <div className="bg-yellow-50 border border-yellow-100 mb-16 shadow-sm rounded-3">
                   <ul className="p-0 m-0">
                     <div className="text-12 text-zinc-500 font-bold leading-15 border-b-1 border-yellow-100  bg-yellow-200 rounded-3 py-12 px-16">
@@ -331,7 +331,7 @@ const AllQuestions = () => {
                     </div>
                     <div className="py-16 px-15 border-t-1 border-gray-200">
                       <div className="flex flex-wrap py-4 m-2">
-                        <a className="mb-1 border-1 border-transparent rounded-3 bg-cyan-50 py-[4.8px] px-[6px] text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
+                        <a className="mb-1 border-1 border-transparent rounded-3 bg-cyan-50 py-4.8 px-6 text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
                           javascript
                         </a>
                       </div>
@@ -446,14 +446,14 @@ const AllQuestions = () => {
                     </span>
                   </div>
                 </div>
-                <div className="min-h-[300px]"></div>
+                <div className="min-h-300"></div>
 
-                <div className="mb-[19.5px]">
+                <div className="mb-19.5">
                   <h2 className="text-neutral-700 mb-19 text-19 font-400 leading-24">
                     Related Tags
                   </h2>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       javascript
                     </a>
                     &nbsp;
@@ -468,7 +468,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       pyhton
                     </a>
                     &nbsp;
@@ -483,7 +483,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       java
                     </a>
                     &nbsp;
@@ -498,7 +498,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       c#
                     </a>
                     &nbsp;
@@ -513,7 +513,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       php
                     </a>
                     &nbsp;
@@ -528,7 +528,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       android
                     </a>
                     &nbsp;
@@ -543,7 +543,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       html
                     </a>
                     &nbsp;
@@ -558,7 +558,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       jquery
                     </a>
                     &nbsp;
@@ -573,7 +573,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       c++
                     </a>
                     &nbsp;
@@ -588,7 +588,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-[4.8px] py-[4.3px] text-12 font-400 leading-12 rounded-3">
+                    <a className="border-1 border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       css
                     </a>
                     &nbsp;
