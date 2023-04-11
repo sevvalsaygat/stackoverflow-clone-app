@@ -66,7 +66,7 @@ const AskQuestions = () => {
                 </div>
                 <div className="w-100 mt-16">
                   <div className="flex w-100 mb-16 align-center items-center">
-                    <div className="w-70 p-24 border-1 rounded-3 bg-cyan-200 border-blue-100">
+                    <div className="w-70 p-24 border rounded-3 bg-cyan-200 border-blue-100">
                       <h2 className="mb-8 text-21 font-400 leading-27 text-neutral-700">
                         Writing a good question
                       </h2>
@@ -112,7 +112,7 @@ const AskQuestions = () => {
                 </div>
               </div>
               <div className="w-100 flex flex-row gap-16">
-                <div className="w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50">
+                <div className="w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50">
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
@@ -132,7 +132,7 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('title')}
-                        className="border-1 rounded-3 border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
+                        className=" rounded-3 border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
                         placeholder="e.g. Is there an R function the index of an element in a vector?"
                       ></input>
                     </div>
@@ -141,14 +141,14 @@ const AskQuestions = () => {
                     <button
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7"
+                      className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7"
                     >
                       Next
                     </button>
                   )}
                 </div>
                 {currentFormElementIndex == 0 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
+                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Writing a good title
                     </div>
@@ -172,7 +172,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
                     currentFormElementIndex == 0 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -193,7 +193,7 @@ const AskQuestions = () => {
                       </div>
                     </div>
                     <div className="h-277">
-                      <div className="border-1 border-gray-300 h-full rounded-3">
+                      <div className=" border-gray-300 h-full rounded-3">
                         <Controller
                           control={control}
                           name="details"
@@ -210,14 +210,14 @@ const AskQuestions = () => {
                       disabled={watchDetails.length < 20}
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
+                      className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
                     >
                       Next
                     </button>
                   )}
                 </div>
                 {currentFormElementIndex == 1 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
+                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Introduce the problem
                     </div>
@@ -239,7 +239,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 1 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -261,7 +261,7 @@ const AskQuestions = () => {
                       </div>
                     </div>
                     <div className="h-277">
-                      <div className="border-1 border-gray-300 h-full rounded-3">
+                      <div className=" border-gray-300 h-full rounded-3">
                         <Controller
                           control={control}
                           name="expecting"
@@ -277,14 +277,14 @@ const AskQuestions = () => {
                       disabled={watchExpecting.length < 20}
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
+                      className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
                     >
                       Next
                     </button>
                   )}
                 </div>
                 {currentFormElementIndex == 2 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-287 bg-white">
+                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-287 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Expand on the problem
                     </div>
@@ -316,7 +316,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`relative w-70 p-24 flex-shrink-0 flex-grow-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`relative w-70 p-24 flex-shrink-0 flex-grow-0 bg-white  rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 2 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -339,7 +339,7 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('tags')}
-                        className="border-1 rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
+                        className=" rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
                         placeholder="e.g. (c# vba pandas)"
                       ></input>
                     </div>
@@ -349,7 +349,7 @@ const AskQuestions = () => {
                     <button
                       type="button"
                       onClick={onClickNextButton}
-                      className="border-1 border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-15"
+                      className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-15"
                     >
                       Next
                     </button>
@@ -357,7 +357,7 @@ const AskQuestions = () => {
                 </div>
                 {currentFormElementIndex == 3 && (
                   <div className="relative w-full">
-                    <div className="absolute border-1 rounded-3 border-gray-200 shadow-sm min-h-212 bg-white">
+                    <div className="absolute  rounded-3 border-gray-200 shadow-sm min-h-212 bg-white">
                       <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                         Adding tags
                       </div>
@@ -386,7 +386,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border-1 rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 3 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -411,7 +411,7 @@ const AskQuestions = () => {
                     <div className="flex flex-col">
                       <div className="flex flex-row w-full">
                         <button
-                          className="w-full border-1 border-gray-300 rounded-t-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
+                          className="w-full  border-gray-300 rounded-t-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
                           type="button"
                           onClick={() => {
                             setIsShowingReviewTab(!isShowingReviewTab);
@@ -446,7 +446,7 @@ const AskQuestions = () => {
                       {currentFormElementIndex == 4 && (
                         <button
                           type="submit"
-                          className="border-1 border-transparent p-10.4 w-fit bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-16"
+                          className=" border-transparent p-10.4 w-fit bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-16"
                         >
                           Review your question
                         </button>
@@ -455,7 +455,7 @@ const AskQuestions = () => {
                   </div>
                 </div>
                 {currentFormElementIndex == 4 && (
-                  <div className="border-1 rounded-3 border-gray-200  shadow-sm w-full h-188 bg-white">
+                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-188 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Make sure we don’t already have an answer for your
                       question
@@ -479,7 +479,7 @@ const AskQuestions = () => {
                 )}
               </div>
               <div className="my-12 ">
-                <button className="border-1-transparent cursor-pointer rounded-3 p-10.4 hover:bg-red-100 text-red-300 hover:text-red-400 text-13 font-400 leading-15">
+                <button className="-transparent cursor-pointer rounded-3 p-10.4 hover:bg-red-100 text-red-300 hover:text-red-400 text-13 font-400 leading-15">
                   Discard draft
                 </button>
               </div>
