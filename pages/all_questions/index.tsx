@@ -102,7 +102,7 @@ const AllQuestions = () => {
                     <div>
                       <Link
                         href="/ask_question"
-                        className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
+                        className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
                       >
                         Ask Question
                       </Link>
@@ -154,15 +154,15 @@ const AllQuestions = () => {
                               className="flex flex-row p-16 border-b-1 border-gray-50"
                             >
                               <div className="flex flex-col shrink-0 flex-wrap w-108 mr-16 mb-4 gap-6 text-gray-250">
-                                <div className="text-neutral-900 gap-1 flex justify-end  border-transparent text-13 font-400 leading-17">
+                                <div className="text-neutral-900 gap-1 flex justify-end border border-transparent text-13 font-400 leading-17">
                                   <span>{q.votesCount}</span>
                                   <span>votes</span>
                                 </div>
-                                <div className="flex flex-row justify-end gap-1  border-transparent text-gray-250 text-13 font-400 leading-17">
+                                <div className="flex flex-row justify-end gap-1 border border-transparent text-gray-250 text-13 font-400 leading-17">
                                   <span>{q.answersCount}</span>
                                   <span>answer</span>
                                 </div>
-                                <div className="flex flex-row justify-end gap-1  border-transparent text-gray-250 text-13 font-400 leading-17">
+                                <div className="flex flex-row justify-end gap-1 border border-transparent text-gray-250 text-13 font-400 leading-17">
                                   <span>{q.viewsCount}</span>
                                   <span>views</span>
                                 </div>
@@ -186,7 +186,7 @@ const AllQuestions = () => {
                                               key={index}
                                               className="inline mr-4"
                                             >
-                                              <a className="text-sky-700 bg-cyan-50  border-transparent inline-block px-5.8 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
+                                              <a className="text-sky-700 bg-cyan-50 border border-transparent inline-block px-5.8 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
                                                 {t}
                                               </a>
                                             </div>
@@ -311,7 +311,7 @@ const AllQuestions = () => {
                     </div>
                   </ul>
                 </div>
-                <div className="mb-16  border-gray-200 rounded-3 shadow-sm bg-white">
+                <div className="mb-16 border border-gray-200 rounded-3 shadow-sm bg-white">
                   <h2 className="bg-gray-100 text-zinc-500 text-15 font-400 leading-19.5 py-12 px-16">
                     Custom Filters
                   </h2>
@@ -324,26 +324,26 @@ const AllQuestions = () => {
                   </ul>
                 </div>
                 <div>
-                  <div className="mb-16  border-gray-200 rounded-3 shadow-sm bg-white">
+                  <div className="mb-16 border border-gray-200 rounded-3 shadow-sm bg-white">
                     <div className="flex flex-row justify-between bg-gray-100 text-15 font-400 leading-19.5 py-12 px-15">
                       <h2 className="text-zinc-500">Watched Tags</h2>
                       <a className="text-gray-250 cursor-pointer">edit</a>
                     </div>
                     <div className="py-16 px-15 border-t-1 border-gray-200">
                       <div className="flex flex-wrap py-4 m-2">
-                        <a className="mb-1  border-transparent rounded-3 bg-cyan-50 py-4.8 px-6 text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
+                        <a className="mb-1 border border-transparent rounded-3 bg-cyan-50 py-4.8 px-6 text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer">
                           javascript
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div className="mb-16  border-gray-200 rounded-3 shadow-sm bg-white">
+                  <div className="mb-16 border border-gray-200 rounded-3 shadow-sm bg-white">
                     <div className="bg-gray-100 text-15 font-400 leading-19.5 py-12 px-15">
                       <h2 className="text-zinc-500">Ignored Tags</h2>
                     </div>
                     <div className="py-16 px-15 border-t-1 border-gray-200">
                       <div className="flex flex-wrap justify-center items-center py-4">
-                        <button className=" border-blue-400 rounded-3 bg-cyan-50 py-8 px-10 shadow-bm text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-300 cursor-pointer">
+                        <button className="border border-blue-400 rounded-3 bg-cyan-50 py-8 px-10 shadow-bm text-sky-700 text-12 font-400 leading-17 hover:text-blue-350 hover:bg-cyan-300 cursor-pointer">
                           Add an ignored tag
                         </button>
                       </div>
@@ -351,7 +351,7 @@ const AllQuestions = () => {
                   </div>
                 </div>
 
-                <div className="mb-16  border-gray-200 rounded-3 shadow-sm bg-white">
+                <div className="mb-16 border border-gray-200 rounded-3 shadow-sm bg-white">
                   <div className="flex flex-row justify-between bg-gray-100 text-15 font-400 leading-19.5 py-12 px-15">
                     <div className="text-zinc-500">Collectives</div>
                     <a className="text-11 font-400 leading-19.5 text-blue-700 cursor-pointer">
@@ -376,7 +376,7 @@ const AllQuestions = () => {
                       </div>
                       <div className="flex">
                         <form className="flex flex-row justify-end">
-                          <button className=" border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
+                          <button className="border border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
                             Join
                           </button>
                         </form>
@@ -405,7 +405,7 @@ const AllQuestions = () => {
                       </div>
                       <div className="flex">
                         <form className="flex flex-row justify-end">
-                          <button className=" border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
+                          <button className="border border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
                             Join
                           </button>
                         </form>
@@ -434,7 +434,7 @@ const AllQuestions = () => {
                       </div>
                       <div className="flex">
                         <form className="flex flex-row justify-end">
-                          <button className=" border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
+                          <button className="border border-blue-450 rounded-3 text-12 font-400 leading-13 text-sky-700 px-8 hover:bg-cyan-150">
                             Join
                           </button>
                         </form>
@@ -453,7 +453,7 @@ const AllQuestions = () => {
                     Related Tags
                   </h2>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       javascript
                     </a>
                     &nbsp;
@@ -468,7 +468,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       pyhton
                     </a>
                     &nbsp;
@@ -483,7 +483,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       java
                     </a>
                     &nbsp;
@@ -498,7 +498,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       c#
                     </a>
                     &nbsp;
@@ -513,7 +513,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       php
                     </a>
                     &nbsp;
@@ -528,7 +528,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       android
                     </a>
                     &nbsp;
@@ -543,7 +543,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       html
                     </a>
                     &nbsp;
@@ -558,7 +558,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       jquery
                     </a>
                     &nbsp;
@@ -573,7 +573,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       c++
                     </a>
                     &nbsp;
@@ -588,7 +588,7 @@ const AllQuestions = () => {
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
-                    <a className=" border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
+                    <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       css
                     </a>
                     &nbsp;
