@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Icons } from '@components';
 import { useAuth } from '@hooks';
 import Link from 'next/link';
@@ -9,6 +10,9 @@ type HeaderType = {
 const Header = ({ hideHamburger }: HeaderType) => {
   const I18N_SCOPE = 'components.header';
   const { isAuthenticated } = useAuth();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
     <div className="w-full bg-gray-100 shadow-sm border-t-[3px] border-t-orange-400 h-[50px] sticky">
@@ -70,11 +74,11 @@ const Header = ({ hideHamburger }: HeaderType) => {
               <div className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]">
                 <Icons.SvgHelp className="w-18 h-18" />
               </div>
-              <div className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]">
+              <button onClick={toggleDropdown} className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]">
                 <Icons.SvgList className="w-18 h-18" />
-              </div>
-              <li className='list-none' role='topbar'>
-                <div className='static overflow-auto mt-[436px] z-0 w-[375px] border-gray-50 border-x-1 border-b-1  max-h-[390px] min-h-[390px] bg-white shadow-sm'>
+              </button>
+              {isOpen && (
+                <div className='absolute mr-[180px] overflow-auto mt-[436px] z-0 w-[375px] border-gray-50 border-x-1 border-b-1  max-h-[390px] min-h-[390px] bg-white shadow-sm'>
                   <div className='bg-gray-150 py-8 px-10 w-full'>
                     <h3 className='text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer'>CURRENT COMMUNITY</h3>
                   </div>
@@ -197,7 +201,7 @@ const Header = ({ hideHamburger }: HeaderType) => {
                     </li>
                   </ul>
                 </div>
-              </li>
+              )}
             </div>
           ) : (
             <div className="flex flex-row">
