@@ -13,7 +13,7 @@ type AuthProviderType = {
 const AuthContext = createContext({} as UseAuthType);
 
 export const AuthProvider = ({ children }: AuthProviderType) => {
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [currentUser, setCurrentUser] = useState<any>(true);
   const isAuthenticated = currentUser != null;
 
   function setUser(user: any): void {

@@ -44,6 +44,7 @@ module.exports = {
           600: '#9fa6ad'
         },
         blue:{
+          50: '#F4F8FB',
           100: '#a6ceed',
           200: '#a0c8e4',
           300: '#a3cae5',
@@ -230,6 +231,7 @@ module.exports = {
         '3': '0.1875rem',
       },
       lineHeight: {
+        '14': '0.875rem',
         '1': '1px',
         '18': '1.125rem',
         '25': '1.5625rem',

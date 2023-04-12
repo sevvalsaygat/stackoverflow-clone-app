@@ -34,6 +34,7 @@ import SvgAskBackground from './AskBackground';
 import SvgArrowDown from './ArrowDown';
 import SvgArrowUp from './ArrowUp';
 import SvgBell from './Bell';
+import SvgLogoBlackSmall from './LogoBlackSmall';
 
 /* eslint-disable */
 export default {
@@ -73,5 +74,6 @@ export default {
   SvgArrowDown,
   SvgArrowUp,
   SvgBell,
+  SvgLogoBlackSmall
 };
 /* eslint-enable */
