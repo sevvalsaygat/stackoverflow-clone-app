@@ -75,20 +75,18 @@ const AskQuestions = () => {
                         <a className="cursor-pointer text-blue-700 hover:text-sky-600">
                           {' '}
                           ask
-                        </a>{' '}
+                        </a>
                         a
                         <a className="cursor-pointer text-blue-700 hover:text-sky-600">
-                          {' '}
                           programming-related question
-                        </a>{' '}
+                        </a>
                         and this form will help guide you through the process.
                       </p>
                       <p className="text-15 font-400 leading-19.61 text-neutral-700 mb-15">
                         Looking to ask a non-programming question? See
                         <a className="cursor-pointer text-blue-700 hover:text-sky-600">
-                          {' '}
                           the topics here
-                        </a>{' '}
+                        </a>
                         to find a relevant site.
                       </p>
                       <h5 className="mb-8 text-13 font-600 leading-17 text-neutral-700">
@@ -132,7 +130,7 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('title')}
-                        className=" rounded-3 border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
+                        className=" rounded-3 border border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
                         placeholder="e.g. Is there an R function the index of an element in a vector?"
                       ></input>
                     </div>
@@ -148,7 +146,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 0 && (
-                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
+                  <div className=" rounded-3 border border-gray-200  shadow-sm w-full h-153 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Writing a good title
                     </div>
@@ -193,7 +191,7 @@ const AskQuestions = () => {
                       </div>
                     </div>
                     <div className="h-277">
-                      <div className=" border-gray-300 h-full rounded-3">
+                      <div className="border border-gray-300 h-full rounded-3">
                         <Controller
                           control={control}
                           name="details"
@@ -217,7 +215,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 1 && (
-                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-153 bg-white">
+                  <div className=" rounded-3 border border-gray-200  shadow-sm w-full h-153 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Introduce the problem
                     </div>
@@ -261,7 +259,7 @@ const AskQuestions = () => {
                       </div>
                     </div>
                     <div className="h-277">
-                      <div className=" border-gray-300 h-full rounded-3">
+                      <div className="border border-gray-300 h-full rounded-3">
                         <Controller
                           control={control}
                           name="expecting"
@@ -284,7 +282,7 @@ const AskQuestions = () => {
                   )}
                 </div>
                 {currentFormElementIndex == 2 && (
-                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-287 bg-white">
+                  <div className=" rounded-3 border border-gray-200  shadow-sm w-full h-287 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                       Expand on the problem
                     </div>
@@ -339,7 +337,7 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('tags')}
-                        className=" rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
+                        className="border rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
                         placeholder="e.g. (c# vba pandas)"
                       ></input>
                     </div>
@@ -357,7 +355,7 @@ const AskQuestions = () => {
                 </div>
                 {currentFormElementIndex == 3 && (
                   <div className="relative w-full">
-                    <div className="absolute  rounded-3 border-gray-200 shadow-sm min-h-212 bg-white">
+                    <div className="absolute  rounded-3 border border-gray-200 shadow-sm min-h-212 bg-white">
                       <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
                         Adding tags
                       </div>
@@ -411,7 +409,7 @@ const AskQuestions = () => {
                     <div className="flex flex-col">
                       <div className="flex flex-row w-full">
                         <button
-                          className="w-full  border-gray-300 rounded-t-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
+                          className="w-full border border-gray-300 rounded-t-3 flex py-12 px-16 bg-gray-100 cursor-pointer"
                           type="button"
                           onClick={() => {
                             setIsShowingReviewTab(!isShowingReviewTab);
@@ -455,10 +453,9 @@ const AskQuestions = () => {
                   </div>
                 </div>
                 {currentFormElementIndex == 4 && (
-                  <div className=" rounded-3 border-gray-200  shadow-sm w-full h-188 bg-white">
+                  <div className=" rounded-3 border border-gray-200 shadow-sm w-full h-188 bg-white">
                     <div className="text-15 font-400 leading-19.61 text-zinc-800 p-12 bg-gray-100 border-b border-gray-200">
-                      Make sure we don’t already have an answer for your
-                      question
+                      Make sure we don’t already have an answer for your question
                     </div>
                     <div className="flex flex-row bg-white m-16">
                       <div className="mx-8 my-0">
