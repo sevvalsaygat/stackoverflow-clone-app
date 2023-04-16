@@ -92,83 +92,109 @@ const TopQuestions = () => {
                   </div>
                 </nav>
               </div>
-                    </div>
-                    <div className="w-full border-l p-24 flex flex-row">
-                        <div className='w-727 px-15'>
-                            <div id="mainbar" className="flex flex-row w-full mb-24">
-                                <div className='flex flex-row justify-center align-center'>
-                                    <div className='flex flex-row justify-center items-center align-center'>
-                                        <Icons.SvgLogoBlackSmall className="text-gray-250 hover:text-neutral-700" />
-                                        <Icons.SvgArrowRight className="mx-4 text-gray-300" />
+              </div>
+                <div className="w-full border-l px-15 py-24 flex flex-row">
+                    <div className='w-727 px-15'>
+                        <div id="mainbar" className="flex flex-row w-full mb-24">
+                            <div className='flex flex-row justify-center align-center'>
+                                <div className='flex flex-row justify-center items-center align-center'>
+                                    <Icons.SvgLogoBlackSmall className="text-gray-250 hover:text-neutral-700" />
+                                    <Icons.SvgArrowRight className="mx-4 text-gray-300" />
+                                </div>
+                                <div className='flex justify-center align-center cursor-pointer my-2 text-12 leading-15 text-gray-250 hover:text-neutral-700'>Staging Ground</div>
+                            </div>
+                        </div>
+                        <main className='flex flex-col'>
+                            <div className='w-full'>
+                                <h1 className='mb-2 text-27 leading-9 text-neutral-700'>
+                                    facebook clone yapmaya çalışıyorum ama olmuyor acaba neden? 
+                                </h1>
+                                <div className='flex flex-row gap-4'>
+                                    <div className='flex gap-4 mt-8'>
+                                        <div className='flex flex-row justify-center items-center py-1 px-5 border border-yellow-700 rounded-3 text-11 leading-18 text-yellow-800 font-bold bg-yellow-200 gap-4'>
+                                            <Icons.SvgEye className="mr-4" />
+                                            New
+                                        </div>
+                                        <div className='flex gap-1 justify-center items-center'>
+                                            <div className='text-15 leading-18 text-gray-250'>Asked by</div>
+                                            <a className='text-15 leading-18 text-blue-700 hover:text-sky-600 cursor-pointer'>Şevval Saygat</a>
+                                            <span className='text-15 leading-18 text-gray-250'>2 hours ago |</span>
+                                            <div className='flex justify-center items-center text-gray-250'>
+                                                <Icons.SvgHistory />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className='flex justify-center align-center cursor-pointer my-2 text-12 leading-15 text-gray-250 hover:text-neutral-700'>Staging Ground</div>
+                                </div>
+                                <div className='w-full'>
+                                  <div className='mb-24 mt-32'>
+                                    <p className='mb-20 text-15 leading-23'>facebook clone yapmaya çalışıyorum ama olmuyor</p>
+                                    <p className='text-15 leading-23'>facebook clone un backendini json server ile yapmayı denedim, teker teker componentler oluşturarak ilerledim, silme, düzenleme vs için fakat başarılı olamadım bunun nedini ne olabilir?</p>
+                                  </div>
+                                  <div className='flex flex-row'>
+                                    <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>javascript</div>
+                                    <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>json</div>
+                                  </div>
+                                  <div className='my-16 flex flex-row justify-between'>
+                                    <div className='m-4'>
+                                      <div className='pt-2 -m-4 flex flex-wrap gap-4'>
+                                        <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</div>
+                                        <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</div>
+                                        <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Flag</div>
+                                      </div>
+                                    </div>
+                                    <div className='flex flex-col m-4 border-transparent rounded-3 w-200 bg-blue-150'>
+                                      <div className='px-6 py-7'>
+                                        <div className='mb-4 text-12 leading-15 text-gray-250'>asked 10 hours ago</div>
+                                        <div className='flex flex-row'>
+                                          <div>
+                                            <Icons.SvgUser className='border rounded-3 p-2 w-9 h-9' />
+                                          </div>
+                                          <div className='ml-8 flex flex-col'>
+                                            <div className='text-13 leading-17 text-blue-700 hover:text-sky-600 cursor-pointer'>Şevval Saygat</div>
+                                            <div className='text-12 leading-17 text-gray-250'>1</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className='border border-transparent rounded-b-3 py-6 flex flex-row bg-cyan-450'>
+                                        <Icons.SvgHand className='text-neutral-700' />
+                                        <div className='text-13 leading-17 text-neutral-700 ml-4'>New contributor</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <div className='w-full border-t'>
+                                      <div className='flex flex-col'>
+                                        <form className='-ml-1 mt-48'>
+                                          <div className='border'>
+                                            <div className='bg-gray-450 p-3 text-13 leading-17 text-zinc-800 font-bold border-b '>Add a comment</div>
+                                            <div className='h-65'>
+                                              <input type='textarea' placeholder='Use comments to ask for more information or respond to feedback' className='px-12 py-5 w-full placeholder:text-13 placeholder:text-gray-550'></input>
+                                            </div>
+                                            <div className='bg-gray-450 flex flex-row justify-between p-12 border-t'>
+                                              <div>
+                                                <button className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
+                                                >
+                                                  Add Comment
+                                                </button>
+                                              </div>
+                                              <div className='flex justify-center align-center items-center text-13 leading-17 text-gray-250'>Enter at least 15 characters</div>
+                                            </div>
+                                          </div>
+                                          <div className='flex flex-row mt-4 gap-6'>
+                                            <Icons.SvgLightbulb className='text-gray-250 mt-2' />
+                                            <button className='text-13 leading-17 text-gray-250'>Show tips</button>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
-                            <main className='flex flex-col'>
-                                <div className='w-full'>
-                                    <h1 className='mb-2 text-27 leading-9 text-neutral-700'>
-                                        facebook clone yapmaya çalışıyorum ama olmuyor acaba neden? 
-                                    </h1>
-                                    <div className='flex flex-row gap-4'>
-                                        <div className='flex gap-4 mt-8'>
-                                            <div className='flex flex-row justify-center items-center py-1 px-5 border border-yellow-700 rounded-3 text-11 leading-18 text-yellow-800 font-bold bg-yellow-200 gap-4'>
-                                                <Icons.SvgEye className="mr-4" />
-                                                New
-                                            </div>
-                                            <div className='flex gap-1 justify-center items-center'>
-                                                <div className='text-15 leading-18 text-gray-250'>Asked by</div>
-                                                <a className='text-15 leading-18 text-blue-700 hover:text-sky-600 cursor-pointer'>Şevval Saygat</a>
-                                                <span className='text-15 leading-18 text-gray-250'>2 hours ago |</span>
-                                                <div className='flex justify-center items-center text-gray-250'>
-                                                    <Icons.SvgHistory />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='w-full'>
-                                      <div className='mb-24 mt-32'>
-                                        <p className='mb-20 text-15 leading-23'>facebook clone yapmaya çalışıyorum ama olmuyor</p>
-                                        <p className='text-15 leading-23'>facebook clone un backendini json server ile yapmayı denedim, teker teker componentler oluşturarak ilerledim, silme, düzenleme vs için fakat başarılı olamadım bunun nedini ne olabilir?</p>
-                                      </div>
-                                      <div className='flex flex-row'>
-                                        <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>javascript</div>
-                                        <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>json</div>
-                                      </div>
-                                      <div className='my-16 flex flex-row justify-between'>
-                                        <div className='m-4'>
-                                          <div className='pt-2 -m-4 flex flex-wrap gap-4'>
-                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</div>
-                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</div>
-                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Flag</div>
-                                          </div>
-                                        </div>
-                                        <div className='flex flex-col m-4 border-transparent rounded-3 w-200 bg-blue-150'>
-                                          <div className='px-6 py-7'>
-                                            <div className='mb-4 text-12 leading-15 text-gray-250'>asked 10 hours ago</div>
-                                            <div className='flex flex-row'>
-                                              <div>
-                                                <Icons.SvgUser className='border rounded-3 p-2 w-9 h-9' />
-                                              </div>
-                                              <div className='ml-8 flex flex-col'>
-                                                <div className='text-13 leading-17 text-blue-700 hover:text-sky-600 cursor-pointer'>Şevval Saygat</div>
-                                                <div className='text-12 leading-17 text-gray-250'>1</div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div className='border border-transparent rounded-b-3 py-6 px-8 flex flex-row bg-cyan-450'>
-                                            <Icons.SvgHand className='text-neutral-700' />
-                                            <div className='text-13 leading-17 text-neutral-700 ml-4'>New contributor</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                </div>
-                            </main>
-                        </div>
+                        </main>
                     </div>
-   
                 </div>
-            </div>
+              </div>
+          </div>
         </div>
     </AppLayout>
   );
