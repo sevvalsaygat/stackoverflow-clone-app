@@ -40,6 +40,9 @@ import SvgEye from './Eye';
 import SvgHistory from './History';
 import SvgHand from './Hand';
 import SvgLightbulb from './Lightbulb';
+import SvgUpLg from './UpLg';
+import SvgDownLg from './DownLg';
+import SvgSelect from './Select';
 
 /* eslint-disable */
 export default {
@@ -85,5 +88,8 @@ export default {
   SvgHistory,
   SvgHand,
   SvgLightbulb,
+  SvgUpLg,
+  SvgDownLg,
+  SvgSelect
 };
 /* eslint-enable */
