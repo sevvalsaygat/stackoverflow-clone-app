@@ -37,7 +37,7 @@ const TopQuestions = () => {
                             Questions
                           </Link>
                         </div>
-                        <div className="group pl-30 p-4 cursor-pointer bg-gray-150 border-r-3 border-orange-400 text-13 font-bold text-zinc-500 group-hover:text-neutral-900">
+                        <div className="group pl-30 p-7 cursor-pointer bg-gray-150 border-r-3 border-orange-400 text-13 font-bold text-zinc-500 group-hover:text-neutral-900">
                             Staging Ground
                         </div>
                         <div className="group pl-30 p-4 cursor-pointer">
@@ -125,7 +125,43 @@ const TopQuestions = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div></div>
+                                    <div className='w-full'>
+                                      <div className='mb-24 mt-32'>
+                                        <p className='mb-20 text-15 leading-23'>facebook clone yapmaya çalışıyorum ama olmuyor</p>
+                                        <p className='text-15 leading-23'>facebook clone un backendini json server ile yapmayı denedim, teker teker componentler oluşturarak ilerledim, silme, düzenleme vs için fakat başarılı olamadım bunun nedini ne olabilir?</p>
+                                      </div>
+                                      <div className='flex flex-row'>
+                                        <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>javascript</div>
+                                        <div className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 p-6 text-12 rounded-3 leading-12 m-2 hover:text-blue-350 cursor-pointer'>json</div>
+                                      </div>
+                                      <div className='my-16 flex flex-row justify-between'>
+                                        <div className='m-4'>
+                                          <div className='pt-2 -m-4 flex flex-wrap gap-4'>
+                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</div>
+                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</div>
+                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Flag</div>
+                                          </div>
+                                        </div>
+                                        <div className='flex flex-col m-4 border-transparent rounded-3 w-200 bg-blue-150'>
+                                          <div className='px-6 py-7'>
+                                            <div className='mb-4 text-12 leading-15 text-gray-250'>asked 10 hours ago</div>
+                                            <div className='flex flex-row'>
+                                              <div>
+                                                <Icons.SvgUser className='border rounded-3 p-2 w-9 h-9' />
+                                              </div>
+                                              <div className='ml-8 flex flex-col'>
+                                                <div className='text-13 leading-17 text-blue-700 hover:text-sky-600 cursor-pointer'>Şevval Saygat</div>
+                                                <div className='text-12 leading-17 text-gray-250'>1</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className='border border-transparent rounded-b-3 py-6 px-8 flex flex-row bg-cyan-450'>
+                                            <Icons.SvgHand className='text-neutral-700' />
+                                            <div className='text-13 leading-17 text-neutral-700 ml-4'>New contributor</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
                                 </div>
                             </main>
                         </div>

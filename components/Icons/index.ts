@@ -38,6 +38,7 @@ import SvgLogoBlackSmall from './LogoBlackSmall';
 import SvgArrowRight from './ArrowRight';
 import SvgEye from './Eye';
 import SvgHistory from './History';
+import SvgHand from './Hand';
 
 /* eslint-disable */
 export default {
@@ -81,5 +82,6 @@ export default {
   SvgArrowRight,
   SvgEye,
   SvgHistory,
+  SvgHand,
 };
 /* eslint-enable */
