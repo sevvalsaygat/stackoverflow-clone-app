@@ -125,7 +125,7 @@ const TopQuestions = () => {
                             </div>
                             <div className='flex flex-row justify-between'>
                                 <div style={{width: "calc(100% - 300px )"}}>
-                                    <div className='flex flex-row'>
+                                    <div className='flex flex-row pr-16'>
                                         <div className='w-10 top-0 flex flex-col align-center items-center mr-24'>
                                             <div>
                                                 <Icons.SvgUpLg className='text-gray-300'/>
@@ -185,7 +185,7 @@ const TopQuestions = () => {
                                             <div className='mt-24'>
                                                 <button className='text-13 leading-17 text-gray-400 hover:text-sky-600'>Add a comment</button>
                                             </div>
-                                            <div className='pt-32 -mx-16'>
+                                            <div className='pt-32 mx-16 -ml-[38px]'>
                                                 <div className='pb-8 text-17 leading-23 text-zinc-800'>Related questions</div>
                                                 <div className='border rounded-md border-gray-650'>
                                                     <div className='p-12 flex flex-row items-center border-b'>
@@ -208,14 +208,14 @@ const TopQuestions = () => {
                                                 </div>
                                                 <div className='text-13 leading-17 text-blue-700 group-hover:text-sky-600'>Load 5 more related questions </div>
                                             </div>
-                                            <div id='answer' className='pt-10 mt-15 -mx-32'>
+                                            <div id='answer' className='pt-10 mt-15 -ml-[55px]'>
                                                 <h2 className='pt-8 text-17 leading-24'>Know someone who can answer? Share a link to this
                                                     <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> question</a> via
                                                     <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> email</a>,
                                                     <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Twitter</a>, or
                                                     <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Facebook.</a>
                                                 </h2>
-                                                <form>
+                                                <form className='w-full mx-16 -ml-1'>
                                                     <h2 className='py-20 text-19 leading-25'>Your Answer</h2>
                                                     <div className="border border-gray-300 h-full rounded-3"> 
                                                         <div className='h-322'>
