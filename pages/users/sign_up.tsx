@@ -2,25 +2,28 @@ import { AppLayout } from '@layouts';
 import { Icons, Buttons } from '@components';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useRouter } from 'next/router';
-import { Api, useAuth } from '@hooks';
+import { useAuth, useCreateUser } from '@hooks';
 import { useForm } from 'react-hook-form';
+import { SignUpFormType, UserType } from '@types';
 
 const SignUp = () => {
-  const { mutate } = Api.Authentication.useLogin({
-    onSuccess: (data: any) => {
-      setUser(data);
-      router.push('/top_questions');
-    },
-    onError: () => {},
+  const { mutate } = useCreateUser({
+    onSuccess: (user: UserType) => {
+      signup(user);
+
+      setTimeout(() => {
+        router.push('/all_questions')
+      }, 500)
+    }
   });
 
   const router = useRouter();
 
-  const { setUser } = useAuth();
+  const { signup } = useAuth();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<SignUpFormType>();
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: SignUpFormType) => {
     mutate(data);
   };
 
@@ -120,7 +123,7 @@ const SignUp = () => {
                     </label>
                     <div className="mt-2 flex">
                       <input
-                        {...register('displayName')}
+                        {...register('name')}
                         className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
                       ></input>
                     </div>
@@ -172,7 +175,6 @@ const SignUp = () => {
                   <div className="flex flex-row mt-3">
                     <div className="flex mr-1 content-start">
                       <input
-                        {...register('allowResearch')}
                         type="checkbox"
                         className="mt-0 h-13 w-13 mr-4"
                       />

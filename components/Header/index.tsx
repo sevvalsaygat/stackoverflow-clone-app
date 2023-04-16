@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Icons } from '@components';
 import { useAuth } from '@hooks';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 type HeaderType = {
   hideHamburger?: boolean;
@@ -9,10 +10,12 @@ type HeaderType = {
 
 const Header = ({ hideHamburger }: HeaderType) => {
   const I18N_SCOPE = 'components.header';
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const router = useRouter();
 
   return (
     <div className="w-full bg-gray-100 shadow-sm border-t-[3px] border-t-orange-400 h-[50px] sticky">
@@ -93,7 +96,14 @@ const Header = ({ hideHamburger }: HeaderType) => {
                           <div className='flex flex-row justify-center items-center p-8'>
                             <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>help</a>
                             <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>chat</a>
-                            <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>log out</a>
+                            <button onClick={
+                              () => {
+                                logout()
+                                setTimeout(() => {
+                                  router.push('/users/sign_in')
+                                })
+                              }
+                            } className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>log out</button>
                           </div>
                         </li>
                       </div>

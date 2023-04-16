@@ -1,30 +1,30 @@
 import { AppLayout } from '@layouts';
 import { Icons, Buttons } from '@components';
-import { Api, useAuth } from '@hooks';
+import { Api, useAuth, useGetUsers } from '@hooks';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import { LoginFormType, UserType } from '@types';
 
 const SignIn = () => {
-  const { setUser } = useAuth();
+  const { login } = useAuth();
 
-  const { mutate } = Api.Authentication.useLogin({
-    onSuccess: (data: any) => {
-      console.log(data);
-
-      setUser(data);
-      setTimeout(() => {
-        router.push('/top_questions');
-      }, 500)
-    },
-    onError: () => {},
-  });
+  const { data: users } = useGetUsers()
+  
 
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<LoginFormType>();
 
-  const onSubmit = (data: any) => {
-    mutate(data);
+  const onSubmit = (data: LoginFormType) => {
+    const foundUser = users.find((u: UserType) => u.email == data.email && u.password == u.password)
+
+    if (foundUser != undefined) {
+      login(foundUser)
+
+      setTimeout(() => {
+        router.push('/all_questions')
+      })
+    }
   };
 
   return (

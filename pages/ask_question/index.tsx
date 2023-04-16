@@ -3,23 +3,18 @@ import { AppLayout } from '@layouts';
 import { Icons, MyEditor } from '@components';
 import { useForm, Controller } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { Api } from '@hooks';
-
-type FormInputType = {
-  title: string;
-  details: string;
-  expecting: string;
-  tags: string;
-  rewiew: string;
-}
+import { useCreateQuestion, useAuth } from '@hooks';
+import { QuestionFormType, QuestionType } from '@types';
 
 const AskQuestions = () => {
   const [isShowingReviewTab, setIsShowingReviewTab] = useState(false);
   const [currentFormElementIndex, setCurrentFormElementIndex] = useState(0);
 
-  const { mutate } = Api.Questions.useAskQuestion({
-    onSuccess: (data: any) => {
-      router.push('/all_questions');
+  const { publicAuthenticatedUser } = useAuth();
+
+  const { mutate } = useCreateQuestion({
+    onSuccess: (data: QuestionType) => {
+      router.push(`/questions/${data.id}`);
     },
     onError: () => {},
   });
@@ -29,18 +24,23 @@ const AskQuestions = () => {
   const {
     register,
     handleSubmit,
-    getValues,
-    setValue,
     control,
     watch,
     formState: { errors }, 
-  } = useForm<FormInputType>();
+  } = useForm<QuestionFormType>();
 
   const watchDetails = watch('details', '');
-  const watchExpecting = watch('expecting', '');
+  const watchExpect = watch('expect', '');
 
-  const onSubmit = (data: any) => {
-    mutate(data);
+  const onSubmit = (data: QuestionFormType) => {
+    mutate({
+      ...data,
+      owner: publicAuthenticatedUser,
+      votes: [],
+      answers: [],
+      viewsCount: 0,
+      createdAt: new Date().toISOString(), 
+    });
   };
 
   function onClickNextButton() {
@@ -262,7 +262,7 @@ const AskQuestions = () => {
                       <div className="border border-gray-300 h-full rounded-3">
                         <Controller
                           control={control}
-                          name="expecting"
+                          name="expect"
                           render={({ field: { onChange, onBlur, value, ref } }) => (
                           <MyEditor onChange={onChange} value={value} />
                         )}
@@ -272,7 +272,7 @@ const AskQuestions = () => {
                   </div>
                   {currentFormElementIndex == 2 && (
                     <button
-                      disabled={watchExpecting.length < 20}
+                      disabled={watchExpect.length < 20}
                       type="button"
                       onClick={onClickNextButton}
                       className=" border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-7 disabled:cursor-default disabled:bg-gray-70"
@@ -336,7 +336,7 @@ const AskQuestions = () => {
                     </div>
                     <div className="flex m-2 mx-0 relative">
                       <input
-                        {...register('tags')}
+                        {...register('tag')}
                         className="border rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
                         placeholder="e.g. (c# vba pandas)"
                       ></input>

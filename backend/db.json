@@ -1,3 +1,94 @@
 {
-    "questions": []
+  "users": [
+    {
+      "name": "şevval",
+      "email": "sevval.saygat@shft.co",
+      "password": "aaggaga",
+      "id": 1
+    },
+    {
+      "name": "şevval",
+      "email": "sevval.saygat@shft.co",
+      "password": "1233133132",
+      "id": 2
+    },
+    {
+      "name": "şevval",
+      "email": "sevval.saygat@shft.co",
+      "password": "1231331",
+      "id": 3
+    },
+    {
+      "name": "şevval",
+      "email": "sevval.saygat@shft.co",
+      "password": "asdsd",
+      "id": 4
+    },
+    {
+      "name": "aaa",
+      "email": "aaa",
+      "password": "aaa",
+      "id": 5
+    },
+    {
+      "name": "a",
+      "email": "a",
+      "password": "a",
+      "id": 6
+    },
+    {
+      "name": "aa",
+      "email": "aa",
+      "password": "aa",
+      "id": 7
+    },
+    {
+      "name": "aa",
+      "email": "aa",
+      "password": "aa",
+      "id": 8
+    },
+    {
+      "name": "aa",
+      "email": "aa",
+      "password": "aa",
+      "id": 9
+    },
+    {
+      "name": "AA",
+      "email": "AA",
+      "password": "AA",
+      "id": 10
+    },
+    {
+      "name": "aa",
+      "email": "aa",
+      "password": "aa",
+      "id": 11
+    },
+    {
+      "name": "aa",
+      "email": "aa",
+      "password": "aa",
+      "id": 12
+    }
+  ],
+  "questions": [
+    {
+      "title": "TİTLE2",
+      "tag": "TAGS2",
+      "details": "PROBLEM2PROBLEM2PROBLEM2",
+      "expect": "expecting2expecting2expecting2expecting2",
+      "owner": {
+        "id": 123,
+        "name": "John Doe",
+        "email": "sevvallsstt@gmail.com"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-15T20:20:17.550Z",
+      "id": 2
+    }
+  ]
 }

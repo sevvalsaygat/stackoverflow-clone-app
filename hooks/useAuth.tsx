@@ -1,9 +1,14 @@
 import React, { useState, useContext, createContext } from 'react';
+import { PublicUserType, UserType, LoginFormType, SignUpFormType } from '@types';
+import Cookies from 'js-cookie'
 
 type UseAuthType = {
   isAuthenticated: boolean;
-  currentUser: null | object;
-  setUser: (user: any) => void;
+  currentUser: null | UserType;
+  publicAuthenticatedUser: PublicUserType;
+  login: (user: UserType) => void;
+  signup: (user: UserType) => void;
+  logout: () => void;
 };
 
 type AuthProviderType = {
@@ -12,18 +17,40 @@ type AuthProviderType = {
 
 const AuthContext = createContext({} as UseAuthType);
 
-export const AuthProvider = ({ children }: AuthProviderType) => {
-  const [currentUser, setCurrentUser] = useState<any>(true);
-  const isAuthenticated = currentUser != null;
+const cookieUser = Cookies.get('user');
+const initialUser = cookieUser ? JSON.parse(cookieUser) as UserType : null;
 
-  function setUser(user: any): void {
+export const AuthProvider = ({ children }: AuthProviderType) => {
+  const [currentUser, setCurrentUser] = useState<UserType | null>(initialUser);
+  const isAuthenticated = currentUser != null;
+  const publicAuthenticatedUser = { 
+    id: currentUser?.id,
+    name: currentUser?.name,
+    email: currentUser?.email,
+  } as PublicUserType;
+
+  function login(user: UserType): void {
     setCurrentUser(user);
+    Cookies.set('user', JSON.stringify(user));
+  }
+
+  function signup(user: UserType): void {
+    setCurrentUser(user);
+    Cookies.set('user', JSON.stringify(user));
+  }
+
+  function logout() {
+    setCurrentUser(null)
+    Cookies.remove('user');
   }
 
   const contextValue = {
     isAuthenticated,
     currentUser,
-    setUser,
+    publicAuthenticatedUser,
+    login,
+    signup,
+    logout
   };
 
   return (

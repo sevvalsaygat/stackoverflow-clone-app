@@ -1,11 +1,12 @@
 import { AppLayout } from '@layouts';
-import { Icons, Pagination } from '@components';
-import { Api } from '@hooks';
+import { Icons, Pagination, Question } from '@components';
 import Link from 'next/link';
+import { useGetQuestions } from '@hooks';
+import { QuestionType } from '@types';
 
 const AllQuestions = () => {
-  const { data, isSuccess } = Api.Questions.useGetAllQuestions();
-
+  const { data, isSuccess } = useGetQuestions();
+  
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
       <div className="w-full bg-white">
@@ -94,12 +95,12 @@ const AllQuestions = () => {
             <div className="w-full border-l p-24 flex flex-row">
               <div className="w-727">
                 <div id="mainbar" className="w-full">
-                  <div className="flex flex-row justify-between mt-7">
+                  <div className="flex flex-row justify-between">
                     <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27">
                       {' '}
                       All Questions
                     </h1>
-                    <div>
+                    <div className='mt-7'>
                       <Link
                         href="/ask_question"
                         className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
@@ -147,7 +148,7 @@ const AllQuestions = () => {
                   <div id="qlist-wrapper" className="w-full -ml-24 border-t-1">
                     <div className="mb-20">
                       {isSuccess &&
-                        data.map((q: any, index: number) => {
+                        data.map((q: QuestionType, index: number) => {
                           return (
                             <div
                               key={index}
@@ -155,11 +156,11 @@ const AllQuestions = () => {
                             >
                               <div className="flex flex-col shrink-0 flex-wrap w-108 mr-16 mb-4 gap-6 text-gray-250">
                                 <div className="text-neutral-900 gap-1 flex justify-end border border-transparent text-13 font-400 leading-17">
-                                  <span>{q.votesCount}</span>
+                                  <span>{q.votes.length}</span>
                                   <span>votes</span>
                                 </div>
                                 <div className="flex flex-row justify-end gap-1 border border-transparent text-gray-250 text-13 font-400 leading-17">
-                                  <span>{q.answersCount}</span>
+                                  <span>{q.answers.length}</span>
                                   <span>answer</span>
                                 </div>
                                 <div className="flex flex-row justify-end gap-1 border border-transparent text-gray-250 text-13 font-400 leading-17">
@@ -170,28 +171,21 @@ const AllQuestions = () => {
                               <div className="grow max-w-full">
                                 <h3 className="-mt-1.95 mb-5 pr-24 text-17 font-sans leading-22.2308 break-words">
                                   <a className="text-blue-700 hover:text-sky-600 cursor-pointer">
-                                    {q.question}
+                                    {q.title}
                                   </a>
                                 </h3>
                                 <div className="-mt-2 mb-8 line-clamp-2 break-words overflow-hidden text-13 font-400 leading-17 text-neutral-700">
-                                  {q.description}
+                                  {q.details}
                                 </div>
                                 <div className="flex flex-wrap justify-between align-center items-center gap-x-6 gap-y-8">
                                   <div className="flex flex-wrap gap-4 float-left leading-18">
                                     <ul className="mb-13 inline ml-0">
-                                      {q.tags.map(
-                                        (t: string, index: number) => {
-                                          return (
-                                            <div
-                                              key={index}
-                                              className="inline mr-4"
-                                            >
-                                              <a className="text-sky-700 bg-cyan-50 border border-transparent inline-block px-5.8 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
-                                                {t}
-                                              </a>
-                                            </div>
-                                          );
-                                        }
+                                      {q.tag && (
+                                        <div className="inline mr-4">
+                                          <a className="text-sky-700 bg-cyan-50 border border-transparent inline-block px-5.8 py-5 mb-2 mr-2 text-12 font-400 leading-12 rounded-3 whitespace-nowrap cursor-pointer hover:bg-cyan-450 hover:text-blue-350">
+                                            {q.tag}
+                                          </a>
+                                        </div>
                                       )}
                                     </ul>
                                   </div>
@@ -199,10 +193,10 @@ const AllQuestions = () => {
                                     <div className="flex flex-row gap-4">
                                       <div className="flex flex-row align-center items-center gap-4">
                                         <a className="flex align-center items-center text-12 font-400 leading-12 text-blue-700 hover:text-sky-600 cursor-pointer">
-                                          {q.askedBy.name}
+                                          {q.owner.name}
                                         </a>
                                         <div className="flex align-center items-center text-12 font-bold leading-12 text-zinc-500">
-                                          {q.asksCount}
+                                          12
                                         </div>
                                       </div>
                                       <time className="text-gray-250 text-12 font-400 leading-12">
