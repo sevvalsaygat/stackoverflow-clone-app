@@ -10,10 +10,9 @@ const SignIn = () => {
 
   const { data: users } = useGetUsers()
   
-
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm<LoginFormType>();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormType>();
 
   const onSubmit = (data: LoginFormType) => {
     const foundUser = users.find((u: UserType) => u.email == data.email && u.password == u.password)
@@ -26,7 +25,7 @@ const SignIn = () => {
       })
     }
   };
-
+  
   return (
     <AppLayout hideFooter={true}>
       <div
@@ -76,11 +75,30 @@ const SignIn = () => {
                     <label className="m-1 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
                       Email
                     </label>
-                    <div className="m-2 flex">
-                      <input
-                        {...register('email')}
-                        className="w-full m-0 h-32.59 border rounded-sm bg-white"
-                      ></input>
+                    <div className="m-2 flex flex-col relative">
+                      <div className={`flex flex-row items-center ${errors.email ? 'error' : ''}`}>
+                        <input
+                          type="email"
+                          {...register("email", {
+                            required: "Email cannot be empty",
+                            pattern: {
+                              value: /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g,
+                              message: "a is not a valid email address.",
+                            },
+                          })}
+                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                        ></input>
+                        {errors.email && (
+                          <div className='absolute right-0 top-0 mr-6 mt-6'>
+                            <Icons.SvgError className='text-red-450' />
+                          </div>
+                        )}
+                      </div>
+                      {errors.email && (
+                        <span className="text-red-450 text-12 leading-17 p-4">
+                          {errors.email.message}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-col mt-3">
@@ -92,12 +110,31 @@ const SignIn = () => {
                         Forgot password?
                       </a>
                     </div>
-                    <div className="m-2 flex">
-                      <input
-                        type="password"
-                        {...register('password')}
-                        className="w-full m-0 h-32.59 border rounded-sm bg-white"
-                      ></input>
+                    <div className="m-2 flex flex-col relative">
+                      <div className={`flex flex-row items-center ${errors.password ? 'error' : ''}`}>
+                        <input
+                          type={'password'}
+                          {...register('password', {
+                            required: 'Password cannot be empty.',
+                            minLength: 6,
+                            pattern: {
+                              value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
+                              message: "Password cannot be empty.",
+                            },
+                          })}
+                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                        ></input>
+                        {errors.email && (
+                          <div className='absolute right-0 top-0 mr-6 mt-6'>
+                            <Icons.SvgError className='text-red-450' />
+                          </div>
+                        )}
+                      </div>
+                      {errors.password && (
+                        <span className="text-red-450 text-12 leading-17 p-4">
+                          {errors.password.message}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="flex mt-3">

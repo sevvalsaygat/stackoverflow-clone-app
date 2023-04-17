@@ -137,7 +137,7 @@ const SignUp = () => {
                     <div className="mt-2 flex flex-col relative">
                       <div className={`flex flex-row items-center ${errors.email ? 'error' : ''}`}>
                         <input
-                          type='text'
+                          type='email'
                           {...register("email", {
                             required: "The email is not a valid email address.",
                             pattern: {
