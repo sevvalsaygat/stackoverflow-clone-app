@@ -6,6 +6,12 @@ type QuestionFormType = {
   rewiew: string;
 };
 
+type UpdateQuestionType = {
+  title: string;
+  details: string;
+  expect: string;
+}
+
 type LoginFormType = {
   email: string;
   password: string;
@@ -54,4 +60,4 @@ type QuestionType = {
   createdAt: string;
 };
   
-export type { QuestionFormType, QuestionType, PublicUserType, UserType, AnswerType, VoteType, LoginFormType, SignUpFormType };
+export type { QuestionFormType, QuestionType, PublicUserType, UserType, AnswerType, VoteType, LoginFormType, SignUpFormType, UpdateQuestionType };

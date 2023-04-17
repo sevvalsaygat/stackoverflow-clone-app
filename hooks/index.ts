@@ -7,6 +7,7 @@ import useGetQuestionById from './useGetQuestionById';
 import useGetQuestions from './useGetQuestions';
 import useCreateUser from './useCreateUser';
 import useGetUsers from './useGetUsers';
+import useUpdateQuestionById from './useUpdateQuestionById';
 
 export { 
     useAuth, 
@@ -17,5 +18,6 @@ export {
     useGetQuestionById, 
     useGetQuestions,
     useCreateUser,
-    useGetUsers
+    useGetUsers,
+    useUpdateQuestionById
 };
