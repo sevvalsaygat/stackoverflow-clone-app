@@ -3,74 +3,8 @@
     {
       "name": "şevval",
       "email": "sevval.saygat@shft.co",
-      "password": "aaggaga",
+      "password": "şevval123",
       "id": 1
-    },
-    {
-      "name": "şevval",
-      "email": "sevval.saygat@shft.co",
-      "password": "1233133132",
-      "id": 2
-    },
-    {
-      "name": "şevval",
-      "email": "sevval.saygat@shft.co",
-      "password": "1231331",
-      "id": 3
-    },
-    {
-      "name": "şevval",
-      "email": "sevval.saygat@shft.co",
-      "password": "asdsd",
-      "id": 4
-    },
-    {
-      "name": "aaa",
-      "email": "aaa",
-      "password": "aaa",
-      "id": 5
-    },
-    {
-      "name": "a",
-      "email": "a",
-      "password": "a",
-      "id": 6
-    },
-    {
-      "name": "aa",
-      "email": "aa",
-      "password": "aa",
-      "id": 7
-    },
-    {
-      "name": "aa",
-      "email": "aa",
-      "password": "aa",
-      "id": 8
-    },
-    {
-      "name": "aa",
-      "email": "aa",
-      "password": "aa",
-      "id": 9
-    },
-    {
-      "name": "AA",
-      "email": "AA",
-      "password": "AA",
-      "id": 10
-    },
-    {
-      "name": "aa",
-      "email": "aa",
-      "password": "aa",
-      "id": 11
-    },
-    {
-      "name": "aa",
-      "email": "aa",
-      "password": "aa",
-      "id": 12
     }
   ],
   "questions": [

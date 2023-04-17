@@ -2,9 +2,15 @@ import { AppLayout } from '@layouts';
 import { Icons, MyEditor } from '@components';
 import { Api } from '@hooks';
 import Link from 'next/link';
+import { useForm, Controller } from 'react-hook-form';
+import { QuestionFormType } from '@types';
 
 const TopQuestions = () => {
   const { data, isSuccess } = Api.Questions.useGetTopQuestions();
+
+  const {
+    control,
+  } = useForm<QuestionFormType>();
 
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
@@ -157,9 +163,9 @@ const TopQuestions = () => {
                                                 <div className='mt-32 flex flex-row justify-between'>
                                                     <div className='m-4'>
                                                         <div className='pt-2 -m-4 flex flex-wrap gap-4'>
+                                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Share</div>
                                                             <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</div>
-                                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</div>
-                                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Flag</div>
+                                                            <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Follow</div>
                                                         </div>
                                                     </div>
                                                     <div className='flex flex-col m-4 border-transparent rounded-3 w-200 bg-blue-150'>
@@ -218,9 +224,17 @@ const TopQuestions = () => {
                                                 <form className='w-full mx-16 -ml-1'>
                                                     <h2 className='py-20 text-19 leading-25'>Your Answer</h2>
                                                     <div className="border border-gray-300 h-full rounded-3"> 
-                                                        <div className='h-322'>
-                                                            <MyEditor />
+                                                    <div className="h-322">
+                                                        <div className="border border-gray-300 h-full rounded-3">
+                                                            <Controller 
+                                                                control={control}
+                                                                name="details"
+                                                                render={({ field: { onChange, value } }) => (
+                                                                <MyEditor onChange={onChange} value={value} />
+                                                                )}
+                                                            />
                                                         </div>
+                                                    </div>
                                                     </div>
                                                     <div className='mt-24'>
                                                         <button className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs">
