@@ -43,6 +43,7 @@ import SvgLightbulb from './Lightbulb';
 import SvgUpLg from './UpLg';
 import SvgDownLg from './DownLg';
 import SvgSelect from './Select';
+import SvgError from './Error';
 
 /* eslint-disable */
 export default {
@@ -90,6 +91,7 @@ export default {
   SvgLightbulb,
   SvgUpLg,
   SvgDownLg,
-  SvgSelect
+  SvgSelect,
+  SvgError,
 };
 /* eslint-enable */

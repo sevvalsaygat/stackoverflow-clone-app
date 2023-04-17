@@ -21,7 +21,7 @@ const SignUp = () => {
 
   const { signup } = useAuth();
 
-  const { register, handleSubmit } = useForm<SignUpFormType>();
+  const { register, handleSubmit, formState: { errors } } = useForm<SignUpFormType>();
 
   const onSubmit = (data: SignUpFormType) => {
     mutate(data);
@@ -124,7 +124,7 @@ const SignUp = () => {
                     <div className="mt-2 flex">
                       <input
                         {...register('name')}
-                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
+                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white p-6 text-13"
                       ></input>
                     </div>
                   </div>
@@ -134,23 +134,61 @@ const SignUp = () => {
                         Email
                       </label>
                     </div>
-                    <div className="mt-2 flex">
-                      <input
-                        {...register('email')}
-                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
-                      ></input>
+                    <div className="mt-2 flex flex-col relative">
+                      <div className={`flex flex-row items-center ${errors.email ? 'error' : ''}`}>
+                        <input
+                          type='text'
+                          {...register("email", {
+                            required: "The email is not a valid email address.",
+                            pattern: {
+                              value: /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g,
+                              message: "a is not a valid email address.",
+                            },
+                          })}
+                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                        ></input>
+                        {errors.email && (
+                          <div className='absolute right-0 top-0 mr-6 mt-6'>
+                            <Icons.SvgError className='text-red-450' />
+                          </div>
+                        )}
+                      </div>
+                      {errors.email && (
+                        <span className="text-red-450 text-12 leading-17 p-4">
+                          {errors.email.message}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="flex flex-col my-6">
                     <label className="m-2 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
                       Password
                     </label>
-                    <div className="mt-2 flex">
-                      <input
-                        type={'password'}
-                        {...register('password')}
-                        className="w-full m-0 h-32.59 border border-gray-300 rounded-3 bg-white"
-                      ></input>
+                    <div className="mt-2 flex flex-col relative">
+                      <div className={`flex flex-row items-center ${errors.password ? 'error' : ''}`}>
+                        <input
+                          type={'password'}
+                          {...register('password', {
+                            required: 'Please add one of the following things to make your password stronger',
+                            minLength: 6,
+                            pattern: {
+                              value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
+                              message: "Please add one of the following things to make your password stronger:",
+                            },
+                          })}
+                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                        ></input>
+                        {errors.email && (
+                          <div className='absolute right-0 top-0 mr-6 mt-6'>
+                            <Icons.SvgError className='text-red-450' />
+                          </div>
+                        )}
+                      </div>
+                      {errors.password && (
+                        <span className="text-red-450 text-12 leading-17 p-4 mb-10">
+                          {errors.password.message}
+                        </span>
+                      )}
                     </div>
                     <p className="my-4 font-400 text-12 leading-15 text-gray-250">
                       Passwords must contain at least eight characters,

@@ -5,6 +5,18 @@
       "email": "sevval.saygat@shft.co",
       "password": "şevval123",
       "id": 1
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 2
+    },
+    {
+      "name": "aa",
+      "email": "a",
+      "password": "aa",
+      "id": 3
     }
   ],
   "questions": [
