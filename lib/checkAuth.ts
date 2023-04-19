@@ -1,12 +1,12 @@
-import type { NextRequest, NextResponse } from 'next/server'
-import Cookies from 'js-cookie'
+import { NextRequest, NextResponse } from 'next/server';
+import Cookies from 'js-cookie';
 
-export default function checkAuth(request: NextRequest, response: any) {
-    const cookieUser = Cookies.get('user');
+export function checkAuth(request: NextRequest, response: typeof NextResponse) {
+    const cookieUser = Object.prototype.hasOwnProperty.call(request.cookies, "user");
     
     if (!cookieUser) {
-        return response.redirect(new URL('/users/sign_in', request.url))  
-    }else {
-        return response.next()
+        return response.redirect('/users/sign_in');
+    } else {
+        return NextResponse.next();
     }
 }

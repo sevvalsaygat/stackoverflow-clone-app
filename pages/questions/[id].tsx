@@ -1,13 +1,14 @@
 import { AppLayout } from '@layouts';
 import { useState } from 'react';
 import { Icons, MyEditor } from '@components';
-import { useGetQuestionById, useGetQuestions, useUpdateQuestionById, useAuth } from '@hooks';
+import { useGetQuestionById, useGetQuestions, useUpdateQuestionById, useAuth, useDeleteQuestionById } from '@hooks';
 import Link from 'next/link';
 import { useForm, Controller } from 'react-hook-form';
 import { QuestionType, AnswerFormType, AnswerType } from '@types';
 import { useRouter } from 'next/router';
 
 const TopQuestions = () => {
+  const [userAnswered, setUserAnswered] = useState<boolean>(false)
   const router = useRouter();
 
   const { id } = router.query;
@@ -20,7 +21,6 @@ const TopQuestions = () => {
     onSuccess: (data: QuestionType) => {
         reset()
         refetch()
-        router.push(`/questions/${data.id}`);
     },
     onError: () => {},
   });
@@ -28,6 +28,8 @@ const TopQuestions = () => {
   const { publicAuthenticatedUser } = useAuth();
 
   const onSubmit = (formData: AnswerFormType) => {
+    setUserAnswered(true)
+
     const answer = {
         content: formData.content,
         user: publicAuthenticatedUser,
@@ -50,13 +52,21 @@ const TopQuestions = () => {
 
   const { data: relatedQuestionData, isSuccess: relatedQuestionIsSuccess } = useGetQuestions({}, {_limit: 3});
 
-  const [answerForm, setAnswerForm] = useState(true);
-  const [connectForm, setConnectForm] = useState(false);
+  const onDeleteAnswer = (answer: AnswerType) => {
+    setUserAnswered(false)
 
-  const toggleDiv = () => {
-    setAnswerForm(!answerForm);
-    setConnectForm(!connectForm);
-  };
+    if (answer.user.id != publicAuthenticatedUser.id) {
+      } else {
+        const filteredAnswers = data.answers.filter((ans: AnswerType) => ans != answer)
+
+        mutate({
+          ...data,
+          answers: filteredAnswers,
+        });
+      }
+    }
+
+  const authenticatedUserAnswered = isSuccess && data.answers.filter((a: AnswerType) => a.user.id == publicAuthenticatedUser.id).length > 0
 
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
@@ -210,7 +220,7 @@ const TopQuestions = () => {
                                 <div className='m-4'>
                                   <div className='pt-2 -m-4 flex flex-wrap gap-4'>
                                     <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Share</div>
-                                    <Link  href={`/questions/${data.id}`} className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</Link>
+                                    <Link  href={`/questions/edit/${data.id}`} className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</Link>
                                     <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Follow</div>
                                   </div>
                                 </div>
@@ -238,11 +248,11 @@ const TopQuestions = () => {
                               <button className='text-13 leading-17 text-gray-400 hover:text-sky-600'>Add a comment</button>
                             </div>
                             {
-                              connectForm && (
-                              <div className='flex flex-col -ml-[50px]'>
+                              data.answers.length > 0 && (
+                                <div className='flex flex-col -ml-[50px]'>
                                 <div className='pt-10'>
                                   <div className='mb-8 flex flex-row justify-between items-center w-full -right-5'>
-                                    <div className='text-19 leading-25 text-zinc-800'>1 Answer</div>
+                                    <div className='text-19 leading-25 text-zinc-800'>{data.answers.length} Answer</div>
                                     <div className='flex flex-row items-center gap-4'>
                                       <div className='text-12 leading-15'>Sorted by:</div>
                                         <select className='border rounded-3 py-8 px-10 bg-white text-13 leading-15'>
@@ -253,32 +263,32 @@ const TopQuestions = () => {
                                         </select>
                                     </div>
                                   </div>
-                                  <div className='flex flex-row py-16 border-b'>
-                                    <div className='w-10 flex flex-col align-center items-center mr-24'>
-                                      <div>
-                                        <Icons.SvgUpLg className='text-gray-300'/>
-                                      </div>
-                                      <div className='m-4 text-21 leading-27 text-gray-250'>0</div>
-                                      <div>
-                                        <Icons.SvgDownLg className='text-gray-300'/>
-                                      </div>
-                                      <div className='py-4'>
-                                        <Icons.SvgSelect className='text-gray-300'/>
-                                      </div>
-                                      <div className='py-8'>
-                                        <Icons.SvgHistory className='text-gray-300'/>
-                                      </div>
-                                    </div>
-                                    <div className='flex flex-col w-full'>
-                                      {
-                                        data.answers.map((answer: AnswerType, index: number) => (
-                                          <div key={index} className='flex flex-col'>
+                                  {
+                                    data.answers.map((answer: AnswerType, index: number) => (
+                                      <div key={index} className='flex flex-row py-16 border-b'>
+                                        <div className='w-10 flex flex-col align-center items-center mr-24'>
+                                          <div>
+                                            <Icons.SvgUpLg className='text-gray-300'/>
+                                          </div>
+                                          <div className='m-4 text-21 leading-27 text-gray-250'>0</div>
+                                          <div>
+                                            <Icons.SvgDownLg className='text-gray-300'/>
+                                          </div>
+                                          <div className='py-4'>
+                                            <Icons.SvgSelect className='text-gray-300'/>
+                                          </div>
+                                          <div className='py-8'>
+                                            <Icons.SvgHistory className='text-gray-300'/>
+                                          </div>
+                                        </div>
+                                        <div className='flex flex-col w-full'>
+                                          <div className='flex flex-col'>
                                             <p className='mb-16 text-15 leading-23 text-zinc-800'>{answer.content}</p>
                                             <div className='m-4 flex flex-row justify-between'>
                                               <div className='pt-2 -m-4 flex flex-wrap gap-4'>
                                                   <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Share</div>
                                                   <Link  href={`/questions/${data.id}`} className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Edit</Link>
-                                                  <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</div>
+                                                  <button onClick={() => onDeleteAnswer(answer)} className='flex justify-end m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Delete</button>
                                                   <div className='m-4 text-13 leading-17 text-neutral-100 hover:text-gray-400 cursor-pointer'>Flag</div>
                                               </div>
                                               <div className='flex flex-col m-4 border-transparent rounded-3 w-200 pr-16'>
@@ -304,60 +314,73 @@ const TopQuestions = () => {
                                               <button className='text-13 leading-17 text-blue-700 hover:text-sky-600'>Add a comment</button>
                                             </div>
                                           </div>
-                                        ))
-                                      }
+                                        </div>
+                                      </div>)
+                                      )
+                                    }
+                                </div>
+                                {
+                                  !authenticatedUserAnswered && (
+                                    <div className='flex flex-col mt-10'>
+                                      <button className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs w-fit">
+                                        Add Another Answer
+                                      </button>
+                                      <div className='mt-24 flex flex-row text-17 leading-24'>
+                                        <h2>Not the answer you are looking for? Browse other questions tagged
+                                          <a className='ml-4 border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>html</a>
+                                          <a className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>jquery</a>
+                                          <a className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>css</a> or
+                                          <a className='text-17 leading-24 text-blue-700 hover:text-sky-600'> ask your own question.</a>
+                                        </h2>
+                                      </div>
                                     </div>
-                                  </div>  
-                                </div>
-                                <div className='flex flex-col mt-10'>
-                                  <button className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs w-fit">
-                                    Add Another Answer
-                                  </button>
-                                  <div className='mt-24 flex flex-row text-17 leading-24'>
-                                    <h2>Not the answer you are looking for? Browse other questions tagged
-                                      <a className='ml-4 border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>html</a>
-                                      <a className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>jquery</a>
-                                      <a className='border border-transparent bg-cyan-50 hover:bg-cyan-450 text-sky-300 px-6 py-4 text-12 rounded-3 leading-12 mr-5 hover:text-blue-350 cursor-pointer'>css</a> or
-                                      <a className='text-17 leading-24 text-blue-700 hover:text-sky-600'> ask your own question.</a>
-                                    </h2>
-                                  </div>
-                                </div>
+                                  )
+                                }
                               </div>
                               )
                             }
-                            
                             {
-                              answerForm && (
+                              !userAnswered && (
                                 <div className='flex flex-col'>
-                                  <div className='pt-32 mx-16 -ml-[38px]'>
-                                    <div className='pb-8 text-17 leading-23 text-zinc-800'>Related questions</div>
-                                    <div className='border rounded-md border-gray-650'>
-                                      {
-                                        relatedQuestionIsSuccess && (
-                                          relatedQuestionData.map((q: QuestionType, index: number) => (
-                                            <div key={index} className='p-12 flex flex-row items-center border-b'>
-                                              <div className='border border-gray-650 rounded-2 px-14 text-12 leading-24'>0</div>
-                                              <div className='pr-12 pl-16 text-13 leading-17 cursor-pointer text-blue-700 hover:text-sky-600'>{q.title}</div>
-                                            </div>
-                                            )
-                                          )
-                                        )
-                                      }
-                                    </div>
-                                  </div>
-                                  <div className='group flex flex-row justify-center align-center items-center gap-4 pt-8 cursor-pointer'>
-                                    <div>
-                                      <Icons.SvgArrowDown className='text-blue-700 group-hover:text-sky-600' />
-                                    </div>
-                                    <div className='text-13 leading-17 text-blue-700 group-hover:text-sky-600'>Load 5 more related questions </div>
-                                  </div>
+                                  {
+                                    !authenticatedUserAnswered && (
+                                      <div className='flex flex-col'>
+                                        <div className='pt-32 mx-16 -ml-[38px]'>
+                                          <div className='pb-8 text-17 leading-23 text-zinc-800'>Related questions</div>
+                                          <div className='border rounded-md border-gray-650'>
+                                            {
+                                              relatedQuestionIsSuccess && (
+                                                relatedQuestionData.map((q: QuestionType, index: number) => (
+                                                  <div key={index} className='p-12 flex flex-row items-center border-b'>
+                                                    <div className='border border-gray-650 rounded-2 px-14 text-12 leading-24'>0</div>
+                                                    <div className='pr-12 pl-16 text-13 leading-17 cursor-pointer text-blue-700 hover:text-sky-600'>{q.title}</div>
+                                                  </div>
+                                                  )
+                                                )
+                                              )
+                                            }
+                                          </div>
+                                        </div>
+                                        <div className='group flex flex-row justify-center align-center items-center gap-4 pt-8 cursor-pointer'>
+                                          <div>
+                                            <Icons.SvgArrowDown className='text-blue-700 group-hover:text-sky-600' />
+                                          </div>
+                                          <div className='text-13 leading-17 text-blue-700 group-hover:text-sky-600'>Load 5 more related questions </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  }
                                   <div id='answer' className='pt-10 mt-15 -ml-[55px]'>
-                                    <h2 className='pt-8 text-17 leading-24'>Know someone who can answer? Share a link to this
-                                      <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> question</a> via
-                                      <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> email</a>,
-                                      <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Twitter</a>, or
-                                      <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Facebook.</a>
-                                    </h2>
+                                    {
+                                      !authenticatedUserAnswered && (
+                                        <h2 className='pt-8 text-17 leading-24'>Know someone who can answer? Share a link to this
+                                          <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> question</a> via
+                                          <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> email</a>,
+                                          <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Twitter</a>, or
+                                          <a className='text-blue-700 hover:text-sky-600 cursor-pointer'> Facebook.</a>
+                                        </h2>
+                                      )
+                                    }
                                     <form className='w-full mx-16 -ml-1' onSubmit={handleSubmit(onSubmit)}>
                                       <h2 className='py-20 text-19 leading-25'>Your Answer</h2>
                                       <div className="border border-gray-300 h-full rounded-3"> 
@@ -373,13 +396,13 @@ const TopQuestions = () => {
                                           </div>
                                         </div>
                                       </div>
-                                      <div className='mt-24'>
-                                        <div>
+                                      <div className='mt-7'>
+                                        <div className='mb-20'>
                                           {
                                               watchContent && (watchContent)
                                           }
                                         </div>
-                                        <button onClick={toggleDiv} className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs">
+                                        <button className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs">
                                             Post Your Answer
                                         </button>
                                       </div>
@@ -393,8 +416,8 @@ const TopQuestions = () => {
                                     </div>
                                   </div>
                                 </div>
-                              )
-                            }
+                               )
+                              }
                           </div>
                         </div> 
                       </div>

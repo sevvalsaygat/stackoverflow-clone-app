@@ -130,6 +130,9 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('title')}
+                        onFocus={() => {
+                          setCurrentFormElementIndex(0)
+                        }}
                         className=" rounded-3 border border-gray-300 w-full text-13 py-5.5 px-10 placeholder-gray-300 "
                         placeholder="e.g. Is there an R function the index of an element in a vector?"
                       ></input>
@@ -337,6 +340,9 @@ const AskQuestions = () => {
                     <div className="flex m-2 mx-0 relative">
                       <input
                         {...register('tag')}
+                        onFocus={() => {
+                          setCurrentFormElementIndex(3)
+                        }}
                         className="border rounded-3 border-gray-300 w-full text-13 py-8 px-10 placeholder-gray-300 "
                         placeholder="e.g. (c# vba pandas)"
                       ></input>

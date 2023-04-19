@@ -3,22 +3,10 @@ import { Icons, Pagination, Question } from '@components';
 import Link from 'next/link';
 import { useGetQuestions, useUpdateQuestionById } from '@hooks';
 import { QuestionType } from '@types';
-import { useRouter } from 'next/router';
 
 const AllQuestions = () => {
   const { data, isSuccess } = useGetQuestions();
 
-  const router = useRouter();
-
-  const { id } = router.query;
-
-  const { mutate } = useUpdateQuestionById(id as string, {
-    onSuccess: (data: QuestionType) => {
-      router.push(`/questions/${data.id}`);
-    },
-    onError: () => {},
-  });
-  
   return (
     <AppLayout hideFooter={false} hideHamburger={true}>
       <div className="w-full bg-white">
@@ -182,7 +170,7 @@ const AllQuestions = () => {
                               </div>
                               <div className="grow max-w-full">
                                 <h3 className="-mt-1.95 mb-5 pr-24 text-17 font-sans leading-22.2308 break-words">
-                                  <Link href={`/questions/${data.id}`} className="text-blue-700 hover:text-sky-600 cursor-pointer">
+                                  <Link href={`/questions/${q.id}`} className="text-blue-700 hover:text-sky-600 cursor-pointer">
                                     {q.title}
                                   </Link>
                                 </h3>
