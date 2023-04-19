@@ -86,7 +86,7 @@ const SignIn = () => {
                               message: "a is not a valid email address.",
                             },
                           })}
-                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                          className={`w-full m-0 h-32.59 border ${errors.email ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
                         ></input>
                         {errors.email && (
                           <div className='absolute right-0 top-0 mr-6 mt-6'>
@@ -117,10 +117,6 @@ const SignIn = () => {
                           {...register('password', {
                             required: 'Password cannot be empty.',
                             minLength: 6,
-                            pattern: {
-                              value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
-                              message: "Password cannot be empty.",
-                            },
                           })}
                           className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
                         ></input>

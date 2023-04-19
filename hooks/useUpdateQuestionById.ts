@@ -1,6 +1,6 @@
 import { useAxios } from '@hooks';
 import { useMutation, UseMutationResult } from 'react-query';
-import { UpdateQuestionType, QuestionType } from '@types';
+import { QuestionType } from '@types';
 
 export default function useUpdateQuestionById(
   id: string,
@@ -11,7 +11,7 @@ export default function useUpdateQuestionById(
   return useMutation(
     (data: any) =>
       axios
-        .patch(`/questions/${id}`, data as UpdateQuestionType)
+        .patch(`/questions/${id}`, data as QuestionType)
         .then((res) => res.data as QuestionType),
     props
   );

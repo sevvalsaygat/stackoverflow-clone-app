@@ -35,6 +35,98 @@
       "viewsCount": 0,
       "createdAt": "2023-04-15T20:20:17.550Z",
       "id": 2
+    },
+    {
+      "title": "Facebookfacebook1facebook1",
+      "tag": "facebook1",
+      "details": "facebook1facebook1facebook1facebook1facebook1",
+      "expect": "expecting2expecting2expecting2expecting2",
+      "owner": {
+        "id": 123,
+        "name": "John Doe",
+        "email": "sevvallsstt@gmail.com"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-15T20:20:17.550Z",
+      "id": 3
+    },
+    {
+      "title": "İnstagraminstagram1instagram222ahahsajhgaskjsa",
+      "tag": "facebook1sjkhksjahaskjsah",
+      "details": "editor23editor23editor23editor23",
+      "expect": "editor23editor23editor23editor23editor238989",
+      "owner": {},
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-17T22:40:25.410Z",
+      "id": 4
+    },
+    {
+      "title": "Snapchat123Snapchat123Snapchat123Snapchat123",
+      "tag": "facebook1",
+      "details": "facebook1facebook1facebook1facebook1facebook1",
+      "expect": "expecting2expecting2expecting2expecting2",
+      "owner": {
+        "id": 123,
+        "name": "John Doe",
+        "email": "sevvallsstt@gmail.com"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-15T20:20:17.550Z",
+      "id": 5
+    },
+    {
+      "title": "Twitter1233Twitter1233Twitter1233Twitter1233",
+      "tag": "facebook1",
+      "details": "facebook1facebook1facebook1facebook1facebook1",
+      "expect": "expecting2expecting2expecting2expecting2",
+      "owner": {
+        "id": 123,
+        "name": "John Doe",
+        "email": "sevvallsstt@gmail.com"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-15T20:20:17.550Z",
+      "id": 6
+    },
+    {
+      "title": "hehehehhehehhehee",
+      "tag": "hehehe",
+      "details": "hehehehhehehheheehehehehhehehheheehehehehhehehheheehehehehhehehhehee",
+      "expect": "hehehehhehehheheehehehehhehehheheehehehehhehehhehee",
+      "owner": {
+        "id": 1,
+        "name": "şevval",
+        "email": "sevval.saygat@shft.co"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-17T23:38:57.223Z",
+      "id": 7
+    },
+    {
+      "title": "ŞEVVALALLA",
+      "tag": "NEXT",
+      "details": "ŞEVVALALLALALALLAAJAJJA",
+      "expect": "ŞEVVALALLALALALLAAJAJJA",
+      "owner": {
+        "id": 1,
+        "name": "şevval",
+        "email": "sevval.saygat@shft.co"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-19T02:45:21.192Z",
+      "id": 8
     }
   ]
 }

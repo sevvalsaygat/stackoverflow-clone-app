@@ -110,7 +110,7 @@ const AskQuestions = () => {
                 </div>
               </div>
               <div className="w-100 flex flex-row gap-16">
-                <div className="w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50">
+                <div className="w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50">
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
@@ -170,7 +170,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50 ${
                     currentFormElementIndex == 0 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -237,7 +237,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 1 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -314,7 +314,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`relative w-70 p-24 flex-shrink-0 flex-grow-0 bg-white  rounded-3 border-gray-50 ${
+                  className={`relative w-70 p-24 flex-shrink-0 flex-grow-0 bg-white border rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 2 ? 'disabled-aqfm' : ''
                   }`}
                 >
@@ -384,7 +384,7 @@ const AskQuestions = () => {
 
               <div className="w-100 flex flex-row gap-16 mt-12">
                 <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white  rounded-3 border-gray-50 ${
+                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50 ${
                     currentFormElementIndex <= 3 ? 'disabled-aqfm' : ''
                   }`}
                 >

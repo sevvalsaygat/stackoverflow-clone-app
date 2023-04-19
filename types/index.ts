@@ -42,6 +42,10 @@ type AnswerType = {
   user: PublicUserType;
 }
 
+type AnswerFormType = {
+  content: string;
+}
+
 type VoteType = {
   id: number;
   user: PublicUserType;
@@ -60,4 +64,4 @@ type QuestionType = {
   createdAt: string;
 };
   
-export type { QuestionFormType, QuestionType, PublicUserType, UserType, AnswerType, VoteType, LoginFormType, SignUpFormType, UpdateQuestionType };
+export type { QuestionFormType, QuestionType, PublicUserType, UserType, AnswerType, VoteType, LoginFormType, SignUpFormType, UpdateQuestionType, AnswerFormType };
