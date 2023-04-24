@@ -7,7 +7,7 @@ type QuestionProps = {
   question: QuestionType;
 };
 
-export default function ToDo({ question }: QuestionProps) {
+export default function Question({ question }: QuestionProps) {
   const router = useRouter();
 
   const { mutate } = useDeleteQuestionById({
@@ -19,7 +19,7 @@ export default function ToDo({ question }: QuestionProps) {
   return (
     <div>
       <div>{question.title}</div>
-      <div>{question.problem}</div>
+      <div>{question.details}</div>
       <div>{question.expect}</div>
       <div>{question.tag}</div>
       <div>

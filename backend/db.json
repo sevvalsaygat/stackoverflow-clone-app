@@ -21,7 +21,7 @@
   ],
   "questions": [
     {
-      "title": "TİTLE2",
+      "title": "TİTLE2ahha",
       "tag": "TAGS2",
       "details": "PROBLEM2PROBLEM2PROBLEM2",
       "expect": "expecting2expecting2expecting2expecting2",
@@ -47,70 +47,6 @@
       "id": 2
     },
     {
-      "title": "Facebookfacebook1facebook1",
-      "tag": "facebook1",
-      "details": "facebook1facebook1facebook1facebook1facebook1",
-      "expect": "expecting2expecting2expecting2expecting2",
-      "owner": {
-        "id": 123,
-        "name": "John Doe",
-        "email": "sevvallsstt@gmail.com"
-      },
-      "votes": [],
-      "answers": [
-        {
-          "content": "şevval saygat",
-          "user": {
-            "id": 1,
-            "name": "şevval",
-            "email": "sevval.saygat@shft.co"
-          },
-          "id": 1
-        }
-      ],
-      "viewsCount": 0,
-      "createdAt": "2023-04-15T20:20:17.550Z",
-      "id": 3
-    },
-    {
-      "title": "İnstagraminstagram1instagram222ahahsajhgaskjsa",
-      "tag": "facebook1sjkhksjahaskjsah",
-      "details": "editor23editor23editor23editor23",
-      "expect": "editor23editor23editor23editor23editor238989",
-      "owner": {},
-      "votes": [],
-      "answers": [
-        {
-          "content": "şevval saygat",
-          "user": {
-            "id": 1,
-            "name": "şevval",
-            "email": "sevval.saygat@shft.co"
-          },
-          "id": 1
-        }
-      ],
-      "viewsCount": 0,
-      "createdAt": "2023-04-17T22:40:25.410Z",
-      "id": 4
-    },
-    {
-      "title": "Snapchat123Snapchat123Snapchat123Snapchat123",
-      "tag": "facebook1",
-      "details": "facebook1facebook1facebook1facebook1facebook1",
-      "expect": "expecting2expecting2expecting2expecting2",
-      "owner": {
-        "id": 123,
-        "name": "John Doe",
-        "email": "sevvallsstt@gmail.com"
-      },
-      "votes": [],
-      "answers": [],
-      "viewsCount": 0,
-      "createdAt": "2023-04-15T20:20:17.550Z",
-      "id": 5
-    },
-    {
       "title": "Twitter1233Twitter1233Twitter1233Twitter1233",
       "tag": "facebook1",
       "details": "facebook1facebook1facebook1facebook1facebook1",
@@ -121,25 +57,9 @@
         "email": "sevvallsstt@gmail.com"
       },
       "votes": [],
-      "answers": [],
-      "viewsCount": 0,
-      "createdAt": "2023-04-15T20:20:17.550Z",
-      "id": 6
-    },
-    {
-      "title": "hehehehhehehhehee",
-      "tag": "hehehe",
-      "details": "hehehehhehehheheehehehehhehehheheehehehehhehehheheehehehehhehehhehee",
-      "expect": "hehehehhehehheheehehehehhehehheheehehehehhehehhehee",
-      "owner": {
-        "id": 1,
-        "name": "şevval",
-        "email": "sevval.saygat@shft.co"
-      },
-      "votes": [],
       "answers": [
         {
-          "content": "şevvalallaal",
+          "content": "şevval saygatatat",
           "user": {
             "id": 1,
             "name": "şevval",
@@ -149,8 +69,8 @@
         }
       ],
       "viewsCount": 0,
-      "createdAt": "2023-04-17T23:38:57.223Z",
-      "id": 7
+      "createdAt": "2023-04-15T20:20:17.550Z",
+      "id": 6
     },
     {
       "title": "ŞEVVALALLA",
@@ -169,22 +89,6 @@
       "id": 8
     },
     {
-      "title": "şevval saygat",
-      "tag": "java",
-      "details": "şevval saygatşevval saygatşevval saygatşevval saygatşevval saygatşevval saygatşevval saygat",
-      "expect": "şevval saygatşevval saygatşevval saygatşevval saygatşevval saygatşevval saygat",
-      "owner": {
-        "id": 1,
-        "name": "şevval",
-        "email": "sevval.saygat@shft.co"
-      },
-      "votes": [],
-      "answers": [],
-      "viewsCount": 0,
-      "createdAt": "2023-04-19T16:25:23.844Z",
-      "id": 9
-    },
-    {
       "title": "şevvalsaygat",
       "tag": "java",
       "details": "şevvalsaygatşevvalsaygatşevvalsaygatşevvalsaygatşevvalsaygatşevvalsaygatşevvalsaygat",
@@ -196,15 +100,6 @@
       },
       "votes": [],
       "answers": [
-        {
-          "content": "şevval saygat",
-          "user": {
-            "id": 1,
-            "name": "şevval",
-            "email": "sevval.saygat@shft.co"
-          },
-          "id": 1
-        },
         {
           "content": "başka bir soru",
           "user": {
@@ -218,6 +113,64 @@
       "viewsCount": 0,
       "createdAt": "2023-04-19T22:29:15.242Z",
       "id": 10
+    },
+    {
+      "title": "FACEBOOK CLONEA1212",
+      "tag": "java",
+      "details": "CLONECLONECLONECLONECLONECLONECLONECLONECLONE",
+      "expect": "CLONECLONECLONECLONE151515",
+      "owner": {
+        "id": 1,
+        "name": "şevval",
+        "email": "sevval.saygat@shft.co"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-19T23:29:31.634Z",
+      "id": 11
+    },
+    {
+      "title": "hahahahhaha",
+      "tag": "javascript",
+      "details": "hahahahhahahahahahhahahahahahhaha",
+      "expect": "hahahahhahahahahahhahahahahahhaha",
+      "owner": {
+        "id": 1,
+        "name": "şevval",
+        "email": "sevval.saygat@shft.co"
+      },
+      "votes": [],
+      "answers": [
+        {
+          "content": "hahahhahahah",
+          "user": {
+            "id": 1,
+            "name": "şevval",
+            "email": "sevval.saygat@shft.co"
+          },
+          "id": 1
+        }
+      ],
+      "viewsCount": 0,
+      "createdAt": "2023-04-20T09:52:57.667Z",
+      "id": 12
+    },
+    {
+      "title": "shft SHFT",
+      "tag": "java",
+      "details": "shftshftshftshftshftshftshft",
+      "expect": "shftshftshftshftshftshftshft",
+      "owner": {
+        "id": 1,
+        "name": "şevval",
+        "email": "sevval.saygat@shft.co"
+      },
+      "votes": [],
+      "answers": [],
+      "viewsCount": 0,
+      "createdAt": "2023-04-23T21:14:32.457Z",
+      "id": 13
     }
   ]
 }

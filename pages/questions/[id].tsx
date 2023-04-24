@@ -1,7 +1,7 @@
 import { AppLayout } from '@layouts';
 import { useState } from 'react';
 import { Icons, MyEditor } from '@components';
-import { useGetQuestionById, useGetQuestions, useUpdateQuestionById, useAuth, useDeleteQuestionById } from '@hooks';
+import { useGetQuestionById, useGetQuestions, useUpdateQuestionById, useAuth } from '@hooks';
 import Link from 'next/link';
 import { useForm, Controller } from 'react-hook-form';
 import { QuestionType, AnswerFormType, AnswerType } from '@types';
@@ -205,7 +205,7 @@ const TopQuestions = () => {
                               <Icons.SvgHistory className='text-gray-300'/>
                             </div>
                           </div>
-                          <div className='flex flex-col'>
+                          <div className='flex flex-col w-full'>
                             <div className='pr-16'>
                               <div className='w-full'>
                                 <p className='mb-16 text-15 leading-23 text-zinc-800'>{data.details}</p>
@@ -265,7 +265,7 @@ const TopQuestions = () => {
                                   </div>
                                   {
                                     data.answers.map((answer: AnswerType, index: number) => (
-                                      <div key={index} className='flex flex-row py-16 border-b'>
+                                      <div key={index} className='flex flex-row py-16 border-b w-full'>
                                         <div className='w-10 flex flex-col align-center items-center mr-24'>
                                           <div>
                                             <Icons.SvgUpLg className='text-gray-300'/>
