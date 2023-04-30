@@ -11,8 +11,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <Component {...pageProps} />
-      </AuthProvider>  
-      <ReactQueryDevtools initialIsOpen={false} />  
+      </AuthProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

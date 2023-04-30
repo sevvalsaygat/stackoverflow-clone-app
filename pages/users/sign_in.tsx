@@ -8,24 +8,28 @@ import { LoginFormType, UserType } from '@types';
 const SignIn = () => {
   const { login } = useAuth();
 
-  const { data: users } = useGetUsers()
-  
+  const { data: users } = useGetUsers();
+
   const router = useRouter();
 
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormType>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormType>();
 
   const onSubmit = (data: LoginFormType) => {
-    const foundUser = users.find((u: UserType) => u.email == data.email && u.password == u.password)
+    const foundUser = users.find((u: UserType) => u.email == data.email && u.password == u.password);
 
     if (foundUser != undefined) {
-      login(foundUser)
+      login(foundUser);
 
       setTimeout(() => {
-        router.push('/all_questions')
-      })
+        router.push('/all_questions');
+      });
     }
   };
-  
+
   return (
     <AppLayout hideFooter={true}>
       <div
@@ -67,37 +71,32 @@ const SignIn = () => {
                 </div>
               </div>
               <div className="shadow-xl bg-white p-24 mb-24 rounded-lg max-w-316 max-h-234">
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="flex flex-col"
-                >
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
                   <div className="flex flex-col">
-                    <label className="m-1 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
-                      Email
-                    </label>
+                    <label className="m-1 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">Email</label>
                     <div className="m-2 flex flex-col relative">
                       <div className={`flex flex-row items-center ${errors.email ? 'error' : ''}`}>
                         <input
                           type="email"
-                          {...register("email", {
-                            required: "Email cannot be empty",
+                          {...register('email', {
+                            required: 'Email cannot be empty',
                             pattern: {
                               value: /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g,
-                              message: "a is not a valid email address.",
+                              message: 'a is not a valid email address.',
                             },
                           })}
-                          className={`w-full m-0 h-32.59 border ${errors.email ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                          className={`w-full m-0 h-32.59 border ${
+                            errors.email ? 'border-red-450' : 'border-gray-300'
+                          } rounded-3 bg-white p-6`}
                         ></input>
                         {errors.email && (
-                          <div className='absolute right-0 top-0 mr-6 mt-6'>
-                            <Icons.SvgError className='text-red-450' />
+                          <div className="absolute right-0 top-0 mr-6 mt-6">
+                            <Icons.SvgError className="text-red-450" />
                           </div>
                         )}
                       </div>
                       {errors.email && (
-                        <span className="text-red-450 text-12 leading-17 p-4">
-                          {errors.email.message}
-                        </span>
+                        <span className="text-red-450 text-12 leading-17 p-4">{errors.email.message}</span>
                       )}
                     </div>
                   </div>
@@ -118,18 +117,18 @@ const SignIn = () => {
                             required: 'Password cannot be empty.',
                             minLength: 6,
                           })}
-                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                          className={`w-full m-0 h-32.59 border ${
+                            errors.password ? 'border-red-450' : 'border-gray-300'
+                          } rounded-3 bg-white p-6`}
                         ></input>
                         {errors.email && (
-                          <div className='absolute right-0 top-0 mr-6 mt-6'>
-                            <Icons.SvgError className='text-red-450' />
+                          <div className="absolute right-0 top-0 mr-6 mt-6">
+                            <Icons.SvgError className="text-red-450" />
                           </div>
                         )}
                       </div>
                       {errors.password && (
-                        <span className="text-red-450 text-12 leading-17 p-4">
-                          {errors.password.message}
-                        </span>
+                        <span className="text-red-450 text-12 leading-17 p-4">{errors.password.message}</span>
                       )}
                     </div>
                   </div>
@@ -146,10 +145,7 @@ const SignIn = () => {
               <div className="flex flex-col p-4 mx-auto w-full">
                 <div className="flex align-center justify-center gap-1 text-13 font-400 text-zinc-800 ">
                   Don&apos;t have an account?
-                  <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600">
-                    {' '}
-                    Sign up
-                  </a>
+                  <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600"> Sign up</a>
                 </div>
                 <div className="flex align-center justify-center gap-1 text-13 font-400 text-zinc-800 mt-3">
                   Are you an employer?

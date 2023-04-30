@@ -10,7 +10,7 @@ type UpdateQuestionType = {
   title: string;
   details: string;
   expect: string;
-}
+};
 
 type LoginFormType = {
   email: string;
@@ -21,35 +21,35 @@ type SignUpFormType = {
   name: string;
   email: string;
   password: string;
-}
+};
 
 type PublicUserType = {
   id: number;
   name: string;
   email: string;
-}
+};
 
 type UserType = {
   id: number;
   name: string;
   email: string;
   password: string;
-}
+};
 
 type AnswerType = {
   id: number;
   content: string;
   user: PublicUserType;
-}
+};
 
 type AnswerFormType = {
   content: string;
-}
+};
 
 type VoteType = {
   id: number;
   user: PublicUserType;
-}
+};
 
 type QuestionType = {
   title: string;
@@ -63,5 +63,16 @@ type QuestionType = {
   viewsCount: number;
   createdAt: string;
 };
-  
-export type { QuestionFormType, QuestionType, PublicUserType, UserType, AnswerType, VoteType, LoginFormType, SignUpFormType, UpdateQuestionType, AnswerFormType };
+
+export type {
+  QuestionFormType,
+  QuestionType,
+  PublicUserType,
+  UserType,
+  AnswerType,
+  VoteType,
+  LoginFormType,
+  SignUpFormType,
+  UpdateQuestionType,
+  AnswerFormType,
+};

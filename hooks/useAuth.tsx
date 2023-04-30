@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext } from 'react';
 import { PublicUserType, UserType, LoginFormType, SignUpFormType } from '@types';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 type UseAuthType = {
   isAuthenticated: boolean;
@@ -18,12 +18,12 @@ type AuthProviderType = {
 const AuthContext = createContext({} as UseAuthType);
 
 const cookieUser = Cookies.get('user');
-const initialUser = cookieUser ? JSON.parse(cookieUser) as UserType : null;
+const initialUser = cookieUser ? (JSON.parse(cookieUser) as UserType) : null;
 
 export const AuthProvider = ({ children }: AuthProviderType) => {
   const [currentUser, setCurrentUser] = useState<UserType | null>(initialUser);
   const isAuthenticated = currentUser != null;
-  const publicAuthenticatedUser = { 
+  const publicAuthenticatedUser = {
     id: currentUser?.id,
     name: currentUser?.name,
     email: currentUser?.email,
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: AuthProviderType) => {
   }
 
   function logout() {
-    setCurrentUser(null)
+    setCurrentUser(null);
     Cookies.remove('user');
   }
 
@@ -50,12 +50,10 @@ export const AuthProvider = ({ children }: AuthProviderType) => {
     publicAuthenticatedUser,
     login,
     signup,
-    logout
+    logout,
   };
 
-  return (
-    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
 
 export default function useAuth(): UseAuthType {

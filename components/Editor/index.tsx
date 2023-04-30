@@ -7,7 +7,7 @@ import draftToHtml from 'draftjs-to-html';
 type MyEditorType = {
   value: string;
   onChange: (value: string) => void;
-}
+};
 
 const MyEditor = ({ value, onChange }: MyEditorType) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());

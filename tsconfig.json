@@ -22,7 +22,7 @@
       "@hooks/*": ["hooks/*"],
       "@layouts": ["layouts"],
       "@types": ["types"],
-      "@lib": ["lib"],
+      "@lib": ["lib"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

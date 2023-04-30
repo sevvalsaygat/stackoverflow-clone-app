@@ -9,15 +9,15 @@ import useCreateUser from './useCreateUser';
 import useGetUsers from './useGetUsers';
 import useUpdateQuestionById from './useUpdateQuestionById';
 
-export { 
-    useAuth, 
-    useAxios, 
-    Api, 
-    useCreateQuestion, 
-    useDeleteQuestionById, 
-    useGetQuestionById, 
-    useGetQuestions,
-    useCreateUser,
-    useGetUsers,
-    useUpdateQuestionById
+export {
+  useAuth,
+  useAxios,
+  Api,
+  useCreateQuestion,
+  useDeleteQuestionById,
+  useGetQuestionById,
+  useGetQuestions,
+  useCreateUser,
+  useGetUsers,
+  useUpdateQuestionById,
 };

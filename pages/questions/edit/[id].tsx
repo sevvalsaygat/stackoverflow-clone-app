@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { useUpdateQuestionById, useAuth, useGetQuestionById } from '@hooks';
 import { QuestionFormType, QuestionType } from '@types';
 
-
 const AskQuestions = () => {
   const [isShowingReviewTab, setIsShowingReviewTab] = useState(false);
   const [currentFormElementIndex, setCurrentFormElementIndex] = useState(0);
@@ -18,11 +17,11 @@ const AskQuestions = () => {
   const { data: questionDetailData, isSuccess: questionDetailIsSuccess } = useGetQuestionById(id as string, {
     enabled: !!id,
     onSuccess: (data: QuestionType) => {
-        setValue('title', data.title);
-        setValue('details', data.details);
-        setValue('expect', data.expect);
-        setValue('tag', data.tag);
-    }
+      setValue('title', data.title);
+      setValue('details', data.details);
+      setValue('expect', data.expect);
+      setValue('tag', data.tag);
+    },
   });
 
   const { publicAuthenticatedUser } = useAuth();
@@ -40,10 +39,8 @@ const AskQuestions = () => {
     control,
     watch,
     setValue,
-    formState: { errors }, 
+    formState: { errors },
   } = useForm<QuestionFormType>();
-
-  
 
   const watchDetails = watch('details', '');
   const watchExpect = watch('expect', '');
@@ -51,7 +48,7 @@ const AskQuestions = () => {
   const onSubmit = (data: QuestionFormType) => {
     mutate({
       ...questionDetailData,
-      ...data 
+      ...data,
     });
   };
 
@@ -68,15 +65,13 @@ const AskQuestions = () => {
               <div className="flex flex-col">
                 <div className="flex flex-col m-0 p-0">
                   <div className="flex flex-row justify-between w-full align-center items-center">
-                    <div className='flex flex-col'>
-                      <h1 className="font-600 leading-35 text-27">
-                        Edit question
-                      </h1>
-                      <div className='flex flex-row items-center max-w-fit py-1 px-5 border border-yellow-700 rounded-3 bg-yellow-200 gap-4 mt-4'>
-                        <div>    
+                    <div className="flex flex-col">
+                      <h1 className="font-600 leading-35 text-27">Edit question</h1>
+                      <div className="flex flex-row items-center max-w-fit py-1 px-5 border border-yellow-700 rounded-3 bg-yellow-200 gap-4 mt-4">
+                        <div>
                           <Icons.SvgEye className="mr-4 text-yellow-800" />
                         </div>
-                        <div className='text-11 leading-18 text-yellow-800 font-bold'>New</div>
+                        <div className="text-11 leading-18 text-yellow-800 font-bold">New</div>
                       </div>
                     </div>
                     <div>
@@ -90,15 +85,12 @@ const AskQuestions = () => {
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
-                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">
-                          Title
-                        </label>
+                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">Title</label>
                       </div>
                       <div className="flex flex-col align-baseline">
                         <div className="flex mb-2 p-2 basis-3/4">
                           <label className="text-12 font-400 leading-15 text-neutral-700">
-                            Be specific and imagine you’re asking a question to
-                            another person.
+                            Be specific and imagine you’re asking a question to another person.
                           </label>
                         </div>
                       </div>
@@ -115,9 +107,7 @@ const AskQuestions = () => {
               </div>
 
               <div className="w-100 flex flex-row gap-16 mt-12">
-                <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}
-                >
+                <div className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}>
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
@@ -128,8 +118,7 @@ const AskQuestions = () => {
                       <div className="flex flex-col align-baseline">
                         <div className="flex mb-2 p-2 basis-3/4">
                           <label className="text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
-                            Introduce the problem and expand on what you put in
-                            the title. Minimum 20 characters.
+                            Introduce the problem and expand on what you put in the title. Minimum 20 characters.
                           </label>
                         </div>
                       </div>
@@ -141,9 +130,9 @@ const AskQuestions = () => {
                           name="details"
                           rules={{ required: true, minLength: 20 }}
                           render={({ field: { onChange, onBlur, value, ref } }) => (
-                          <MyEditor onChange={onChange} value={'lkasdjklajsdl'} />
-                        )}
-                        />                      
+                            <MyEditor onChange={onChange} value={'lkasdjklajsdl'} />
+                          )}
+                        />
                       </div>
                     </div>
                   </div>
@@ -151,9 +140,7 @@ const AskQuestions = () => {
               </div>
 
               <div className="w-100 flex flex-row gap-16 mt-12">
-                <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}
-                >
+                <div className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}>
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
@@ -164,8 +151,7 @@ const AskQuestions = () => {
                       <div className="flex flex-col align-baseline">
                         <div className="flex mb-2 p-2 basis-3/4">
                           <label className="text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
-                            Describe what you tried, what you expected to
-                            happen, and what actually resulted. Minimum 20
+                            Describe what you tried, what you expected to happen, and what actually resulted. Minimum 20
                             characters.
                           </label>
                         </div>
@@ -177,9 +163,9 @@ const AskQuestions = () => {
                           control={control}
                           name="expect"
                           render={({ field: { onChange, onBlur, value, ref } }) => (
-                          <MyEditor onChange={onChange} value={value} />
-                        )}
-                        />     
+                            <MyEditor onChange={onChange} value={value} />
+                          )}
+                        />
                       </div>
                     </div>
                   </div>
@@ -193,15 +179,12 @@ const AskQuestions = () => {
                   <div className="flex flex-col -mt-2">
                     <div className="flex flex-col my-2">
                       <div className="flex">
-                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">
-                          Tags
-                        </label>
+                        <label className="font-600 text-15 leading-19.61 text-neutral-900 cursor-pointer">Tags</label>
                       </div>
                       <div className="flex flex-col align-baseline">
                         <div className="flex mb-2 p-2 basis-3/4">
                           <label className="text-12 font-400 leading-15 text-neutral-700 cursor-pointer">
-                            Add up to 5 tags to describe what your question is
-                            about. Start typing to see suggestions.{' '}
+                            Add up to 5 tags to describe what your question is about. Start typing to see suggestions.{' '}
                           </label>
                         </div>
                       </div>
@@ -218,23 +201,19 @@ const AskQuestions = () => {
               </div>
 
               <div className="w-100 flex flex-row gap-16 mt-12">
-                <div
-                  className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}
-                >
+                <div className={`w-70 p-24 flex-shrink-0 bg-white border rounded-3 border-gray-50`}>
                   <div className="flex flex-col -mt-2 gap-12">
                     <div className="flex flex-col my-2">
                       <div className="flex">
                         <label className="font-600 p-2 text-15 leading-19.61 text-neutral-900 cursor-pointer">
-                          Review questions already on Stack Overflow to see if
-                          your question is a duplicate.
+                          Review questions already on Stack Overflow to see if your question is a duplicate.
                         </label>
                       </div>
                       <div className="flex flex-col align-baseline">
                         <div className="flex p-2 basis-3/4">
                           <label className="text-12 font-400 leading-15 text-neutral-700">
-                            Clicking on these questions will open them in a new
-                            tab for you to review. Your progress here will be
-                            saved so you can come back and continue.
+                            Clicking on these questions will open them in a new tab for you to review. Your progress
+                            here will be saved so you can come back and continue.
                           </label>
                         </div>
                       </div>
@@ -252,18 +231,10 @@ const AskQuestions = () => {
                             Do any of these posts answer your question?
                           </div>
                           <div className="w-full flex justify-end">
-                            <div
-                              className={`${
-                                isShowingReviewTab ? 'hidden' : ''
-                              }`}
-                            >
+                            <div className={`${isShowingReviewTab ? 'hidden' : ''}`}>
                               <Icons.SvgArrowDown className="text-gray-250" />
                             </div>
-                            <div
-                              className={`${
-                                isShowingReviewTab ? '' : 'hidden'
-                              }`}
-                            >
+                            <div className={`${isShowingReviewTab ? '' : 'hidden'}`}>
                               <Icons.SvgArrowUp className="text-gray-250" />
                             </div>
                           </div>
@@ -274,12 +245,12 @@ const AskQuestions = () => {
                           No duplicate questions found.
                         </div>
                       )}
-                        <button
-                          type="submit"
-                          className=" border-transparent p-10.4 w-fit bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-16"
-                        >
-                          Review your question
-                        </button>
+                      <button
+                        type="submit"
+                        className=" border-transparent p-10.4 w-fit bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs mt-16"
+                      >
+                        Review your question
+                      </button>
                     </div>
                   </div>
                 </div>

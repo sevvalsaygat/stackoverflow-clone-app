@@ -12,16 +12,20 @@ const SignUp = () => {
       signup(user);
 
       setTimeout(() => {
-        router.push('/all_questions')
-      }, 500)
-    }
+        router.push('/all_questions');
+      }, 500);
+    },
   });
 
   const router = useRouter();
 
   const { signup } = useAuth();
 
-  const { register, handleSubmit, formState: { errors } } = useForm<SignUpFormType>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignUpFormType>();
 
   const onSubmit = (data: SignUpFormType) => {
     mutate(data);
@@ -29,8 +33,7 @@ const SignUp = () => {
 
   return (
     <AppLayout hideFooter={true}>
-      <div
-        className="flex flex-col justify-center items-center w-full bg-gray-150 p-20">
+      <div className="flex flex-col justify-center items-center w-full bg-gray-150 p-20">
         <div className="flex flex-row">
           <div className="flex flex-col align-center justify-center items-center">
             <div className="w-421 mr-48 mb-128 mt-48">
@@ -41,9 +44,7 @@ const SignUp = () => {
                 <div>
                   <Icons.SvgQuestion className="text-sky-600 mr-8" />
                 </div>
-                <div className="text-15 text-zinc-800 leading-19.61">
-                  Get unstuck — ask a question
-                </div>
+                <div className="text-15 text-zinc-800 leading-19.61">Get unstuck — ask a question</div>
               </div>
               <div className="flex flex-row mb-24">
                 <div>
@@ -57,26 +58,19 @@ const SignUp = () => {
                 <div>
                   <Icons.SvgTag className="text-sky-600 mr-8" />
                 </div>
-                <div className="text-15 text-zinc-800 leading-19.61">
-                  Save your favorite tags, filters, and jobs
-                </div>
+                <div className="text-15 text-zinc-800 leading-19.61">Save your favorite tags, filters, and jobs</div>
               </div>
               <div className="flex flex-row mb-24">
                 <div>
                   <Icons.SvgCupWithStar className="text-sky-600 mr-8" />
                 </div>
-                <div className="text-15 text-zinc-800 leading-19.61">
-                  Earn reputation and badges
-                </div>
+                <div className="text-15 text-zinc-800 leading-19.61">Earn reputation and badges</div>
               </div>
               <div>
                 <div className="text-gray-250 text-13 leading-17">
                   Collaborate and share knowledge with a private group for FREE.
                 </div>
-                <a
-                  className="text-blue-700 text-13 leading-17 hover:text-sky-600"
-                  href=""
-                >
+                <a className="text-blue-700 text-13 leading-17 hover:text-sky-600" href="">
                   Get Stack Overflow for Teams free for up to 50 users.
                 </a>
               </div>
@@ -113,10 +107,7 @@ const SignUp = () => {
 
             <div className="w-316">
               <div className="mx-auto shadow-xl p-24 mb-24 bg-white rounded-lg ">
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="flex flex-col"
-                >
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
                   <div className="flex flex-col my-6">
                     <label className="m-2 cursor-pointer text-15 font-600 leading-19.61 text-neutral-800">
                       Display name
@@ -137,26 +128,26 @@ const SignUp = () => {
                     <div className="mt-2 flex flex-col relative">
                       <div className={`flex flex-row items-center ${errors.email ? 'error' : ''}`}>
                         <input
-                          type='email'
-                          {...register("email", {
-                            required: "The email is not a valid email address.",
+                          type="email"
+                          {...register('email', {
+                            required: 'The email is not a valid email address.',
                             pattern: {
                               value: /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g,
-                              message: "a is not a valid email address.",
+                              message: 'a is not a valid email address.',
                             },
                           })}
-                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                          className={`w-full m-0 h-32.59 border ${
+                            errors.password ? 'border-red-450' : 'border-gray-300'
+                          } rounded-3 bg-white p-6`}
                         ></input>
                         {errors.email && (
-                          <div className='absolute right-0 top-0 mr-6 mt-6'>
-                            <Icons.SvgError className='text-red-450' />
+                          <div className="absolute right-0 top-0 mr-6 mt-6">
+                            <Icons.SvgError className="text-red-450" />
                           </div>
                         )}
                       </div>
                       {errors.email && (
-                        <span className="text-red-450 text-12 leading-17 p-4">
-                          {errors.email.message}
-                        </span>
+                        <span className="text-red-450 text-12 leading-17 p-4">{errors.email.message}</span>
                       )}
                     </div>
                   </div>
@@ -173,26 +164,25 @@ const SignUp = () => {
                             minLength: 6,
                             pattern: {
                               value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm,
-                              message: "Please add one of the following things to make your password stronger:",
+                              message: 'Please add one of the following things to make your password stronger:',
                             },
                           })}
-                          className={`w-full m-0 h-32.59 border ${errors.password ? 'border-red-450' : 'border-gray-300'} rounded-3 bg-white p-6`}
+                          className={`w-full m-0 h-32.59 border ${
+                            errors.password ? 'border-red-450' : 'border-gray-300'
+                          } rounded-3 bg-white p-6`}
                         ></input>
                         {errors.email && (
-                          <div className='absolute right-0 top-0 mr-6 mt-6'>
-                            <Icons.SvgError className='text-red-450' />
+                          <div className="absolute right-0 top-0 mr-6 mt-6">
+                            <Icons.SvgError className="text-red-450" />
                           </div>
                         )}
                       </div>
                       {errors.password && (
-                        <span className="text-red-450 text-12 leading-17 p-4 mb-10">
-                          {errors.password.message}
-                        </span>
+                        <span className="text-red-450 text-12 leading-17 p-4 mb-10">{errors.password.message}</span>
                       )}
                     </div>
                     <p className="my-4 font-400 text-12 leading-15 text-gray-250">
-                      Passwords must contain at least eight characters,
-                      including at least 1 letter and 1 number.
+                      Passwords must contain at least eight characters, including at least 1 letter and 1 number.
                     </p>
                   </div>
 
@@ -212,16 +202,12 @@ const SignUp = () => {
 
                   <div className="flex flex-row mt-3">
                     <div className="flex mr-1 content-start">
-                      <input
-                        type="checkbox"
-                        className="mt-0 h-13 w-13 mr-4"
-                      />
+                      <input type="checkbox" className="mt-0 h-13 w-13 mr-4" />
                     </div>
                     <div className="mb-6">
                       <p className="text-12 font-400 leading-15.6923 cursor-pointer text-neutral-900">
-                        Opt-in to receive occasional product updates, user
-                        research invitations, company announcements, and
-                        digests.
+                        Opt-in to receive occasional product updates, user research invitations, company announcements,
+                        and digests.
                       </p>
                     </div>
                     <div>
@@ -261,18 +247,12 @@ const SignUp = () => {
             <div className="flex flex-col p-4 mx-auto w-full">
               <div className="flex align-center justify-center gap-1 text-13 font-400 text-zinc-800 ">
                 Already have an account?
-                <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600">
-                  {' '}
-                  Log in
-                </a>
+                <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600"> Log in</a>
               </div>
               <div className="flex align-center justify-center gap-1 text-13 font-400 text-zinc-800 mt-3">
                 Are you an employer?
                 <div className="flex flex-row gap-1 justify-center items-center">
-                  <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600">
-                    {' '}
-                    Sign up on Talent
-                  </a>
+                  <a className="text-blue-700 text-13 cursor-pointer font-400 hover:text-sky-600"> Sign up on Talent</a>
                   <div>
                     <Icons.SvgOpenLink className="h-14 w-14 text-blue-700 cursor-pointer hover:text-sky-600" />
                   </div>

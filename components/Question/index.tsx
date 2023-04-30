@@ -23,13 +23,13 @@ export default function Question({ question }: QuestionProps) {
       <div>{question.expect}</div>
       <div>{question.tag}</div>
       <div>
-      <button
+        <button
           onClick={() => {
             mutate(question.id);
           }}
         >
           Sil
-      </button>
+        </button>
       </div>
     </div>
   );

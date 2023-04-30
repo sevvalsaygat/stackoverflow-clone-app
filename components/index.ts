@@ -10,4 +10,4 @@ const MyEditor = dynamic(() => import('./Editor'), {
   ssr: false,
 });
 
-export { Footer, Header, Icons, Buttons, Pagination, MyEditor, Question};
+export { Footer, Header, Icons, Buttons, Pagination, MyEditor, Question };

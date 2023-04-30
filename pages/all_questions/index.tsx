@@ -26,9 +26,7 @@ const AllQuestions = () => {
                     </div>
                     <div>
                       <div className="w-full">
-                        <div className="ml-8 mb-4 mt-16 text-11 font-400 leading-15 text-gray-250">
-                          PUBLIC
-                        </div>
+                        <div className="ml-8 mb-4 mt-16 text-11 font-400 leading-15 text-gray-250">PUBLIC</div>
 
                         <div className="relative">
                           <a className="flex flex-row align-center items-center bg-gray-150 border-r-3 border-orange-400 py-6 pl-8 pb-4 cursor-pointer">
@@ -56,9 +54,7 @@ const AllQuestions = () => {
                         </div>
                         <div className="p-2">
                           <div className="flex flex-row justify-between items-center mt-16 ml-8">
-                            <div className="text-11 font-400 text-gray-250">
-                              COLLECTIVES
-                            </div>
+                            <div className="text-11 font-400 text-gray-250">COLLECTIVES</div>
                             <div>
                               <Icons.SvgInfo className="text-gray-250 mx-10" />
                             </div>
@@ -74,9 +70,7 @@ const AllQuestions = () => {
                     </div>
                     <div className="w-full pl-2 pr-3">
                       <div className="flex flex-row justify-between items-center mt-24 ml-8 mb-4">
-                        <div className="text-11 font-400 text-gray-250">
-                          TEAMS
-                        </div>
+                        <div className="text-11 font-400 text-gray-250">TEAMS</div>
                         <div className="group cursor-pointer">
                           <Icons.SvgInfo className="text-gray-250 group-hover:text-neutral-900 mx-2" />
                         </div>
@@ -96,11 +90,8 @@ const AllQuestions = () => {
               <div className="w-727">
                 <div id="mainbar" className="w-full">
                   <div className="flex flex-row justify-between">
-                    <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27">
-                      {' '}
-                      All Questions
-                    </h1>
-                    <div className='mt-7'>
+                    <h1 className="flex text-27 font-400 leading-35 text-zinc-800 mb-27"> All Questions</h1>
+                    <div className="mt-7">
                       <Link
                         href="/ask_question"
                         className="border border-transparent p-10.4 bg-sky-600 hover:bg-blue-700 text-white text-13 font-400 leading-15 rounded-3 shadow-bs"
@@ -110,9 +101,7 @@ const AllQuestions = () => {
                     </div>
                   </div>
                   <div className="flex flex-row justify-between align-center items-center mb-12">
-                    <div className="flex mr-12 text-17 font-400 leading-23 text-zinc-800">
-                      23,455,561 questions
-                    </div>
+                    <div className="flex mr-12 text-17 font-400 leading-23 text-zinc-800">23,455,561 questions</div>
                     <div className="flex justify-end align-center items-center">
                       <div className="flex flex-row">
                         <div className="flex mb-1 max-h-35 mr-16">
@@ -124,9 +113,7 @@ const AllQuestions = () => {
                           </button>
                           <button className="flex justify-center items-center border-y border-r border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Bountied
-                            <span className="bg-blue-700 rounded-2 text-white text-11 px-1 ml-5">
-                              298
-                            </span>
+                            <span className="bg-blue-700 rounded-2 text-white text-11 px-1 ml-5">298</span>
                           </button>
                           <button className="flex justify-center items-center border-y border-r border-gray-400 p-9.6 text-13 font-400 text-gray-250 hover:bg-gray-100 hover:text-zinc-500">
                             Unanswered
@@ -137,8 +124,7 @@ const AllQuestions = () => {
                         </div>
                         <div className="flex flex-row justify-center items-center w-69 h-36">
                           <button className="w-full h-full flex flex-row justify-center items-center rounded-3 border shadow-bs border-blue-400 bg-cyan-50 text-sky-700 p-9.6 text-12 font-400 leading-13">
-                            <Icons.SvgFilter className="flex -my-3.6 align-baseline	" />{' '}
-                            Filter
+                            <Icons.SvgFilter className="flex -my-3.6 align-baseline	" /> Filter
                           </button>
                         </div>
                       </div>
@@ -150,10 +136,7 @@ const AllQuestions = () => {
                       {isSuccess &&
                         data.map((q: QuestionType, index: number) => {
                           return (
-                            <div
-                              key={index}
-                              className="flex flex-row p-16 border-b-1 border-gray-50"
-                            >
+                            <div key={index} className="flex flex-row p-16 border-b-1 border-gray-50">
                               <div className="flex flex-col shrink-0 flex-wrap w-108 mr-16 mb-4 gap-6 text-gray-250">
                                 <div className="text-neutral-900 gap-1 flex justify-end border border-transparent text-13 font-400 leading-17">
                                   <span>{q.votes.length}</span>
@@ -170,7 +153,10 @@ const AllQuestions = () => {
                               </div>
                               <div className="grow max-w-full">
                                 <h3 className="-mt-1.95 mb-5 pr-24 text-17 font-sans leading-22.2308 break-words">
-                                  <Link href={`/questions/${q.id}`} className="text-blue-700 hover:text-sky-600 cursor-pointer">
+                                  <Link
+                                    href={`/questions/${q.id}`}
+                                    className="text-blue-700 hover:text-sky-600 cursor-pointer"
+                                  >
                                     {q.title}
                                   </Link>
                                 </h3>
@@ -238,8 +224,7 @@ const AllQuestions = () => {
                         <Icons.SvgPencil className="" />
                       </div>
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
-                        How chaos engineering preps developers for the ultimate
-                        game day (Ep. 531)
+                        How chaos engineering preps developers for the ultimate game day (Ep. 531)
                       </div>
                     </div>
                     <div className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
@@ -278,8 +263,7 @@ const AllQuestions = () => {
                         <Icons.SvgStack className="text-zinc-800" />
                       </div>
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
-                        We’re bringing advertisements for technology courses to
-                        Stack Overflow
+                        We’re bringing advertisements for technology courses to Stack Overflow
                       </div>
                     </div>
                     <div className="flex flex-row my-12 px-16 gap-2">
@@ -288,17 +272,14 @@ const AllQuestions = () => {
                         <Icons.SvgStack className="text-zinc-800" />
                       </div>
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
-                        Introducing a new close reason specifically for
-                        non-English questions
+                        Introducing a new close reason specifically for non-English questions
                       </div>
                     </div>
                     <div className="text-12 text-zinc-500 font-bold leading-15 border-y-1 border-yellow-100  bg-yellow-200 py-12 px-16">
                       Hot Meta Posts
                     </div>
                     <div className="flex flex-row my-12 px-16 gap-2">
-                      <span className="text-13 font-400 leading-17 text-gray-250">
-                        22
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-250">22</span>
                       <div className="text-13 font-400 leading-17 text-neutral-700 cursor-pointer hover:text-zinc-500">
                         Stack Overflow is adding a 1st party targeting cookie{' '}
                       </div>
@@ -348,9 +329,7 @@ const AllQuestions = () => {
                 <div className="mb-16 border border-gray-200 rounded-3 shadow-sm bg-white">
                   <div className="flex flex-row justify-between bg-gray-100 text-15 font-400 leading-19.5 py-12 px-15">
                     <div className="text-zinc-500">Collectives</div>
-                    <a className="text-11 font-400 leading-19.5 text-blue-700 cursor-pointer">
-                      see all
-                    </a>
+                    <a className="text-11 font-400 leading-19.5 text-blue-700 cursor-pointer">see all</a>
                   </div>
 
                   <div className="flex flex-col justify-between border-t-1 py-16 px-15">
@@ -360,12 +339,8 @@ const AllQuestions = () => {
                           <Icons.SvgTwilio className="h-8 w-8" />
                         </div>
                         <div className="flex flex-col">
-                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">
-                            Twilio
-                          </h1>
-                          <div className="text-12 font-400 leading-15 text-neutral-700">
-                            6k Members
-                          </div>
+                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">Twilio</h1>
+                          <div className="text-12 font-400 leading-15 text-neutral-700">6k Members</div>
                         </div>
                       </div>
                       <div className="flex">
@@ -377,8 +352,7 @@ const AllQuestions = () => {
                       </div>
                     </div>
                     <span className="text-13 font-400 leading-17 text-neutral-700">
-                      Twilio has democratized channels like voice, text, chat,
-                      video, and email by virtualizing...
+                      Twilio has democratized channels like voice, text, chat, video, and email by virtualizing...
                     </span>
                   </div>
 
@@ -389,12 +363,8 @@ const AllQuestions = () => {
                           <Icons.SvgWso2 className="h-8 w-8" />
                         </div>
                         <div className="flex flex-col">
-                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">
-                            WSO2
-                          </h1>
-                          <div className="text-12 font-400 leading-15 text-neutral-700">
-                            3k Members
-                          </div>
+                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">WSO2</h1>
+                          <div className="text-12 font-400 leading-15 text-neutral-700">3k Members</div>
                         </div>
                       </div>
                       <div className="flex">
@@ -406,8 +376,7 @@ const AllQuestions = () => {
                       </div>
                     </div>
                     <span className="text-13 font-400 leading-17 text-neutral-700">
-                      WSO2 solutions give enterprises the flexibility to deploy
-                      applications and ser...
+                      WSO2 solutions give enterprises the flexibility to deploy applications and ser...
                     </span>
                   </div>
 
@@ -418,12 +387,8 @@ const AllQuestions = () => {
                           <Icons.SvgAmazon className="h-8 w-8" />
                         </div>
                         <div className="flex flex-col">
-                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">
-                            AWS
-                          </h1>
-                          <div className="text-12 font-400 leading-15 text-neutral-700">
-                            1k Members
-                          </div>
+                          <h1 className="text-15 font-400 leading-19.5 text-gray-250 cursor-pointer">AWS</h1>
+                          <div className="text-12 font-400 leading-15 text-neutral-700">1k Members</div>
                         </div>
                       </div>
                       <div className="flex">
@@ -435,30 +400,23 @@ const AllQuestions = () => {
                       </div>
                     </div>
                     <span className="text-13 font-400 leading-17 text-neutral-700">
-                      Amazon Web Services (AWS) is the world’s most
-                      comprehensive and broadly adopted...
+                      Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted...
                     </span>
                   </div>
                 </div>
                 <div className="min-h-300"></div>
 
                 <div className="mb-19.5">
-                  <h2 className="text-neutral-700 mb-19 text-19 font-400 leading-24">
-                    Related Tags
-                  </h2>
+                  <h2 className="text-neutral-700 mb-19 text-19 font-400 leading-24">Related Tags</h2>
                   <div className="mr-2 mb-10 my-2">
                     <a className="border border-transparent text-sky-700 hover:text-blue-350 hover:bg-cyan-450 cursor-pointer bg-cyan-50 px-4.8 py-4.3 text-12 font-400 leading-12 rounded-3">
                       javascript
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        2472680
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">2472680</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -467,13 +425,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        2100599
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">2100599</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -482,13 +436,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1887130
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1887130</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -497,13 +447,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1579832
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1579832</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -512,13 +458,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1455508
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1455508</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -527,13 +469,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1399380
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1399380</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -542,13 +480,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1166008
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1166008</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -557,13 +491,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        1036087
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">1036087</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -572,13 +502,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        787823
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">787823</span>
                     </span>
                   </div>
                   <div className="mr-2 mb-10 my-2">
@@ -587,13 +513,9 @@ const AllQuestions = () => {
                     </a>
                     &nbsp;
                     <span className="mr-4 text-gray-400">
-                      <span className="text-13 font-400 leading-17 text-gray-400">
-                        x
-                      </span>
+                      <span className="text-13 font-400 leading-17 text-gray-400">x</span>
                       &nbsp;
-                      <span className="text-11 font-400 leading-13 text-gray-250">
-                        785419
-                      </span>
+                      <span className="text-11 font-400 leading-13 text-gray-250">785419</span>
                     </span>
                   </div>
                   <a className="text-13 font-400 leading-17 my-5 cursor-pointer text-blue-700 hover:text-sky-600">
@@ -603,9 +525,7 @@ const AllQuestions = () => {
 
                 <div className="mb-19">
                   <h4 className="mb-19">
-                    <a className="text-19 font-400 leading-24 text-neutral-700 cursor-pointer">
-                      Hot Network Questions
-                    </a>
+                    <a className="text-19 font-400 leading-24 text-neutral-700 cursor-pointer">Hot Network Questions</a>
                   </h4>
                   <ul>
                     <div className="flex flex-row mb-10 ml-0">
@@ -631,8 +551,7 @@ const AllQuestions = () => {
                     <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
-                        FIPS 186-4, Use of RSA key pair for Encryption and
-                        Signature
+                        FIPS 186-4, Use of RSA key pair for Encryption and Signature
                       </a>
                     </div>
                     <div className="flex flex-row mb-10 ml-0">
@@ -644,29 +563,26 @@ const AllQuestions = () => {
                     <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
-                        Why was the graphical user interface version of Defrag
-                        removed?
+                        Why was the graphical user interface version of Defrag removed?
                       </a>
                     </div>
                     <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
-                        The rationale behind allowing `sudo -u root` but
-                        disallowing `sudo -u root -i`
+                        The rationale behind allowing `sudo -u root` but disallowing `sudo -u root -i`
                       </a>
                     </div>
                     <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
-                        Was there any technological reason that C was designed
-                        to return only a single thing from a function?
+                        Was there any technological reason that C was designed to return only a single thing from a
+                        function?
                       </a>
                     </div>
                     <div className="flex flex-row mb-10 ml-0">
                       <div className="mt-2 mr-6 inline-block align-top"></div>
                       <a className="inline-block align-top text-12 font-400 leading-15 text-blue-700 hover:text-sky-600 cursor-pointer">
-                        How do proponents of the Fine Tuning argument for God,
-                        refute the puddle comparison?
+                        How do proponents of the Fine Tuning argument for God, refute the puddle comparison?
                       </a>
                     </div>
                     <div className="flex flex-row mb-10 ml-0">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Icons } from '@components';
 import { useAuth } from '@hooks';
 import Link from 'next/link';
@@ -77,70 +77,88 @@ const Header = ({ hideHamburger }: HeaderType) => {
               <div className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]">
                 <Icons.SvgHelp className="w-18 h-18" />
               </div>
-              <button onClick={toggleDropdown} className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]">
+              <button
+                onClick={toggleDropdown}
+                className="flex flex-row items-center justify-center px-10 hover:bg-gray-50 cursor-pointer text-zinc-500 hover:text-gray-800 h-[47px]"
+              >
                 <Icons.SvgList className="w-18 h-18" />
               </button>
               {isOpen && (
-                <div className='absolute mr-[180px] overflow-auto mt-[436px] z-0 w-[375px] border-gray-50 border-x-1 border-b-1  max-h-[390px] min-h-[390px] bg-white shadow-sm'>
-                  <div className='bg-gray-150 py-8 px-10 w-full'>
-                    <h3 className='text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer'>CURRENT COMMUNITY</h3>
+                <div className="absolute mr-[180px] overflow-auto mt-[436px] z-0 w-[375px] border-gray-50 border-x-1 border-b-1  max-h-[390px] min-h-[390px] bg-white shadow-sm">
+                  <div className="bg-gray-150 py-8 px-10 w-full">
+                    <h3 className="text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer">
+                      CURRENT COMMUNITY
+                    </h3>
                   </div>
                   <div>
-                    <ul className='pl-0 ml-0 mb-0'>
-                      <div className='group bg-blue-50 hover:bg-cyan-50'>
-                        <li className='p-2 px-7 flex flex-row justify-between cursor-pointer '>
-                          <div className='flex flex-row p-6 justify-center items-center'>
-                            <Icons.SvgLogoSmall className='w-3 h-3 m-4'/>
-                            <div className='group-hover:text-sky-600 m-4 text-12 leading-15 font-bold text-blue-700'>Stack Overflow</div>
+                    <ul className="pl-0 ml-0 mb-0">
+                      <div className="group bg-blue-50 hover:bg-cyan-50">
+                        <li className="p-2 px-7 flex flex-row justify-between cursor-pointer ">
+                          <div className="flex flex-row p-6 justify-center items-center">
+                            <Icons.SvgLogoSmall className="w-3 h-3 m-4" />
+                            <div className="group-hover:text-sky-600 m-4 text-12 leading-15 font-bold text-blue-700">
+                              Stack Overflow
+                            </div>
                           </div>
-                          <div className='flex flex-row justify-center items-center p-8'>
-                            <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>help</a>
-                            <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>chat</a>
-                            <button onClick={
-                              () => {
-                                logout()
+                          <div className="flex flex-row justify-center items-center p-8">
+                            <a className="ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600">help</a>
+                            <a className="ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600">chat</a>
+                            <button
+                              onClick={() => {
+                                logout();
                                 setTimeout(() => {
-                                  router.push('/users/sign_in')
-                                })
-                              }
-                            } className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>log out</button>
+                                  router.push('/users/sign_in');
+                                });
+                              }}
+                              className="ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600"
+                            >
+                              log out
+                            </button>
                           </div>
                         </li>
                       </div>
-                      <div className='group bg-blue-50 hover:bg-cyan-50'>
-                        <li className='p-2 px-7 flex flew-row cursor-pointer'>
-                          <div className='p-6 flex justify-center items-center'>
-                            <Icons.SvgLogoSmall className='w-3 h-3 m-4'/>
+                      <div className="group bg-blue-50 hover:bg-cyan-50">
+                        <li className="p-2 px-7 flex flew-row cursor-pointer">
+                          <div className="p-6 flex justify-center items-center">
+                            <Icons.SvgLogoSmall className="w-3 h-3 m-4" />
                           </div>
-                          <div className='flex flex-row p-6 justify-center items-center '>
-                            <Icons.SvgLogoBlackSmall className='w-3 h-3 m-4'/>
-                            <div className='group-hover:text-sky-600 m-4 text-12 leading-15 text-blue-700'>Meta Stack Overflow</div>
+                          <div className="flex flex-row p-6 justify-center items-center ">
+                            <Icons.SvgLogoBlackSmall className="w-3 h-3 m-4" />
+                            <div className="group-hover:text-sky-600 m-4 text-12 leading-15 text-blue-700">
+                              Meta Stack Overflow
+                            </div>
                           </div>
                         </li>
                       </div>
                     </ul>
                   </div>
-                  <div className='bg-gray-150 py-8 px-10 w-full flex flex-row justify-between'>
-                    <h3 className='text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer'>YOUR COMMUNITIES</h3>
-                    <h3 className='text-blue-700 hover:text-sky-600 px-6 text-12 leading-15 cursor-pointer'>edit</h3>
+                  <div className="bg-gray-150 py-8 px-10 w-full flex flex-row justify-between">
+                    <h3 className="text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer">
+                      YOUR COMMUNITIES
+                    </h3>
+                    <h3 className="text-blue-700 hover:text-sky-600 px-6 text-12 leading-15 cursor-pointer">edit</h3>
                   </div>
-                  <div className='group bg-white hover:bg-gray-50'>
-                    <div className='p-2 px-7 flex flex-row justify-between cursor-pointer '>
-                      <div className='flex flex-row p-6 justify-center items-center '>
-                        <Icons.SvgLogoSmall className='w-3 h-3 m-4'/>
-                        <div className='group-hover:text-sky-600 m-4 text-12 leading-15 text-blue-700'>Stack Overflow</div>
+                  <div className="group bg-white hover:bg-gray-50">
+                    <div className="p-2 px-7 flex flex-row justify-between cursor-pointer ">
+                      <div className="flex flex-row p-6 justify-center items-center ">
+                        <Icons.SvgLogoSmall className="w-3 h-3 m-4" />
+                        <div className="group-hover:text-sky-600 m-4 text-12 leading-15 text-blue-700">
+                          Stack Overflow
+                        </div>
                       </div>
-                      <div className='flex flex-row justify-center items-center p-8 text-gray-400 text-12 leading-15'>
+                      <div className="flex flex-row justify-center items-center p-8 text-gray-400 text-12 leading-15">
                         1
                       </div>
                     </div>
                   </div>
-                  <div className='flex bg-gray-150 py-8 px-10 w-full justify-between'>
-                    <div className='flex flex-row justify-center items-center '>
-                      <h3 className='text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer'>MORE STACK EXCHANGE COMMUNITIES</h3>
+                  <div className="flex bg-gray-150 py-8 px-10 w-full justify-between">
+                    <div className="flex flex-row justify-center items-center ">
+                      <h3 className="text-blue-700 hover:text-sky-600 font-bold text-11 leading-14 cursor-pointer">
+                        MORE STACK EXCHANGE COMMUNITIES
+                      </h3>
                     </div>
-                    <div className='flex flex-row justify-center items-center px-6'>
-                      <a className='ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600'>company blog</a>
+                    <div className="flex flex-row justify-center items-center px-6">
+                      <a className="ml-10 text-12 leading-15 text-blue-700 hover:text-sky-600">company blog</a>
                     </div>
                   </div>
                   <div className="w-full flex flex-row items-center p-8 h-[47px]">
@@ -155,58 +173,72 @@ const Header = ({ hideHamburger }: HeaderType) => {
                     </div>
                   </div>
                   <ul>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>3D Printing</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For 3D printing enthusiasts</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">3D Printing</a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For 3D printing enthusiasts
+                          </p>
+                        </div>
                       </div>
                     </li>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>Ardunio</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For developers of open-source hardware and software that is compatible with Arduino</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">Ardunio</a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For developers of open-source hardware and software that is compatible with Arduino
+                          </p>
+                        </div>
                       </div>
                     </li>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>Academia</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For academics and those enrolled in higher education</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">Academia</a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For academics and those enrolled in higher education
+                          </p>
+                        </div>
                       </div>
                     </li>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>Amateur Radio</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For amateur radio enthusiasts</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">Amateur Radio</a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For amateur radio enthusiasts
+                          </p>
+                        </div>
                       </div>
                     </li>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>Android Enthusiasts</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For enthusiasts and power users of the Android operating system</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">
+                            Android Enthusiasts
+                          </a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For enthusiasts and power users of the Android operating system
+                          </p>
+                        </div>
                       </div>
                     </li>
-                    <li className='group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150'>
-                      <div className='flex flex-row p-8 cursor-pointer'>
-                        <div className='mr-24'></div>
+                    <li className="group hover:bg-gray-50 pt-2 px-7 border-b-1 border-gray-150">
+                      <div className="flex flex-row p-8 cursor-pointer">
+                        <div className="mr-24"></div>
                         <div>
-                          <a className='group-hover:text-sky-600 text-12 text-blue-700 leading-15'>Anime & Manga</a>
-                          <p className='group-hover:text-zinc-500 text-gray-250 text-12 leading-15'>For anime and manga fans</p>
-                        </div>                       
+                          <a className="group-hover:text-sky-600 text-12 text-blue-700 leading-15">Anime & Manga</a>
+                          <p className="group-hover:text-zinc-500 text-gray-250 text-12 leading-15">
+                            For anime and manga fans
+                          </p>
+                        </div>
                       </div>
                     </li>
                   </ul>
